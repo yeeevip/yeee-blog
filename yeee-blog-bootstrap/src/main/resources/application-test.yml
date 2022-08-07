@@ -1,0 +1,45 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/yeeee_manage?characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+  redis:
+    database: 1
+    host: 127.0.0.1
+    password: yeee
+    port: 6379
+    timeout: 10000
+# 授权配置
+security:
+  oauth2:
+    resource:
+      token-info-uri: http://127.0.0.1:${server.port}${server.servlet.context-path}/oauth/check_token
+    client:
+      client-id: yeee-manage
+      client-secret: 111111
+      #      grant-type: password
+      access-token-uri: http://127.0.0.1:${server.port}${server.servlet.context-path}/oauth/token
+yeee:
+  web:
+    cors:
+      enable: true
+  swagger:
+    enable: true
+    title: yeee博客系统
+    description: yeee博客系统
+    contact-name: yeee
+    version: 1.0
+  auth:
+    resource:
+      exclude:
+        - /api/blog/**
+  oss:
+    local:
+      upload:
+        base-dir: C:\
+    qiniu:
+      access-key: XXXXXXXXXXXXXXX
+      secret-key: XXXXXXXXXXXXXXX
+      default-bucket: yeeevip
+      domain: https://www.yeee.vip/
