@@ -66,7 +66,7 @@
 
     <logger name="com.alicp.jetcache.support" level="OFF"/>
 
-    <springProfile name="stage, prod">
+    <springProfile name="test, stage, prod">
         <root level="INFO">
             <appender-ref ref="REF-CONSOLE"/>
             <appender-ref ref="REF-INFO"/>
