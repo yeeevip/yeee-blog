@@ -22,7 +22,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `t_blog_article`;
 CREATE TABLE `t_blog_article` (
   `id` bigint NOT NULL AUTO_INCREMENT COMMENT 'ID',
-  `classify_id` bigint NOT NULL COMMENT '分类ID',
+  `classify_id` bigint DEFAULT NULL COMMENT '分类ID',
   `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '标题',
   `title_img` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT '标题图',
   `content` text COMMENT '内容',
