@@ -2,7 +2,14 @@
   <div class="mod-article">
     <el-form :inline="true" :model="dataForm" @keyup.enter.native="listData()">
       <el-form-item>
-        <el-input v-model="dataForm.classifyId" placeholder="分类ID" clearable></el-input>
+        <el-select v-model="dataForm.classifyId" placeholder="分类" clearable>
+          <el-option
+            v-for="item in classifyList"
+            :key="item.id"
+            :label="item.name"
+            :value="item.id">
+          </el-option>
+        </el-select>
       </el-form-item>
       <el-form-item>
         <el-input v-model="dataForm.title" placeholder="标题" clearable></el-input>
@@ -28,14 +35,40 @@
     <el-table :data="dataList" border stripe v-loading="dataListLoading" :max-height="tableHeight"
               @selection-change="selectionChangeHandle" @sort-change="sortChangeHandle" style="width: 100%;">
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
-      <el-table-column prop="classifyId" label="分类" sortable="custom" header-align="center" align="center"></el-table-column>
       <el-table-column prop="title" label="标题" sortable="custom" header-align="center" align="center"></el-table-column>
       <el-table-column prop="titleImg" label="标题图" sortable="custom" header-align="center" align="center">
-        <template slot-scope="scope">
-          <filePreview :files="scope.row.titleImg" :imageShow=true></filePreview>
+        <template slot-scope="scope" >
+          <el-popover
+            placement="right"
+            width="400"
+            trigger="click">
+            <img  :src="scope.row.titleImg" width="400px" height="400px" >
+            <img  slot="reference" :src="scope.row.titleImg" width="50px" height="50px" >
+          </el-popover>
         </template>
       </el-table-column>
       <el-table-column prop="author" label="作者" sortable="custom" header-align="center" align="center"></el-table-column>
+      <el-table-column prop="classifyName" label="分类" header-align="center" align="center"></el-table-column>
+      <el-table-column prop="labelList" label="标签" header-align="center" align="center">
+        <template slot-scope="scope" >
+          <el-tag
+            :key="label"
+            v-for="label in scope.row.labelList"
+            :disable-transitions="false">
+            {{label}}
+          </el-tag>
+        </template>
+      </el-table-column>
+      <el-table-column prop="topicList" label="专题" header-align="center" align="center">
+        <template slot-scope="scope" >
+          <el-tag
+            :key="topic"
+            v-for="topic in scope.row.topicList"
+            :disable-transitions="false">
+            {{topic}}
+          </el-tag>
+        </template>
+      </el-table-column>
       <el-table-column prop="oriFlag" label="是否原创" sortable="custom" header-align="center" align="center">
         <template slot-scope="scope">
           <el-tag v-if="scope.row.oriFlag === 1" size="small" type="success">是</el-tag>
@@ -82,6 +115,7 @@ import edit from './article-edit'
 import info from './article-info'
 import grid from '@/mixins/grid'
 import filePreview from '@/components/filePreview'
+import query from '@/utils/query'
 export default {
   mixins: [grid],
   data () {
@@ -96,13 +130,27 @@ export default {
       dataMode: {
         title: 'LK'
       },
-      dataForm: {}
+      dataForm: {},
+      classifyList: []
     }
+  },
+  mounted () {
+    this.getClassifyList()
   },
   components: {
     edit, info, filePreview
   },
   methods: {
+    getClassifyList () {
+      let qry = query.new()
+      query.toP(qry, 1, 100)
+      this.$http.get('/manage/blog/classify/page' + '?query=' + encodeURIComponent(query.toJsonStr(qry)))
+        .then(({ data: res }) => {
+          if (res.code === 200) {
+            this.classifyList = res.data.result
+          }
+        })
+    }
   }
 }
 </script>

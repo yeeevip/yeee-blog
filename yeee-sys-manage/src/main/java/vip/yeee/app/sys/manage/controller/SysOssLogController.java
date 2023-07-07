@@ -33,7 +33,7 @@ import java.util.Map;
 * create by yeee.一页 2023/06/13 10:43:41
 */
 @Slf4j
-@Api(tags = "OSS上传")
+@Api(tags = "系统后台-OSS上传")
 @RequestMapping("/manage/sys-ossLog")
 @RestController
 public class SysOssLogController {

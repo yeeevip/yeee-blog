@@ -1,7 +1,7 @@
 {
-  "name": "yeee-blog-manage",
+  "name": "yeee-admin-ui",
   "version": "1.2.2",
-  "description": "yeee-blog-manage基于vue、element-ui构建开发，实现后台管理前端功能。",
+  "description": "yeee-admin-ui基于vue、element-ui构建开发，实现后台管理前端功能。",
   "author": "yeah一页 <1324459373@qq.com>",
   "private": true,
   "scripts": {

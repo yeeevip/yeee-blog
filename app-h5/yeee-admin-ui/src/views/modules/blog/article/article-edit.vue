@@ -5,11 +5,6 @@
     <el-form :model="dataForm" :rules="dataRule" ref="dataForm" label-width="120px">
       <el-row :gutter="20">
         <el-col :span="11">
-          <el-form-item label="分类" prop="classifyId">
-            <el-input v-model="dataForm.classifyId" placeholder="分类ID"></el-input>
-          </el-form-item>
-        </el-col>
-        <el-col :span="11">
           <el-form-item label="标题" prop="title">
             <el-input v-model="dataForm.title" placeholder="标题"></el-input>
           </el-form-item>
@@ -25,6 +20,42 @@
           </el-form-item>
         </el-col>
         <el-col :span="11">
+          <el-form-item label="分类" prop="classifyId">
+            <el-select v-model="dataForm.classifyId" placeholder="请选择" clearable>
+              <el-option
+                v-for="item in classifyList"
+                :key="item.id"
+                :label="item.name"
+                :value="item.id">
+              </el-option>
+            </el-select>
+          </el-form-item>
+        </el-col>
+        <el-col :span="11">
+          <el-form-item label="标签" prop="labelIds">
+            <el-select v-model="dataForm.labelIds" placeholder="请选择" clearable multiple>
+              <el-option
+                v-for="item in labelList"
+                :key="item.id"
+                :label="item.name"
+                :value="item.id">
+              </el-option>
+            </el-select>
+          </el-form-item>
+        </el-col>
+        <el-col :span="11">
+          <el-form-item label="专题" prop="topicIds">
+            <el-select v-model="dataForm.topicIds" placeholder="请选择" clearable multiple>
+              <el-option
+                v-for="item in topicList"
+                :key="item.id"
+                :label="item.name"
+                :value="item.id">
+              </el-option>
+            </el-select>
+          </el-form-item>
+        </el-col>
+        <el-col :span="11">
           <el-form-item label="说明" prop="remark">
             <el-input v-model="dataForm.remark" placeholder="说明"></el-input>
           </el-form-item>
@@ -32,27 +63,32 @@
         <el-col :span="11">
           <el-form-item label="是否原创" prop="oriFlag">
             <el-select v-model="dataForm.oriFlag" clearable  placeholder="是否原创">
-              <el-option label="是" value=1 />
-              <el-option label="否" value=0 />
+              <el-option label="是" value='1' />
+              <el-option label="否" value='0' />
             </el-select>
           </el-form-item>
         </el-col>
         <el-col :span="11">
           <el-form-item label="排序" prop="sort">
-            <el-input v-model="dataForm.sort" placeholder="排序"></el-input>
+            <el-input type="number" v-model="dataForm.sort" placeholder="排序"></el-input>
           </el-form-item>
         </el-col>
         <el-col :span="11">
           <el-form-item label="发布状态" prop="status">
-            <el-select v-model="dataForm.oriFlag" clearable  placeholder="发布状态">
-              <el-option label="是" value=1 />
-              <el-option label="否" value=0 />
+            <el-select v-model="dataForm.status" clearable  placeholder="发布状态">
+              <el-option label="是" value='1' />
+              <el-option label="否" value='0' />
             </el-select>
           </el-form-item>
         </el-col>
         <el-col :span="11">
           <el-form-item label="发布时间" prop="publishTime">
-            <el-input v-model="dataForm.publishTime" placeholder="发布时间"></el-input>
+            <el-date-picker
+              v-model="dataForm.publishTime"
+              type="datetime"
+              value-format="yyyy-MM-dd HH:mm:ss"
+              placeholder="选择日期时间">
+            </el-date-picker>
           </el-form-item>
         </el-col>
       </el-row>
@@ -75,6 +111,8 @@
 import debounce from 'lodash/debounce'
 import { isEmail, isMobile } from '@/utils/validate'
 import wangeditor from '@/components/wangeditor'
+import query from '@/utils/query'
+
 export default {
   data () {
     var validateEmail = (rule, value, callback) => {
@@ -128,7 +166,10 @@ export default {
         mobile: [
           { validator: validateMobile, trigger: 'blur' }
         ]
-      }
+      },
+      classifyList: [],
+      labelList: [],
+      topicList: []
     }
   },
   components: {
@@ -142,6 +183,9 @@ export default {
       this.visible = true
       this.$nextTick(() => {
         this.$refs['dataForm'].resetFields()
+        this.getClassifyList()
+        this.getLabelList()
+        this.getTopicList()
         if (this.id) {
           this.getInfo()
         }
@@ -163,8 +207,40 @@ export default {
           ...this.dataFormOrigin,
           ...res.data
         }
+        this.dataForm.oriFlag = this.dataForm.oriFlag.toString()
+        this.dataForm.status = this.dataForm.status.toString()
         this.$refs.wangeditor.setEditorContent(res.data.content)
       }).catch(() => {})
+    },
+    getClassifyList () {
+      let qry = query.new()
+      query.toP(qry, 1, 100)
+      this.$http.get('/manage/blog/classify/page' + '?query=' + encodeURIComponent(query.toJsonStr(qry)))
+        .then(({ data: res }) => {
+          if (res.code === 200) {
+            this.classifyList = res.data.result
+          }
+        })
+    },
+    getLabelList () {
+      let qry = query.new()
+      query.toP(qry, 1, 100)
+      this.$http.get('/manage/blog/label/page' + '?query=' + encodeURIComponent(query.toJsonStr(qry)))
+        .then(({ data: res }) => {
+          if (res.code === 200) {
+            this.labelList = res.data.result
+          }
+        })
+    },
+    getTopicList () {
+      let qry = query.new()
+      query.toP(qry, 1, 100)
+      this.$http.get('/manage/blog/topic/page' + '?query=' + encodeURIComponent(query.toJsonStr(qry)))
+        .then(({ data: res }) => {
+          if (res.code === 200) {
+            this.topicList = res.data.result
+          }
+        })
     },
     // 表单提交
     dataFormSubmit: debounce(function () {

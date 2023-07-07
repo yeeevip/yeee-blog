@@ -17,7 +17,7 @@ import vip.yeee.memo.base.model.vo.PageVO;
  * @author yeeee
  * @since 2022/5/28 18:12
  */
-@Api(tags = "组织机构管理")
+@Api(tags = "系统后台-组织机构管理")
 @RequiredArgsConstructor
 @RequestMapping("/manage/sys-dept")
 @RestController

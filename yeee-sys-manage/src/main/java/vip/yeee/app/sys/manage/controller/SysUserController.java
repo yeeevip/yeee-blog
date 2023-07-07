@@ -24,7 +24,7 @@ import vip.yeee.memo.base.websecurityoauth2.model.Oauth2TokenVo;
  * @since 2022/4/28 22:53
  */
 @Slf4j
-@Api(tags = "系统用户管理")
+@Api(tags = "系统后台-系统用户管理")
 @RequiredArgsConstructor
 @RequestMapping("/manage/sys-user")
 @RestController

@@ -30,12 +30,12 @@
 ```lua
 yeee-blog
 ├── app-h5
-    ├── yeee-blog-manage -- 博客后台管理系统｜vue
+    ├── yeee-admin-ui -- 博客后台管理系统｜vue
     └── yeee-blog-web -- 博客客户端｜vue
 ├── doc -- 文档脚本
 ├── yeee-blog-bootstrap -- 主启动工程
 ├── yeee-blog-client -- 博客客户端服务
-├── yeee-blog-common -- 公共模块
+├── yeee-app-common -- 公共模块
 ├── yeee-blog-manage -- 博客管理端服务
 ├── yeee-sys-manage -- 系统权限管理服务
 ```
@@ -49,19 +49,20 @@ yeee-blog
 - redis
 
 ```
-# 下载[通用web脚手架]yeee-memo
+# 下载yeee-memo工程
 git clone https://github.com/yeeevip/yeee-memo.git
 
+# 打包[JavaWeb通用脚手架]
 cd memo-parent && mvn clean install
 
-# 下载项目
-git clone https://github.com/yeeevip/yeee-memo.git
+# 下载yeee-blog项目
+git clone https://github.com/yeeevip/yeee-blog.git
 
-# 运行web服务
+# 运行博客服务
 mvn clean install && java -jar -Dspring.profiles.active=test yeee-blog-bootstrap/target/yeee-blog-bootstrap-1.0.0-SNAPSHOT.jar
 
 # 运行博客管理端ui
-cd app-h5/yeee-blog-manage && npm install && npm run dev
+cd app-h5/yeee-admin-ui && npm install && npm run dev
 
 # 运行博客客户端ui
 cd app-h5/yeee-blog-web && npm install && npm run dev

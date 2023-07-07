@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="vip.yeee.app.blog.manage.domain.mysql.mapper.BlogArticleTopicRelMapper">
+
+    <select id="selectLabelByArticleIds" resultType="vip.yeee.app.common.model.dto.BlogArticleTopicDto">
+        select
+            tbalr.article_id,
+            tbl.id topicId,
+            tbl.name topicName
+        from
+            t_blog_article_topic_rel tbalr
+        join t_blog_topic tbl on tbl.id = tbalr.topic_id
+        where
+            tbalr.article_id in<foreach collection="articleIds" open="(" separator="," close=")" item="item">#{item}</foreach>
+    </select>
+
+</mapper>

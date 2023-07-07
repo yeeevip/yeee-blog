@@ -1,5 +1,6 @@
 package vip.yeee.app.blog.manage.service;
 
+import cn.hutool.core.collection.CollectionUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -10,8 +11,11 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 import vip.yeee.app.blog.manage.domain.mysql.mapper.BlogArticleMapper;
 import vip.yeee.app.common.domain.mysql.entity.BlogArticle;
+import vip.yeee.app.common.domain.mysql.entity.BlogArticleLabelRel;
+import vip.yeee.app.common.domain.mysql.entity.BlogArticleTopicRel;
 import vip.yeee.memo.base.mybatisplus.warpper.MyPageWrapper;
 
+import javax.annotation.Resource;
 import java.io.Serializable;
 import java.util.List;
 
@@ -21,6 +25,11 @@ import java.util.List;
 @Service
 public class BlogArticleService extends ServiceImpl<BlogArticleMapper, BlogArticle> {
 
+    @Resource
+    private BlogArticleLabelRelService blogArticleLabelRelService;
+    @Resource
+    private BlogArticleTopicRelService blogArticleTopicRelService;
+
     public IPage<BlogArticle> blogArticlePageList(String query) {
         MyPageWrapper<BlogArticle> pageWrapper = new MyPageWrapper<>(query);
         LambdaQueryWrapper<BlogArticle> queryWrapper = pageWrapper.getLambdaQueryWrapper();
@@ -29,13 +38,35 @@ public class BlogArticleService extends ServiceImpl<BlogArticleMapper, BlogArtic
     }
 
     @Transactional(rollbackFor = Exception.class, isolation = Isolation.READ_COMMITTED)
-    public void blogArticleAdd(BlogArticle saveModel) {
+    public void blogArticleAdd(BlogArticle saveModel, List<BlogArticleLabelRel> labelRelList, List<BlogArticleTopicRel> topicRelList) {
         this.save(saveModel);
+        if (CollectionUtil.isNotEmpty(labelRelList)) {
+            labelRelList.forEach(label -> label.setArticleId(saveModel.getId()));
+            blogArticleLabelRelService.saveBatch(labelRelList);
+        }
+        if (CollectionUtil.isNotEmpty(topicRelList)) {
+            topicRelList.forEach(topic -> topic.setArticleId(saveModel.getId()));
+            blogArticleTopicRelService.saveBatch(topicRelList);
+        }
     }
 
     @Transactional(rollbackFor = Exception.class, isolation = Isolation.READ_COMMITTED)
-    public void blogArticleUpd(BlogArticle updModel) {
+    public void blogArticleUpd(BlogArticle updModel, List<BlogArticleLabelRel> labelRelList, List<BlogArticleTopicRel> topicRelList) {
         this.updateById(updModel);
+        if (CollectionUtil.isNotEmpty(labelRelList)) {
+            LambdaUpdateWrapper<BlogArticleLabelRel> delLabelRelWrapper = Wrappers.lambdaUpdate();
+            delLabelRelWrapper.eq(BlogArticleLabelRel::getArticleId, updModel.getId());
+            blogArticleLabelRelService.remove(delLabelRelWrapper);
+            labelRelList.forEach(label -> label.setArticleId(updModel.getId()));
+            blogArticleLabelRelService.saveBatch(labelRelList);
+        }
+        if (CollectionUtil.isNotEmpty(topicRelList)) {
+            LambdaUpdateWrapper<BlogArticleTopicRel> delTopicRelWrapper = Wrappers.lambdaUpdate();
+            delTopicRelWrapper.eq(BlogArticleTopicRel::getArticleId, updModel.getId());
+            blogArticleTopicRelService.remove(delTopicRelWrapper);
+            topicRelList.forEach(topic -> topic.setArticleId(updModel.getId()));
+            blogArticleTopicRelService.saveBatch(topicRelList);
+        }
     }
 
     public void blogArticleDel(List<? extends Serializable> ids) {

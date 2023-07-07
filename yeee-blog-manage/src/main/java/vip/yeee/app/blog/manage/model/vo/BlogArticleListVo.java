@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.List;
 
 /**
 * create by yeee.一页 2023-06-17 14:06:56
@@ -17,6 +18,15 @@ public class BlogArticleListVo {
 
     @ApiModelProperty("分类ID")
     private String classifyId;
+
+    @ApiModelProperty("分类名称")
+    private String classifyName;
+
+    @ApiModelProperty("标签")
+    private List<String> labelList;
+
+    @ApiModelProperty("专题")
+    private List<String> topicList;
 
     @ApiModelProperty("标题")
     private String title;

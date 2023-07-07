@@ -16,7 +16,7 @@ import vip.yeee.memo.base.model.vo.PageVO;
  * @author yeeee
  * @since 2022/5/28 18:12
  */
-@Api(tags = "数据字典管理")
+@Api(tags = "系统后台-数据字典管理")
 @RequiredArgsConstructor
 @RequestMapping("/manage/sys-cat")
 @RestController

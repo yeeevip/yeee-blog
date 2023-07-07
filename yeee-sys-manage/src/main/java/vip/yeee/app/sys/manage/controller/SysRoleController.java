@@ -17,7 +17,7 @@ import vip.yeee.memo.base.model.vo.PageVO;
  * @author yeeee
  * @since 2022/5/28 18:12
  */
-@Api(tags = "系统角色管理")
+@Api(tags = "系统后台-系统角色管理")
 @RequiredArgsConstructor
 @RequestMapping("/manage/sys-role")
 @RestController
