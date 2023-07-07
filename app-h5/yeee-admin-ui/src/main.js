@@ -11,6 +11,8 @@ import httpRequest from '@/utils/httpRequest' // api: https://github.com/axios/a
 import { hasPermission, hasRole } from '@/utils'
 import cloneDeep from 'lodash/cloneDeep'
 import query from '@/utils/query'
+import hljs from 'highlight.js'
+import 'highlight.js/styles/atom-one-dark.css'
 
 Vue.use(VueCookie)
 Vue.config.productionTip = false
@@ -20,6 +22,13 @@ Vue.prototype.$http = httpRequest // ajax请求方法
 Vue.prototype.$hasPerm = hasPermission     // 权限方法
 Vue.prototype.$hasRole = hasRole     // 权限方法
 Vue.prototype.$query = query // 请求参数
+
+Vue.directive('highlight', function (el) {
+  let blocks = el.querySelectorAll('pre code')
+  blocks.forEach((block) => {
+    hljs.highlightBlock(block)
+  })
+})
 
 // 保存整站vuex本地储存初始状态
 window.SITE_CONFIG['storeState'] = cloneDeep(store.state)

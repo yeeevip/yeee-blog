@@ -66,8 +66,5 @@ public class BlogArticleUpdRequest {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date updateTime;
 
-    @ApiModelProperty("内容")
-    private String content;
-
 
 }

@@ -6,6 +6,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 import vip.yeee.app.blog.manage.model.request.BlogArticleAddRequest;
 import vip.yeee.app.blog.manage.model.request.BlogArticleUpdRequest;
+import vip.yeee.app.blog.manage.model.request.BlogArticleUpdTxtRequest;
 import vip.yeee.app.blog.manage.model.vo.BlogArticleInfoVo;
 import vip.yeee.app.blog.manage.model.vo.BlogArticleListVo;
 import vip.yeee.app.blog.manage.service.BlogArticleLabelRelService;
@@ -117,6 +118,18 @@ public class BlogArticleBiz {
         List<BlogArticleLabelRel> labelRelList = this.genBlogLabelRelList(request.getLabelIds());
         List<BlogArticleTopicRel> topicRelList = this.genBlogTopicRelList(request.getTopicIds());
         blogArticleService.blogArticleUpd(updModel, labelRelList, topicRelList);
+        return null;
+    }
+
+    public Void blogArticleUpdTxt(BlogArticleUpdTxtRequest request) {
+        BlogArticle blogArticle = blogArticleService.queryBlogArticleById(request.getId());
+        if (blogArticle == null) {
+            throw new BizException("不存在");
+        }
+        BlogArticle updModel = new BlogArticle();
+        updModel.setId(blogArticle.getId());
+        updModel.setContent(request.getContent());
+        blogArticleService.blogArticleUpdTxt(updModel);
         return null;
     }
 

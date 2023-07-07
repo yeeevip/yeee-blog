@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import vip.yeee.app.blog.manage.biz.BlogArticleBiz;
 import vip.yeee.app.blog.manage.model.request.BlogArticleAddRequest;
 import vip.yeee.app.blog.manage.model.request.BlogArticleUpdRequest;
+import vip.yeee.app.blog.manage.model.request.BlogArticleUpdTxtRequest;
 import vip.yeee.app.blog.manage.model.vo.BlogArticleInfoVo;
 import vip.yeee.app.blog.manage.model.vo.BlogArticleListVo;
 import vip.yeee.app.common.model.request.IdRequest;
@@ -42,6 +43,12 @@ public class BlogArticleController {
     @PostMapping(value = "/upd")
     public CommonResult<Void> blogArticleUpd(@RequestBody @Validated BlogArticleUpdRequest request) {
         return CommonResult.success(blogArticleBiz.blogArticleUpd(request));
+    }
+
+    @ApiOperation("编辑文章")
+    @PostMapping(value = "/upd-txt")
+    public CommonResult<Void> blogArticleUpdTxt(@RequestBody @Validated BlogArticleUpdTxtRequest request) {
+        return CommonResult.success(blogArticleBiz.blogArticleUpdTxt(request));
     }
 
     @ApiOperation("详情")

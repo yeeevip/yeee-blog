@@ -69,6 +69,11 @@ public class BlogArticleService extends ServiceImpl<BlogArticleMapper, BlogArtic
         }
     }
 
+    @Transactional(rollbackFor = Exception.class, isolation = Isolation.READ_COMMITTED)
+    public void blogArticleUpdTxt(BlogArticle updModel) {
+        this.updateById(updModel);
+    }
+
     public void blogArticleDel(List<? extends Serializable> ids) {
         LambdaUpdateWrapper<BlogArticle> updateWrapper = Wrappers.lambdaUpdate();
         updateWrapper.in(BlogArticle::getId, ids);

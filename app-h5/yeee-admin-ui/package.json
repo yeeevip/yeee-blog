@@ -30,6 +30,7 @@
     "gulp-replace": "0.6.1",
     "gulp-sass": "^4.0.2",
     "gulp-shell": "0.6.5",
+    "highlight.js": "^11.8.0",
     "js-md5": "^0.7.3",
     "lodash": "^4.17.21",
     "node-sass": "4.9.0",

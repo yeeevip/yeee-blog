@@ -35,7 +35,11 @@
     <el-table :data="dataList" border stripe v-loading="dataListLoading" :max-height="tableHeight"
               @selection-change="selectionChangeHandle" @sort-change="sortChangeHandle" style="width: 100%;">
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
-      <el-table-column prop="title" label="标题" sortable="custom" header-align="center" align="center"></el-table-column>
+      <el-table-column prop="title" label="标题" sortable="custom" header-align="center" align="center">
+        <template slot-scope="scope">
+          <el-button type="text" @click="handleToEditTxtPage(scope.row)">{{ scope.row.title }}</el-button>
+        </template>
+      </el-table-column>
       <el-table-column prop="titleImg" label="标题图" sortable="custom" header-align="center" align="center">
         <template slot-scope="scope" >
           <el-popover
@@ -89,7 +93,7 @@
       <el-table-column label="操作" fixed="right" header-align="center" align="center" width="100">
         <template slot-scope="scope">
           <el-button v-if="$hasPerm('blog:article:info')" type="text" size="small" @click="infoHandle(scope.row.id)" icon="el-icon-document" title="详情"></el-button>
-          <el-button v-if="$hasPerm('blog:article:upd')" type="text" size="small" @click="editHandle(scope.row.id)" icon="el-icon-edit" title="编辑"></el-button>
+          <el-button v-if="$hasPerm('blog:article:upd')" type="text" size="small" @click="editHandle(scope.row.id)" icon="el-icon-edit" title="修改"></el-button>
           <el-button v-if="$hasPerm('blog:article:del')" type="text" size="small" @click="delHandle(scope.row.id)" icon="el-icon-delete" title="删除"></el-button>
         </template>
       </el-table-column>
@@ -116,6 +120,7 @@ import info from './article-info'
 import grid from '@/mixins/grid'
 import filePreview from '@/components/filePreview'
 import query from '@/utils/query'
+import { mainRoutes } from '@/router'
 export default {
   mixins: [grid],
   data () {
@@ -150,6 +155,35 @@ export default {
             this.classifyList = res.data.result
           }
         })
+    },
+    handleToEditTxtPage (row) {
+      // 组装路由名称, 并判断是否已添加, 如是: 则直接跳转
+      var routeName = `${this.$route.name}EditTxt__${row.id}`
+      var route = window.SITE_CONFIG['dynamicRoutes'].filter(item => item.name === routeName)[0]
+      var params = { 'id': row.id }
+      if (route) {
+        return this.$router.push({ name: routeName, params: params })
+      }
+      // 否则: 添加并全局变量保存, 再跳转
+      route = {
+        path: routeName,
+        component: () => import(`@/views/modules/${this.$route.name.replace(/-/g, '/')}EditTxt`),
+        name: routeName,
+        meta: {
+          ...window.SITE_CONFIG['contentTabDefault'],
+          menuId: this.$route.meta.menuId,
+          title: `编辑 - ${row.title}`
+        }
+      }
+      this.$router.addRoutes([
+        {
+          ...mainRoutes,
+          name: `main-dynamic__${route.name}`,
+          children: [route]
+        }
+      ])
+      window.SITE_CONFIG['dynamicRoutes'].push(route)
+      this.$router.push({ name: route.name, params: params })
     }
   }
 }

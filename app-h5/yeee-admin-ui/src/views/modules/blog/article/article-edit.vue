@@ -92,13 +92,6 @@
           </el-form-item>
         </el-col>
       </el-row>
-      <el-row :gutter="20">
-        <el-col :span="22">
-          <el-form-item label="内容" prop="content">
-            <wangeditor ref="wangeditor" :getEditConts="getEditConts" :insertImg="insertImgHandle"></wangeditor>
-          </el-form-item>
-        </el-col>
-      </el-row>
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
@@ -110,7 +103,6 @@
 <script>
 import debounce from 'lodash/debounce'
 import { isEmail, isMobile } from '@/utils/validate'
-import wangeditor from '@/components/wangeditor'
 import query from '@/utils/query'
 
 export default {
@@ -173,7 +165,6 @@ export default {
     }
   },
   components: {
-    wangeditor
   },
   methods: {
     init (id) {
@@ -209,7 +200,6 @@ export default {
         }
         this.dataForm.oriFlag = this.dataForm.oriFlag.toString()
         this.dataForm.status = this.dataForm.status.toString()
-        this.$refs.wangeditor.setEditorContent(res.data.content)
       }).catch(() => {})
     },
     getClassifyList () {
@@ -264,26 +254,7 @@ export default {
           })
         }
       })
-    }, 1000, { 'leading': true, 'trailing': false }),
-    getEditConts (value) {
-      this.dataForm.content = value
-    },
-    insertImgHandle (res, insertImg, editor) {
-
-    }
+    }, 1000, { 'leading': true, 'trailing': false })
   }
 }
 </script>
-<style lang="scss">
-.mod-article-edit {
-  .input-bar i {
-    padding-top: 6px;
-    font-size: 24px;
-    color: #3a8ee6;
-    transition-property: color;
-    transition-duration: 0.15s;
-    transition-timing-function: linear;
-    transition-delay: initial;
-  }
-}
-</style>
