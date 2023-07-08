@@ -10,7 +10,7 @@
 
 ### 前台
 
-![](doc/blog/images/yeee-blog-client.png)
+![](doc/blog/images/blog-index.png)
 
 ### 后台
 
