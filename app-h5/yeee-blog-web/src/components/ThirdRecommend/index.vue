@@ -23,7 +23,8 @@ export default {
     created() {
       var thirdParams = {
         "pageNum": 1,
-        "pageSize": 1
+        "pageSize": 1,
+        "labelCode": 'tbtj'
       };
       getBlogByLevel(JSON.stringify(thirdParams)).then(response => {
         if (response.code == this.$ECode.SUCCESS) {

@@ -17,8 +17,8 @@
         <el-col :span="11">
           <el-form-item label="状态" prop="status">
             <el-select v-model="dataForm.status" clearable  placeholder="状态">
-              <el-option label="启用" value=1 />
-              <el-option label="禁用" value=0 />
+              <el-option label="启用" value='1' />
+              <el-option label="禁用" value='0' />
             </el-select>
           </el-form-item>
         </el-col>
@@ -124,6 +124,7 @@ export default {
           ...this.dataFormOrigin,
           ...res.data
         }
+        this.dataForm.status = this.dataForm.status.toString()
       }).catch(() => {})
     },
     // 表单提交

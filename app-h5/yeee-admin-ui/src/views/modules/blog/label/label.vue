@@ -20,10 +20,17 @@
               @selection-change="selectionChangeHandle" @sort-change="sortChangeHandle" style="width: 100%;">
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="name" label="名称" sortable="custom" header-align="center" align="center"></el-table-column>
+      <el-table-column prop="code" label="编码" sortable="custom" header-align="center" align="center"></el-table-column>
       <el-table-column prop="sort" label="排序" sortable="custom" header-align="center" align="center"></el-table-column>
       <el-table-column prop="remark" label="说明" sortable="custom" header-align="center" align="center"></el-table-column>
       <el-table-column prop="createTime" label="创建时间" sortable="custom" header-align="center" align="center"></el-table-column>
       <el-table-column prop="updateTime" label="修改时间" sortable="custom" header-align="center" align="center"></el-table-column>
+      <el-table-column prop="type" label="类型" sortable="custom" header-align="center" align="center">
+        <template slot-scope="scope">
+          <el-tag v-if="scope.row.type === 1" size="small" type="success">普通</el-tag>
+          <el-tag v-else-if="scope.row.type === 2" size="small" type="danger">业务</el-tag>
+        </template>
+      </el-table-column>
       <el-table-column prop="status" label="状态" sortable="custom" header-align="center" align="center">
         <template slot-scope="scope">
           <el-tag v-if="scope.row.status === 1" size="small" type="success">启用</el-tag>

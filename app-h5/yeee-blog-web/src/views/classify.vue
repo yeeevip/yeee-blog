@@ -108,7 +108,7 @@ export default {
         this.activities = result;
 
         // 默认选择第一个
-        this.getBlogList(activities[0].uid);
+        this.getBlogList(activities[0].id);
       }
     });
 
@@ -118,7 +118,8 @@ export default {
       this.selectBlogUid = blogSortUid;
       var params = {
         pageNum: 1,
-        pageSize: 5
+        pageSize: 5,
+        classifyId: this.selectBlogUid
       }
       getArticleByBlogSortUid(JSON.stringify(params)).then(response => {
         if (response.code == this.$ECode.SUCCESS) {
@@ -138,7 +139,8 @@ export default {
       }
       let params = {
         pageNum: this.currentPage + 1,
-        pageSize: 5
+        pageSize: 5,
+        classifyId: this.selectBlogUid
       }
       getArticleByBlogSortUid(JSON.stringify(params)).then(response => {
         if (response.code == this.$ECode.SUCCESS) {

@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 import vip.yeee.app.blog.client.domain.mysql.mapper.ApiBlogArticleMapper;
+import vip.yeee.app.blog.client.model.dto.BlogArticleDto;
+import vip.yeee.app.blog.client.model.request.ApiBlogArticlePageListRequest;
 import vip.yeee.app.common.domain.mysql.entity.BlogArticle;
 import vip.yeee.app.common.model.request.PageRequest;
 
@@ -21,8 +23,12 @@ public class ApiBlogArticleService extends ServiceImpl<ApiBlogArticleMapper, Blo
         return this.getById(id);
     }
 
-    public IPage<BlogArticle> apiBlogArticlePageList(PageRequest request) {
-        BlogArticle query = new BlogArticle();
+    public IPage<BlogArticle> apiBlogArticlePageList(ApiBlogArticlePageListRequest request) {
+        BlogArticleDto query = new BlogArticleDto();
+        query.setClassifyId(request.getClassifyId());
+        query.setTopicId(request.getTopicId());
+        query.setLabelId(request.getLabelId());
+        query.setLabelCode(request.getLabelCode());
         return baseMapper.apiBlogArticlePageList(new Page<>(request.getPageNum(), request.getPageSize()), query);
     }
 }

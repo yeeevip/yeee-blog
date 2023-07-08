@@ -56,7 +56,7 @@
           </el-form-item>
         </el-col>
         <el-col :span="11">
-          <el-form-item label="说明" prop="remark">
+          <el-form-item label="摘要" prop="remark">
             <el-input v-model="dataForm.remark" placeholder="说明"></el-input>
           </el-form-item>
         </el-col>

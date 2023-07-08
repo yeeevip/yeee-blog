@@ -107,7 +107,7 @@
       methods: {
         getList() {
           var params = {};
-          params.subjectUid = this.subjectUid;
+          params.topicId = this.subjectUid;
           params.pageSize = this.pageSize;
           params.pageNum = this.currentPage;
           this.loading = true

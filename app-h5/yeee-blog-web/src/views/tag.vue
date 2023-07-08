@@ -118,7 +118,8 @@
         this.selectBlogUid = tagUid;
         var params = {
           pageNum: 1,
-          pageSize: 5
+          pageSize: 5,
+          labelId: this.selectBlogUid
         }
         getArticleByTagUid(JSON.stringify(params)).then(response => {
           if (response.code == this.$ECode.SUCCESS) {
@@ -137,8 +138,9 @@
           return;
         }
         var params = {
-          pageNum: 1,
-          pageSize: this.currentPage + 1
+          pageNum: this.currentPage + 1,
+          pageSize: 5,
+          labelId: this.selectBlogUid
         }
         getArticleByTagUid(JSON.stringify(params)).then(response => {
           if (response.code == this.$ECode.SUCCESS) {

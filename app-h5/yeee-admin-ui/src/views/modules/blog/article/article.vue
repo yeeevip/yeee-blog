@@ -87,7 +87,6 @@
         </template>
       </el-table-column>
       <el-table-column prop="publishTime" label="发布时间" sortable="custom" header-align="center" align="center"></el-table-column>
-      <el-table-column prop="remark" label="说明" sortable="custom" header-align="center" align="center"></el-table-column>
       <el-table-column prop="createTime" label="创建时间" sortable="custom" header-align="center" align="center"></el-table-column>
       <el-table-column prop="updateTime" label="修改时间" sortable="custom" header-align="center" align="center"></el-table-column>
       <el-table-column label="操作" fixed="right" header-align="center" align="center" width="100">

@@ -18,11 +18,17 @@ public class BlogLabelListVo {
     @ApiModelProperty("名称")
     private String name;
 
+    @ApiModelProperty("编码")
+    private String code;
+
     @ApiModelProperty("排序")
     private Integer sort;
 
     @ApiModelProperty("状态：1-启用，0-禁用")
     private Integer status;
+
+    @ApiModelProperty("标签类型：1-普通标签，2-业务标签")
+    private Integer type;
 
     @ApiModelProperty("说明")
     private String remark;

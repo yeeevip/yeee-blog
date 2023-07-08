@@ -10,15 +10,28 @@
           </el-form-item>
         </el-col>
         <el-col :span="11">
+          <el-form-item label="编码" prop="code">
+            <el-input v-model="dataForm.code" placeholder="名称"></el-input>
+          </el-form-item>
+        </el-col>
+        <el-col :span="11">
           <el-form-item label="排序" prop="sort">
             <el-input v-model="dataForm.sort" placeholder="排序"></el-input>
           </el-form-item>
         </el-col>
         <el-col :span="11">
+          <el-form-item label="类型" prop="status">
+            <el-select v-model="dataForm.type" clearable  placeholder="状态">
+              <el-option label="普通" value='1' />
+              <el-option label="业务" value='2' />
+            </el-select>
+          </el-form-item>
+        </el-col>
+        <el-col :span="11">
           <el-form-item label="状态" prop="status">
             <el-select v-model="dataForm.status" clearable  placeholder="状态">
-              <el-option label="启用" value=1 />
-              <el-option label="禁用" value=0 />
+              <el-option label="启用" value='1' />
+              <el-option label="禁用" value='0' />
             </el-select>
           </el-form-item>
         </el-col>
@@ -124,6 +137,8 @@ export default {
           ...this.dataFormOrigin,
           ...res.data
         }
+        this.dataForm.status = this.dataForm.status.toString()
+        this.dataForm.type = this.dataForm.type.toString()
       }).catch(() => {})
     },
     // 表单提交

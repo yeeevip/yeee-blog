@@ -20,6 +20,7 @@ public class ApiBlogLabelService extends ServiceImpl<ApiBlogLabelMapper, BlogLab
         LambdaQueryWrapper<BlogLabel> queryWrapper = Wrappers.lambdaQuery();
         queryWrapper.eq(BlogLabel::getDeleted, 0);
         queryWrapper.eq(BlogLabel::getStatus, 1);
+        queryWrapper.eq(BlogLabel::getType, 1);
         queryWrapper.orderByDesc(BlogLabel::getSort);
         return this.page(new Page<>(request.getPageNum(), request.getPageSize()), queryWrapper);
     }

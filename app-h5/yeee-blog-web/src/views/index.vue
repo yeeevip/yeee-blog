@@ -88,19 +88,20 @@
     <!--blogsbox end-->
 
     <div class="sidebar">
-      <!--标签云-->
-      <TagCloud></TagCloud>
 
-      <!--关注我们-->
-      <FollowUs></FollowUs>
-
-      <!-- 三级推荐 -->
+      <!-- 特别推荐 -->
       <ThirdRecommend></ThirdRecommend>
 
-      <!--四级推荐-->
+      <!--热门标签-->
+      <TagCloud></TagCloud>
+
+      <!--联系博主-->
+      <FollowUs></FollowUs>
+
+      <!--推荐文章-->
       <FourthRecommend></FourthRecommend>
 
-      <!--点击排行-->
+      <!--人气排行-->
       <HotBlog></HotBlog>
 
       <!-- 友情链接-->

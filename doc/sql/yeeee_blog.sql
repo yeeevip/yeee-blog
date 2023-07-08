@@ -137,7 +137,9 @@ DROP TABLE IF EXISTS `t_blog_label`;
 CREATE TABLE `t_blog_label` (
   `id` bigint NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `name` varchar(255) NOT NULL COMMENT '名称',
+  `code` varchar(64) DEFAULT NULL COMMENT '编码',
   `sort` int NOT NULL DEFAULT '0' COMMENT '排序',
+  `type` tinyint NOT NULL DEFAULT '1' COMMENT '标签类型：1-普通标签，2-业务标签',
   `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态：1-启用，0-禁用',
   `remark` varchar(255) DEFAULT NULL COMMENT '说明',
   `deleted` tinyint(1) NOT NULL DEFAULT '0',

@@ -4,6 +4,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 import vip.yeee.app.blog.client.biz.ApiBlogArticleBiz;
+import vip.yeee.app.blog.client.model.request.ApiBlogArticlePageListRequest;
 import vip.yeee.app.blog.client.model.vo.ApiBlogArticleDetailVo;
 import vip.yeee.app.blog.client.model.vo.ApiBlogArticleListVo;
 import vip.yeee.app.common.model.request.IdRequest;
@@ -27,7 +28,7 @@ public class ApiBlogArticleController {
 
     @ApiOperation("列表")
     @PostMapping(value = "/page")
-    public CommonResult<PageVO<ApiBlogArticleListVo>> blogArticlePageList(@Valid @RequestBody PageRequest request) {
+    public CommonResult<PageVO<ApiBlogArticleListVo>> blogArticlePageList(@Valid @RequestBody ApiBlogArticlePageListRequest request) {
         return CommonResult.success(apiBlogArticleBiz.blogArticlePageList(request));
     }
 

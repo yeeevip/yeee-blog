@@ -4,26 +4,61 @@
 
     <sql id="searchBy">
         <trim prefix = "where" prefixOverrides = "and|or">
-            deleted = 0 and status = 1
+            ba.deleted = 0 and ba.status = 1
             <if test="query.title != null and query.title != ''">
-                and title = #{title}
+                and ba.title = #{query.title}
+            </if>
+            <if test="query.classifyId != null">
+                and ba.classify_id = #{query.classifyId}
             </if>
         </trim>
     </sql>
 
     <select id="apiBlogArticlePageList" resultType="vip.yeee.app.common.domain.mysql.entity.BlogArticle">
         SELECT
-            id,
-            classify_id,
-            title,
-            title_img,
-            author,
-            publish_time,
-            remark
+            ba.id,
+            ba.classify_id,
+            ba.title,
+            ba.title_img,
+            ba.author,
+            ba.publish_time,
+            ba.remark
         FROM
-            t_blog_article
+            t_blog_article ba
         <include refid="searchBy"/>
-            order by publish_time desc
+        <if test="query.labelCode != null and query.labelCode != ''">
+            and ba.id in(
+                    SELECT
+                        balr.article_id
+                    from
+                        t_blog_article_label_rel balr
+                    join t_blog_label bl on bl.id = balr.label_id
+                    where
+                        bl.deleted = 0 and bl.status = 1 and bl.code = #{query.labelCode}
+                )
+        </if>
+        <if test="query.labelId != null">
+            and ba.id in(
+                    SELECT
+                        balr.article_id
+                    from t_blog_article_label_rel balr
+                    join t_blog_label bl on bl.id = balr.label_id
+                    where
+                        bl.deleted = 0 and bl.status = 1 and bl.id = #{query.labelId}
+                )
+        </if>
+        <if test="query.topicId != null">
+            and ba.id in(
+                    SELECT
+                        batr.article_id
+                    FROM
+                        t_blog_article_topic_rel batr
+                    JOIN t_blog_topic bt ON bt.id = batr.topic_id
+                    WHERE
+                        bt.deleted = 0 AND bt.STATUS = 1 AND bt.id = #{query.topicId}
+                )
+        </if>
+            order by ba.publish_time desc
     </select>
 
 </mapper>

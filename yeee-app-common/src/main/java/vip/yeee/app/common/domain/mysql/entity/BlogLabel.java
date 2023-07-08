@@ -23,6 +23,11 @@ public class BlogLabel {
     private String name;
 
     /**
+     * 编码
+     */
+    private String code;
+
+    /**
      * 排序
      */
     private Integer sort;
@@ -31,6 +36,11 @@ public class BlogLabel {
      * 状态：1-启用，0-禁用
      */
     private Integer status;
+
+    /**
+     * 标签类型：1-普通标签，2-业务标签
+     */
+    private Integer type;
 
     /**
      * 说明

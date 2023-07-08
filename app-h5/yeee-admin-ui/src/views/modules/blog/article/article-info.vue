@@ -43,7 +43,7 @@
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item label="说明:">
+          <el-form-item label="摘要:">
             <label>{{ dataForm.remark }}</label>
           </el-form-item>
         </el-col>

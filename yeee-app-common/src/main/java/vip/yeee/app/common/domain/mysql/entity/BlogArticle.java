@@ -58,7 +58,7 @@ public class BlogArticle {
     private Date publishTime;
 
     /**
-     * 说明
+     * 摘要
      */
     private String remark;
 

@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.apache.ibatis.annotations.Param;
+import vip.yeee.app.blog.client.model.dto.BlogArticleDto;
 import vip.yeee.app.common.domain.mysql.entity.BlogArticle;
 
 /**
@@ -11,5 +12,5 @@ import vip.yeee.app.common.domain.mysql.entity.BlogArticle;
  */
 public interface ApiBlogArticleMapper extends BaseMapper<BlogArticle> {
 
-    IPage<BlogArticle> apiBlogArticlePageList(Page<BlogArticle> page, @Param("query") BlogArticle query);
+    IPage<BlogArticle> apiBlogArticlePageList(Page<BlogArticle> page, @Param("query") BlogArticleDto query);
 }
