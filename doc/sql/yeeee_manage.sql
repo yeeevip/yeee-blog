@@ -155,225 +155,225 @@ CREATE TABLE `sys_menu`  (
 -- ----------------------------
 -- Records of sys_menu
 -- ----------------------------
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4059879121720320, NULL, '系统工具', '', NULL, 'icon-tubiao', 300, '', 0, NULL, NULL, '2019-02-13 23:26:39', NULL);
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4059881300399104, 4059879121720320, '任务调度', 'sched/qrtz/qrtz', '', 'icon-job', 10, 'view/sched/qrtz/qrtz.html', 0, NULL, NULL, '2019-02-11 15:45:49', NULL);
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4059891056399360, 4059889694397440, '全部任务', 'act/task/taskAll', NULL, 'icon-zhedie', 15, 'view/act/task/taskAll.html', 0, NULL, NULL, '2019-02-11 15:49:50', NULL);
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4059891515298816, 4059889694397440, '用户任务', 'act/task/task', NULL, 'icon-menu', 20, 'view/act/task/task.html', 0, NULL, NULL, '2019-02-11 15:49:59', NULL);
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4059916341400576, NULL, '系统管理', '', NULL, 'icon-system', 100, '', 0, NULL, NULL, '2019-02-13 23:24:22', NULL);
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4059916791092224, 4059916341400576, '用户管理', 'sys/user/user', NULL, 'icon-admin', 5, 'view/sys/user/user.html', 0, NULL, NULL, '2019-02-11 15:16:48', NULL);
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4059917154079744, 4059916341400576, '角色管理', 'sys/role/role', NULL, 'icon-geren', 10, 'view/sys/role/role.html', 0, NULL, NULL, '2019-02-11 15:42:24', NULL);
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4059917584143360, 4059916341400576, '资源管理', 'sys/rsco/rsco', NULL, 'icon-editor', 15, 'view/sys/rsco/rsco.html', 0, NULL, NULL, '2019-02-11 15:42:45', NULL);
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4059918640845824, 4323654351082496, '接口日志', 'sys/log/log', NULL, 'icon-log', 10, 'view/sys/log/log.html', 0, NULL, NULL, '2019-04-06 19:55:29', 'admin');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4059918640845825, 4323654351082499, '会员管理', 'sys/log/log', NULL, 'icon-log', 20, 'view/sys/log/log.html', 0, NULL, NULL, '2019-04-06 19:55:29', 'admin');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4059918640845826, 4323654351082499, '订单管理', 'sys/log/log', NULL, 'icon-log', 30, 'view/sys/log/log.html', 0, NULL, NULL, '2019-04-06 19:55:29', 'admin');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4059919174194176, 4059916341400576, '数据字典', 'sys/cat/cat', NULL, 'icon-sousuo', 20, 'view/sys/cat/cat.html', 0, NULL, NULL, '2019-02-11 15:43:16', NULL);
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297179754714113, 4059919174194176, '查看', NULL, 'sys:cat:page, sys:cat:list, sys:cat:info', NULL, 10, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297179754714114, 4059919174194176, '新增', NULL, 'sys:cat:add', NULL, 20, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297179754714115, 4059919174194176, '修改', NULL, 'sys:cat:upd', NULL, 30, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297179754714116, 4059919174194176, '删除', NULL, 'sys:cat:del', NULL, 40, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297179754714117, 4059919174194176, '导出', NULL, 'sys:cat:expt', NULL, 50, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297179754714118, 4059919174194176, '导入', NULL, 'sys:cat:impt', NULL, 60, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297179754714119, 4059919174194176, '审核', NULL, 'sys:cat:audit', NULL, 70, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297179755844609, 4059918640845824, '查看', NULL, 'sys:log:page, sys:log:list, sys:log:info', NULL, 10, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297179755844612, 4059918640845824, '删除', NULL, 'sys:log:del', NULL, 40, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297179755844613, 4059918640845824, '导出', NULL, 'sys:log:expt', NULL, 50, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297179758302211, 4059919704003584, '修改', NULL, 'sys:param:upd', NULL, 30, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297735991448577, 4059917154079744, '查看', NULL, 'sys:role:page, sys:role:list, sys:role:info', NULL, 10, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297735991448578, 4059917154079744, '新增', NULL, 'sys:role:add', NULL, 20, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297735991448579, 4059917154079744, '修改', NULL, 'sys:role:upd', NULL, 30, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297735991448580, 4059917154079744, '删除', NULL, 'sys:role:del', NULL, 40, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297735991448581, 4059917154079744, '导出', NULL, 'sys:role:expt', NULL, 50, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297735991448582, 4059917154079744, '导入', NULL, 'sys:role:impt', NULL, 60, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297735991448583, 4059917154079744, '审核', NULL, 'sys:role:audit', NULL, 70, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297735992218625, 4059917584143360, '查看', NULL, 'sys:rsco:page, sys:rsco:list, sys:rsco:info', NULL, 10, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297735992218626, 4059917584143360, '新增', NULL, 'sys:rsco:add', NULL, 20, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297735992218627, 4059917584143360, '修改', NULL, 'sys:rsco:upd', NULL, 30, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297735992218628, 4059917584143360, '删除', NULL, 'sys:rsco:del', NULL, 40, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297735992218629, 4059917584143360, '导出', NULL, 'sys:rsco:expt', NULL, 50, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297735992218630, 4059917584143360, '导入', NULL, 'sys:rsco:impt', NULL, 60, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297735992218631, 4059917584143360, '审核', NULL, 'sys:rsco:audit', NULL, 70, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297735995577345, 4059916791092224, '查看', NULL, 'sys:user:page, sys:user:list, sys:user:info', NULL, 10, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297735995577346, 4059916791092224, '新增', NULL, 'sys:user:add', NULL, 20, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297735995577347, 4059916791092224, '修改', NULL, 'sys:user:upd', NULL, 30, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297735995577348, 4059916791092224, '删除', NULL, 'sys:user:del', NULL, 40, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297735995577349, 4059916791092224, '导出', NULL, 'sys:user:expt', NULL, 50, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297735995577350, 4059916791092224, '导入', NULL, 'sys:user:impt', NULL, 60, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4297735995577351, 4059916791092224, '审核', NULL, 'sys:user:audit', NULL, 70, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4298067236262912, 4059916791092224, '修改密码', '', 'sys:user:updPwd', '', 80, '', 1, '2019-02-26 16:03:00', 'admin', '2019-02-26 16:03:00', 'admin');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4298102159430656, 4059881300399104, '查询', '', 'sched:qrtz:list, sched:qrtz:info', '', 10, '', 1, '2019-02-26 16:38:32', 'admin', '2019-02-26 16:44:05', 'admin');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4298102588576768, 4059881300399104, '新增', '', 'sched:qrtz:add', '', 20, '', 1, '2019-02-26 16:38:58', 'admin', '2019-02-26 16:38:58', 'admin');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4298102912996352, 4059881300399104, '修改', '', 'sched:qrtz:upd', '', 30, '', 1, '2019-02-26 16:39:18', 'admin', '2019-02-26 16:39:18', 'admin');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4298103224865792, 4059881300399104, '删除', '', 'sched:qrtz:del', '', 40, '', 1, '2019-02-26 16:39:37', 'admin', '2019-02-26 16:39:37', 'admin');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4298103662826496, 4059881300399104, '执行', '', 'sched:qrtz:exec', '', 50, '', 1, '2019-02-26 16:40:03', 'admin', '2019-02-26 16:40:03', 'admin');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4298104030680064, 4059881300399104, '暂停', '', 'sched:qrtz:pause', '', 60, '', 1, '2019-02-26 16:40:26', 'admin', '2019-02-26 16:40:26', 'admin');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4298104367584256, 4059881300399104, '恢复', '', 'sched:qrtz:resume', '', 70, '', 1, '2019-02-26 16:40:46', 'admin', '2019-02-26 16:40:46', 'admin');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4323654351082496, NULL, '日志管理', '', '', 'icon-filesearch', 350, '', 0, '2019-03-16 17:51:34', 'admin', '2019-03-16 17:51:34', 'admin');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4323654351082499, NULL, '众筹管理', '', '', 'icon-filesearch', 1, '', 0, '2019-03-16 17:51:34', 'admin', '2019-03-16 17:51:34', 'admin');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4336080847524864, NULL, '伪菜单那', '', '', '', 1000, '伪菜单在后台不显示', 2, '2019-03-25 12:32:27', 'admin', '2019-04-16 16:19:18', 'admin');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4347326007383040, 4059916341400576, '组织机构', 'sys/org/org', NULL, 'icon-cluster', 30, NULL, 0, NULL, 'auto', '2019-04-02 12:34:22', 'admin');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4353221119792119, 4323654351082499, '项目管理', 'sys/qrtzLog/qrtzLog', NULL, 'icon-file-text', 10, NULL, 0, NULL, 'auto', '2019-04-06 19:54:39', 'admin');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4353221119792128, 4323654351082496, '调度日志', 'sys/qrtzLog/qrtzLog', NULL, 'icon-file-text', 50, NULL, 0, NULL, 'auto', '2019-04-06 19:54:39', 'admin');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4353221119792129, 4353221119792128, '查看', NULL, 'sys:qrtzLog:page, sys:qrtzLog:list, sys:qrtzLog:info', NULL, 10, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4353221119792132, 4353221119792128, '删除', NULL, 'sys:qrtzLog:del', NULL, 40, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4353221119792133, 4353221119792128, '导出', NULL, 'sys:qrtzLog:expt', NULL, 50, NULL, 1, NULL, 'auto', NULL, 'auto');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4353221119792134, 4347326007383040, '详情', '', 'sys:dept:info', '', 1, NULL, 1, '2022-05-29 14:52:26', 'admin', '2022-05-29 14:52:26', 'admin');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4353221119792135, 4347326007383040, '删除', '', 'sys:dept:del', '', 1, NULL, 1, '2022-05-29 14:53:00', 'admin', '2022-05-29 14:53:00', 'admin');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4353221119792136, 4347326007383040, '编辑', '', 'sys:dept:upd', '', 1, NULL, 1, '2022-05-29 14:53:18', 'admin', '2022-05-29 14:53:18', 'admin');
-INSERT INTO yeeee_manage.sys_menu
+INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4353221119792137, 4347326007383040, '新增', '', 'sys:dept:add', '', 1, NULL, 1, '2022-05-29 14:53:53', 'admin', '2022-05-29 14:53:53', 'admin');
 
-INSERT INTO `yeeee_manage`.`sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792142, 4059879121720320, 'OSS资源', 'sys/oss/oss', '', '', 1, NULL, 0, '2023-06-12 17:22:41', 'admin', '2023-06-12 17:22:41', 'admin');
-INSERT INTO `yeeee_manage`.`sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792143, 4353221119792142, '上传', '', 'sys:oss:upload', '', 1, NULL, 1, '2023-06-12 17:51:22', 'admin', '2023-06-12 17:51:22', 'admin');
-INSERT INTO `yeeee_manage`.`sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792144, NULL, '一页の博客', '', '', 'icon-meh', 2, NULL, 0, '2023-06-17 14:29:00', 'admin', '2023-06-17 14:29:00', 'admin');
-INSERT INTO `yeeee_manage`.`sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792145, 4353221119792144, '博客分类', 'blog/classify/classify', '', '', 1, NULL, 0, '2023-06-17 13:53:44', 'admin', '2023-06-17 13:53:44', 'admin');
-INSERT INTO `yeeee_manage`.`sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792146, 4353221119792145, '添加', '', 'blog:classify:add', '', 1, NULL, 1, '2023-06-17 13:53:44', 'admin', '2023-06-17 13:53:44', 'admin');
-INSERT INTO `yeeee_manage`.`sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792147, 4353221119792145, '修改', '', 'blog:classify:upd', '', 1, NULL, 1, '2023-06-17 13:53:44', 'admin', '2023-06-17 13:53:44', 'admin');
-INSERT INTO `yeeee_manage`.`sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792148, 4353221119792145, '查看', '', 'blog:classify:info', '', 1, NULL, 1, '2023-06-17 13:53:44', 'admin', '2023-06-17 13:53:44', 'admin');
-INSERT INTO `yeeee_manage`.`sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792149, 4353221119792145, '删除', '', 'blog:classify:del', '', 1, NULL, 1, '2023-06-17 13:53:44', 'admin', '2023-06-17 13:53:44', 'admin');
-INSERT INTO `yeeee_manage`.`sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792150, 4353221119792144, '博客标签', 'blog/label/label', '', '', 1, NULL, 0, '2023-06-17 14:05:12', 'admin', '2023-06-17 14:05:12', 'admin');
-INSERT INTO `yeeee_manage`.`sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792151, 4353221119792150, '添加', '', 'blog:label:add', '', 1, NULL, 1, '2023-06-17 14:05:12', 'admin', '2023-06-17 14:05:12', 'admin');
-INSERT INTO `yeeee_manage`.`sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792152, 4353221119792150, '修改', '', 'blog:label:upd', '', 1, NULL, 1, '2023-06-17 14:05:12', 'admin', '2023-06-17 14:05:12', 'admin');
-INSERT INTO `yeeee_manage`.`sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792153, 4353221119792150, '查看', '', 'blog:label:info', '', 1, NULL, 1, '2023-06-17 14:05:12', 'admin', '2023-06-17 14:05:12', 'admin');
-INSERT INTO `yeeee_manage`.`sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792155, 4353221119792150, '删除', '', 'blog:label:del', '', 1, NULL, 1, '2023-06-17 14:05:12', 'admin', '2023-06-17 14:05:12', 'admin');
-INSERT INTO `yeeee_manage`.`sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792156, 4353221119792144, '博客专题', 'blog/topic/topic', '', '', 1, NULL, 0, '2023-06-17 14:06:10', 'admin', '2023-06-17 14:06:10', 'admin');
-INSERT INTO `yeeee_manage`.`sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792157, 4353221119792156, '添加', '', 'blog:topic:add', '', 1, NULL, 1, '2023-06-17 14:06:10', 'admin', '2023-06-17 14:06:10', 'admin');
-INSERT INTO `yeeee_manage`.`sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792158, 4353221119792156, '修改', '', 'blog:topic:upd', '', 1, NULL, 1, '2023-06-17 14:06:10', 'admin', '2023-06-17 14:06:10', 'admin');
-INSERT INTO `yeeee_manage`.`sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792159, 4353221119792156, '查看', '', 'blog:topic:info', '', 1, NULL, 1, '2023-06-17 14:06:10', 'admin', '2023-06-17 14:06:10', 'admin');
-INSERT INTO `yeeee_manage`.`sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792160, 4353221119792156, '删除', '', 'blog:topic:del', '', 1, NULL, 1, '2023-06-17 14:06:10', 'admin', '2023-06-17 14:06:10', 'admin');
-INSERT INTO `yeeee_manage`.`sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792161, 4353221119792144, '博客文章', 'blog/article/article', '', '', 1, NULL, 0, '2023-06-17 14:06:56', 'admin', '2023-06-17 14:06:56', 'admin');
-INSERT INTO `yeeee_manage`.`sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792162, 4353221119792161, '添加', '', 'blog:article:add', '', 1, NULL, 1, '2023-06-17 14:06:56', 'admin', '2023-06-17 14:06:56', 'admin');
-INSERT INTO `yeeee_manage`.`sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792163, 4353221119792161, '修改', '', 'blog:article:upd', '', 1, NULL, 1, '2023-06-17 14:06:56', 'admin', '2023-06-17 14:06:56', 'admin');
-INSERT INTO `yeeee_manage`.`sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792164, 4353221119792161, '查看', '', 'blog:article:info', '', 1, NULL, 1, '2023-06-17 14:06:56', 'admin', '2023-06-17 14:06:56', 'admin');
-INSERT INTO `yeeee_manage`.`sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792165, 4353221119792161, '删除', '', 'blog:article:del', '', 1, NULL, 1, '2023-06-17 14:06:56', 'admin', '2023-06-17 14:06:56', 'admin');
+INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792142, 4059879121720320, 'OSS资源', 'sys/oss/oss', '', '', 1, NULL, 0, '2023-06-12 17:22:41', 'admin', '2023-06-12 17:22:41', 'admin');
+INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792143, 4353221119792142, '上传', '', 'sys:oss:upload', '', 1, NULL, 1, '2023-06-12 17:51:22', 'admin', '2023-06-12 17:51:22', 'admin');
+INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792144, NULL, '一页の博客', '', '', 'icon-meh', 2, NULL, 0, '2023-06-17 14:29:00', 'admin', '2023-06-17 14:29:00', 'admin');
+INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792145, 4353221119792144, '博客分类', 'blog/classify/classify', '', '', 1, NULL, 0, '2023-06-17 13:53:44', 'admin', '2023-06-17 13:53:44', 'admin');
+INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792146, 4353221119792145, '添加', '', 'blog:classify:add', '', 1, NULL, 1, '2023-06-17 13:53:44', 'admin', '2023-06-17 13:53:44', 'admin');
+INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792147, 4353221119792145, '修改', '', 'blog:classify:upd', '', 1, NULL, 1, '2023-06-17 13:53:44', 'admin', '2023-06-17 13:53:44', 'admin');
+INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792148, 4353221119792145, '查看', '', 'blog:classify:info', '', 1, NULL, 1, '2023-06-17 13:53:44', 'admin', '2023-06-17 13:53:44', 'admin');
+INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792149, 4353221119792145, '删除', '', 'blog:classify:del', '', 1, NULL, 1, '2023-06-17 13:53:44', 'admin', '2023-06-17 13:53:44', 'admin');
+INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792150, 4353221119792144, '博客标签', 'blog/label/label', '', '', 1, NULL, 0, '2023-06-17 14:05:12', 'admin', '2023-06-17 14:05:12', 'admin');
+INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792151, 4353221119792150, '添加', '', 'blog:label:add', '', 1, NULL, 1, '2023-06-17 14:05:12', 'admin', '2023-06-17 14:05:12', 'admin');
+INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792152, 4353221119792150, '修改', '', 'blog:label:upd', '', 1, NULL, 1, '2023-06-17 14:05:12', 'admin', '2023-06-17 14:05:12', 'admin');
+INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792153, 4353221119792150, '查看', '', 'blog:label:info', '', 1, NULL, 1, '2023-06-17 14:05:12', 'admin', '2023-06-17 14:05:12', 'admin');
+INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792155, 4353221119792150, '删除', '', 'blog:label:del', '', 1, NULL, 1, '2023-06-17 14:05:12', 'admin', '2023-06-17 14:05:12', 'admin');
+INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792156, 4353221119792144, '博客专题', 'blog/topic/topic', '', '', 1, NULL, 0, '2023-06-17 14:06:10', 'admin', '2023-06-17 14:06:10', 'admin');
+INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792157, 4353221119792156, '添加', '', 'blog:topic:add', '', 1, NULL, 1, '2023-06-17 14:06:10', 'admin', '2023-06-17 14:06:10', 'admin');
+INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792158, 4353221119792156, '修改', '', 'blog:topic:upd', '', 1, NULL, 1, '2023-06-17 14:06:10', 'admin', '2023-06-17 14:06:10', 'admin');
+INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792159, 4353221119792156, '查看', '', 'blog:topic:info', '', 1, NULL, 1, '2023-06-17 14:06:10', 'admin', '2023-06-17 14:06:10', 'admin');
+INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792160, 4353221119792156, '删除', '', 'blog:topic:del', '', 1, NULL, 1, '2023-06-17 14:06:10', 'admin', '2023-06-17 14:06:10', 'admin');
+INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792161, 4353221119792144, '博客文章', 'blog/article/article', '', '', 1, NULL, 0, '2023-06-17 14:06:56', 'admin', '2023-06-17 14:06:56', 'admin');
+INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792162, 4353221119792161, '添加', '', 'blog:article:add', '', 1, NULL, 1, '2023-06-17 14:06:56', 'admin', '2023-06-17 14:06:56', 'admin');
+INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792163, 4353221119792161, '修改', '', 'blog:article:upd', '', 1, NULL, 1, '2023-06-17 14:06:56', 'admin', '2023-06-17 14:06:56', 'admin');
+INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792164, 4353221119792161, '查看', '', 'blog:article:info', '', 1, NULL, 1, '2023-06-17 14:06:56', 'admin', '2023-06-17 14:06:56', 'admin');
+INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792165, 4353221119792161, '删除', '', 'blog:article:del', '', 1, NULL, 1, '2023-06-17 14:06:56', 'admin', '2023-06-17 14:06:56', 'admin');
 -- ----------------------------
 
 -- ----------------------------
@@ -457,202 +457,202 @@ CREATE TABLE `sys_role_menu`  (
 -- ----------------------------
 -- Records of sys_role_menu
 -- ----------------------------
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4059880098206720, 1, 4059879121720320, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4059896069346304, 1, 4059881300399104, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4059896070181888, 1, 4059891056399360, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4059896070231040, 1, 4059891515298816, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4059922616374272, 1, 4059916341400576, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4059922616488960, 1, 4059916791092224, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4059922616538112, 1, 4059917154079744, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4059922616570880, 1, 4059917584143360, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4059922616636416, 1, 4059919174194176, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4059922616849408, 1, 4059918640845824, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008073216, 1, 4297735995577345, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008073217, 1, 4297735995577346, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008105984, 1, 4297735995577347, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008122368, 1, 4297735995577348, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008122369, 1, 4297735995577349, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008122370, 1, 4297735995577350, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008155136, 1, 4297735995577351, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008155137, 1, 4297735991448577, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008187904, 1, 4297735991448578, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008253440, 1, 4297735991448579, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008286208, 1, 4297735991448580, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008286209, 1, 4297735991448581, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008286210, 1, 4297735991448582, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008318976, 1, 4297735991448583, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008318977, 1, 4297735992218625, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008351744, 1, 4297735992218626, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008351745, 1, 4297735992218627, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008384512, 1, 4297735992218628, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008384513, 1, 4297735992218629, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008384514, 1, 4297735992218630, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008417280, 1, 4297735992218631, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008417281, 1, 4297179754714113, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008450048, 1, 4297179754714114, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008450049, 1, 4297179754714115, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008450050, 1, 4297179754714116, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008482816, 1, 4297179754714117, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008482817, 1, 4297179754714118, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008482818, 1, 4297179754714119, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008548352, 1, 4297179758302211, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008777728, 1, 4297179755844609, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008810497, 1, 4297179755844612, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4297962008826880, 1, 4297179755844613, NULL, '2019-02-26 14:15:57', 'admin', '2019-02-26 14:15:57', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4298067504092160, 1, 4298067236262912, NULL, '2019-02-26 16:03:16', 'admin', '2019-02-26 16:03:16', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4298104939090944, 1, 4298102159430656, NULL, '2019-02-26 16:41:21', 'admin', '2019-02-26 16:41:21', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4298104939090945, 1, 4298102588576768, NULL, '2019-02-26 16:41:21', 'admin', '2019-02-26 16:41:21', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4298104939123712, 1, 4298102912996352, NULL, '2019-02-26 16:41:21', 'admin', '2019-02-26 16:41:21', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4298104939123713, 1, 4298103224865792, NULL, '2019-02-26 16:41:21', 'admin', '2019-02-26 16:41:21', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4298104939172864, 1, 4298103662826496, NULL, '2019-02-26 16:41:21', 'admin', '2019-02-26 16:41:21', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4298104939172865, 1, 4298104030680064, NULL, '2019-02-26 16:41:21', 'admin', '2019-02-26 16:41:21', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4298104939205632, 1, 4298104367584256, NULL, '2019-02-26 16:41:21', 'admin', '2019-02-26 16:41:21', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4301058363200512, 1, 4297735995577345, NULL, '2019-02-28 18:45:44', 'admin', '2019-02-28 18:45:44', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4323660713317376, 1, 4323654351082496, NULL, '2019-03-16 17:58:02', 'admin', '2019-03-16 17:58:02', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4326496941560832, 1, 4297735995577346, NULL, '2019-03-18 18:03:12', 'admin', '2019-03-18 18:03:12', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4336082061579264, 1, 4336080847524864, NULL, '2019-03-25 12:33:41', 'admin', '2019-03-25 12:33:41', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4347405895521280, 1, 4347326007383040, NULL, '2019-04-02 12:32:53', 'admin', '2019-04-02 12:32:53', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4353231277986816, 1, 4353221119792128, NULL, '2019-04-06 15:18:46', 'admin', '2019-04-06 15:18:46', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4353231278035968, 1, 4353221119792129, NULL, '2019-04-06 15:18:46', 'admin', '2019-04-06 15:18:46', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4353231278068736, 1, 4353221119792132, NULL, '2019-04-06 15:18:46', 'admin', '2019-04-06 15:18:46', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4353231278101504, 1, 4353221119792133, NULL, '2019-04-06 15:18:46', 'admin', '2019-04-06 15:18:46', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4398262101201920, 1, 4297735995577349, NULL, '2019-05-08 10:46:29', 'admin', '2019-05-08 10:46:29', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4398262101332992, 1, 4297735995577350, NULL, '2019-05-08 10:46:29', 'admin', '2019-05-08 10:46:29', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4398263498183680, 1, 4297735995577347, NULL, '2019-05-08 10:47:54', 'admin', '2019-05-08 10:47:54', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4861403364758330, 1, 4353221119792119, NULL, '2020-03-30 14:58:09', 'admin', '2020-03-30 14:58:09', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4861403364758331, 1, 4059918640845825, NULL, '2020-03-30 14:58:09', 'admin', '2020-03-30 14:58:09', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4861403364758332, 1, 4059918640845826, NULL, '2020-03-30 14:58:09', 'admin', '2020-03-30 14:58:09', 'admin');
-INSERT INTO yeeee_manage.sys_role_menu
+INSERT INTO sys_role_menu
 (id, role_id, menu_id, remark, create_time, create_by, update_time, update_by)
 VALUES(4861403364758529, 1, 4323654351082499, NULL, '2020-03-30 14:58:09', 'admin', '2020-03-30 14:58:09', 'admin');
 

@@ -23,8 +23,8 @@ DROP TABLE IF EXISTS `t_blog_article`;
 CREATE TABLE `t_blog_article` (
   `id` bigint NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `classify_id` bigint DEFAULT NULL COMMENT '分类ID',
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '标题',
-  `title_img` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT '标题图',
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '标题',
+  `title_img` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '标题图',
   `content` text COMMENT '内容',
   `author` varchar(32) NOT NULL COMMENT '作者',
   `ori_flag` tinyint(1) DEFAULT '1' COMMENT '是否原创：1-是，0-否',
@@ -38,7 +38,7 @@ CREATE TABLE `t_blog_article` (
   `update_by` varchar(32) DEFAULT NULL COMMENT '修改人',
   `update_time` datetime DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='博客文章';
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='博客文章';
 
 -- ----------------------------
 -- Records of t_blog_article
@@ -75,7 +75,7 @@ CREATE TABLE `t_blog_article_label_rel` (
   `update_by` varchar(32) DEFAULT NULL COMMENT '修改人',
   `update_time` datetime DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='博客文章标签关系';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='博客文章标签关系';
 
 -- ----------------------------
 -- Records of t_blog_article_label_rel
@@ -96,7 +96,7 @@ CREATE TABLE `t_blog_article_topic_rel` (
   `update_by` varchar(32) DEFAULT NULL COMMENT '修改人',
   `update_time` datetime DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='博客文章专题关系';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='博客文章专题关系';
 
 -- ----------------------------
 -- Records of t_blog_article_topic_rel
@@ -120,7 +120,7 @@ CREATE TABLE `t_blog_classify` (
   `update_by` varchar(32) DEFAULT NULL COMMENT '修改人',
   `update_time` datetime DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='博客分类';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='博客分类';
 
 -- ----------------------------
 -- Records of t_blog_classify
@@ -148,7 +148,7 @@ CREATE TABLE `t_blog_label` (
   `update_by` varchar(32) DEFAULT NULL COMMENT '修改人',
   `update_time` datetime DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='博客标签';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='博客标签';
 
 -- ----------------------------
 -- Records of t_blog_label
@@ -174,7 +174,7 @@ CREATE TABLE `t_blog_topic` (
   `update_by` varchar(32) DEFAULT NULL COMMENT '修改人',
   `update_time` datetime DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='博客专题';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='博客专题';
 
 -- ----------------------------
 -- Records of t_blog_topic
