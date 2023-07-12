@@ -2,17 +2,17 @@
   <div>
     <div class="pagebg sh"></div>
     <div class="container">
-      <h1 class="t_nav">
-        <span>慢生活，不是懒惰，放慢速度不是拖延时间，而是让我们在生活中寻找到平衡。</span>
-        <a href="/" class="n1">网站首页</a>
-        <a href="/" class="n2">搜索</a>
-      </h1>
+<!--      <h1 class="t_nav">-->
+<!--        <span>慢生活，不是懒惰，放慢速度不是拖延时间，而是让我们在生活中寻找到平衡。</span>-->
+<!--        <a href="/" class="n1">网站首页</a>-->
+<!--        <a href="/" class="n2">搜索</a>-->
+<!--      </h1>-->
 
       <!--blogsbox begin-->
       <div class="blogsbox">
         <div
           v-for="item in blogData"
-          :key="item.uid"
+          :key="item.id"
           class="blogs"
           data-scroll-reveal="enter bottom over 1s"
         >
@@ -25,21 +25,21 @@
           </h3>
           <span class="blogpic">
             <a href="javascript:void(0);" @click="goToInfo(item)" title>
-              <img v-if="item.photoUrl" :src="item.photoUrl" alt="">
+              <img v-if="item.titleImg" :src="item.titleImg" alt="">
             </a>
           </span>
-          <p class="blogtext" v-html="item.summary">{{item.summary}}</p>
+          <p class="blogtext" v-html="item.remark">{{item.remark}}</p>
           <div class="bloginfo">
             <ul>
               <li class="author">
                 <span class="iconfont">&#xe60f;</span>
                 <a href="javascript:void(0);" @click="goToAuthor(item.author)">{{item.author}}</a>
               </li>
-              <li class="lmname" v-if="item.blogSortName">
+              <li class="lmname" v-if="item.classify">
                 <span class="iconfont">&#xe603;</span>
-                <a href="javascript:void(0);" @click="goToList(item.blogSortUid)">{{item.blogSortName}}</a>
+                <a href="javascript:void(0);" @click="goToList(item.classify.id)">{{item.classify.name}}</a>
               </li>
-              <li class="createTime"><span class="iconfont">&#xe606;</span>{{item.createTime}}</li>
+              <li class="createTime"><span class="iconfont">&#xe606;</span>{{item.publishTime}}</li>
             </ul>
           </div>
         </div>
@@ -99,8 +99,8 @@ import {
   searchBlog,
   searchBlogByES,
   searchBloBySolr,
-  searchBlogByTag,
-  searchBlogBySort,
+  searchBlogByLabel,
+  searchBlogByClassify,
   searchBlogByAuthor
 } from "../api/search";
 import {getBlogByUid} from "../api/blogContent";
@@ -116,9 +116,9 @@ export default {
       totalPages: 0,
       pageSize: 10,
       total: 0, //总数量
-      tagUid: "",
+      labelId: "",
       searchBlogData: [], //搜索出来的文章
-      sortUid: "",
+      classifyId: "",
       isEnd: false, //是否到底底部了
       loading: false //内容是否正在加载
     };
@@ -132,8 +132,8 @@ export default {
   },
   created() {
     this.keywords = this.$route.query.keyword;
-    this.tagUid = this.$route.query.tagUid;
-    this.sortUid = this.$route.query.sortUid;
+    this.labelId = this.$route.query.labelId;
+    this.classifyId = this.$route.query.classifyId;
     this.author = this.$route.query.author;
     let model = this.$route.query.model;
     if(model) {
@@ -142,8 +142,8 @@ export default {
 
     if (
       this.keywords == undefined &&
-      this.tagUid == undefined &&
-      this.sortUid == undefined &&
+      this.labelId == undefined &&
+      this.classifyId == undefined &&
       this.author == undefined
     ) {
       return;
@@ -167,8 +167,8 @@ export default {
   watch: {
     $route(to, from) {
       this.keywords = this.$route.query.keyword;
-      this.tagUid = this.$route.query.tagUid;
-      this.sortUid = this.$route.query.sortUid;
+      this.labelId = this.$route.query.labelId;
+      this.classifyId = this.$route.query.classifyId;
       this.searchBlogData = [] // 清空查询出来的博客
       this.search();
     }
@@ -180,7 +180,7 @@ export default {
       if(blog.type == "0") {
         let routeData = this.$router.resolve({
           path: "/info",
-          query: {blogOid: blog.oid}
+          query: {blogOid: blog.id}
         });
         window.open(routeData.href, '_blank');
       } else if(blog.type == "1") {
@@ -197,7 +197,7 @@ export default {
     goToList(uid) {
       let routeData = this.$router.resolve({
         path: "/list",
-        query: { sortUid: uid }
+        query: { classifyId: uid }
       });
       window.open(routeData.href, '_blank');
     },
@@ -266,32 +266,27 @@ export default {
             that.convertSearchData(that, response)
           });
         }
-      } else if (this.tagUid != undefined) {
-        var params = new URLSearchParams();
+      } else if (this.labelId != undefined) {
+        var params = {
+          pageNum: that.currentPage,
+          pageSize: that.pageSize,
+          labelId: that.labelId,
+        }
 
-        params.append("tagUid", that.tagUid);
-        params.append("currentPage", that.currentPage);
-        params.append("pageSize", that.pageSize);
-
-        searchBlogByTag(params).then(response => {
-          if (response.code == this.$ECode.SUCCESS && response.data.records.length > 0) {
+        searchBlogByLabel(JSON.stringify(params)).then(response => {
+          if (response.code == this.$ECode.SUCCESS && response.data.result.length > 0) {
             that.isEnd = false;
             //获取总页数
-            that.totalPages = response.data.total;
+            that.totalPages = response.data.pages;
 
-            var blogData = response.data.records;
+            var blogData = response.data.result;
             that.total = response.data.total;
-            that.pageSize = response.data.size;
-            that.currentPage = response.data.current;
+            that.pageSize = response.data.pageSize;
+            that.currentPage = response.data.pageNum;
 
             //全部加载完毕
             if (blogData.length < that.pageSize) {
               that.isEnd = true;
-            }
-
-            // 设置分类名
-            for (var i = 0; i < blogData.length; i++) {
-              blogData[i].blogSort = blogData[i].blogSort.sortName;
             }
 
             blogData = that.searchBlogData.concat(blogData);
@@ -305,31 +300,27 @@ export default {
             that.loading = false;
           }
         });
-      } else if (this.sortUid != undefined) {
-        var params = new URLSearchParams();
+      } else if (this.classifyId != undefined) {
+        var params = {
+          pageNum: that.currentPage,
+          pageSize: that.pageSize,
+          classifyId: that.classifyId,
+        }
 
-        params.append("blogSortUid", that.sortUid);
-        params.append("currentPage", that.currentPage);
-        params.append("pageSize", that.pageSize);
-
-        searchBlogBySort(params).then(response => {
-          if (response.code == this.$ECode.SUCCESS && response.data.records.length > 0) {
+        searchBlogByClassify(JSON.stringify(params)).then(response => {
+          if (response.code == this.$ECode.SUCCESS && response.data.result.length > 0) {
             that.isEnd = false;
             //获取总页数
-            that.totalPages = response.data.total;
+            that.totalPages = response.data.pages;
 
-            var blogData = response.data.records;
+            var blogData = response.data.result;
             that.total = response.data.total;
-            that.pageSize = response.data.size;
-            that.currentPage = response.data.current;
+            that.pageSize = response.data.pageSize;
+            that.currentPage = response.data.pageNum;
 
             //全部加载完毕
             if (blogData.length < that.pageSize) {
               that.isEnd = true;
-            }
-
-            for (var i = 0; i < blogData.length; i++) {
-              blogData[i].blogSort = blogData[i].blogSort.sortName;
             }
 
             blogData = that.searchBlogData.concat(blogData);

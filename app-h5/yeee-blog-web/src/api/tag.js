@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-export function getTagList(params) {
+export function getLabelList(params) {
   return request({
     url: process.env.WEB_API + '/api/blog/label/page',
     method: 'post',
@@ -8,7 +8,7 @@ export function getTagList(params) {
   })
 }
 
-export function getArticleByTagUid(params) {
+export function getArticleByLabelId(params) {
   return request({
     url: process.env.WEB_API + '/api/blog/article/page',
     method: 'post',

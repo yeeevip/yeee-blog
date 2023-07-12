@@ -79,6 +79,12 @@
           <el-tag v-else-if="scope.row.oriFlag === 0" size="small" type="danger">否</el-tag>
         </template>
       </el-table-column>
+      <el-table-column prop="type" label="类型" sortable="custom" header-align="center" align="center">
+        <template slot-scope="scope">
+          <el-tag v-if="scope.row.type === 0" size="small" type="success">原文</el-tag>
+          <el-tag v-else-if="scope.row.type === 1" size="small" type="danger">外链</el-tag>
+        </template>
+      </el-table-column>
       <el-table-column prop="sort" label="排序" sortable="custom" header-align="center" align="center"></el-table-column>
       <el-table-column prop="status" label="发布状态" sortable="custom" header-align="center" align="center">
         <template slot-scope="scope">

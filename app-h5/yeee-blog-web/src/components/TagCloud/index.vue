@@ -30,7 +30,7 @@ export default {
   methods: {
     //跳转到搜索详情页
     goToList(uid) {
-      let routeData = this.$router.resolve({ path: "/list", query: { tagUid: uid } });
+      let routeData = this.$router.resolve({ path: "/list", query: { labelId: uid } });
       window.open(routeData.href, '_blank');
     },
   }

@@ -391,7 +391,7 @@
             goToSortList(uid) {
                 let routeData = this.$router.resolve({
                     path: "/list",
-                    query: { sortUid: uid }
+                    query: { classifyId: uid }
                 });
                 window.open(routeData.href, "_blank");
             },

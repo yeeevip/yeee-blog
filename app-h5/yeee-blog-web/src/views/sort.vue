@@ -140,7 +140,7 @@ export default {
         {
           let routeData = this.$router.resolve({
             path: "/list",
-            query: { sortUid: entity.blogSort.uid }
+            query: { classifyId: entity.classify.id }
           });
           window.open(routeData.href, "_blank");
         }

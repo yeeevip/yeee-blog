@@ -53,18 +53,18 @@ export function searchBloBySolr (params) {
   })
 }
 
-export function searchBlogByTag (params) {
+export function searchBlogByLabel (params) {
   return request({
-    url: process.env.WEB_API + '/search/searchBlogByTag',
-    method: 'get',
+    url: process.env.WEB_API + '/api/blog/article/page',
+    method: 'post',
     params
   })
 }
 
-export function searchBlogBySort (params) {
+export function searchBlogByClassify (params) {
   return request({
-    url: process.env.WEB_API + '/search/searchBlogBySort',
-    method: 'get',
+    url: process.env.WEB_API + '/api/blog/article/page',
+    method: 'post',
     params
   })
 }

@@ -16,6 +16,8 @@ public class BlogArticleDto extends BlogArticle {
 
     private Long classifyId;
 
+    private String classifyName;
+
     private Long labelId;
 
     private Long topicId;

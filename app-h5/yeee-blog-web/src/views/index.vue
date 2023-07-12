@@ -197,7 +197,7 @@
       goToList(uid) {
         let routeData = this.$router.push({
           path: "/list",
-          query: {sortUid: uid}
+          query: {classifyId: uid}
         });
 
       },

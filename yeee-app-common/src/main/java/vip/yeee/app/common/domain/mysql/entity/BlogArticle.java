@@ -63,6 +63,16 @@ public class BlogArticle {
     private String remark;
 
     /**
+     * 文章类型:0原文，1外链
+     */
+    private Integer type;
+
+    /**
+     * 外链地址
+     */
+    private String linkUrl;
+
+    /**
      * 创建人
      */
     @TableField(fill = FieldFill.INSERT)

@@ -44,6 +44,12 @@ public class BlogArticleAddRequest {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date publishTime;
 
+    @ApiModelProperty("文章类型:0原文，1外链")
+    private Integer type;
+
+    @ApiModelProperty("外链地址")
+    private String linkUrl;
+
     @ApiModelProperty("说明")
     private String remark;
 

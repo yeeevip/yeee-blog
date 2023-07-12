@@ -67,7 +67,7 @@
 </template>
 
 <script>
-  import {getSubjectItemList} from "../../api/subject";
+import {getTopicItemList} from "../../api/topic";
     export default {
       name: "SubjectItemList",
       props: ["visiable", "subjectUid"],
@@ -111,7 +111,7 @@
           params.pageSize = this.pageSize;
           params.pageNum = this.currentPage;
           this.loading = true
-          getSubjectItemList(params).then(response => {
+          getTopicItemList(params).then(response => {
             if(response.code == this.$ECode.SUCCESS) {
               let itemList = response.data.result
               let oldItemList = this.subjectItemlist

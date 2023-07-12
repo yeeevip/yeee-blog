@@ -184,3 +184,10 @@ INSERT INTO `t_blog_topic` (`id`, `name`, `cover_img`, `sort`, `status`, `remark
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+
+
+-- 2023.07.12
+
+alter table t_blog_article add column type tinyint(1) default 0 comment '文章类型:0原文，1外链' after `publish_time`;
+alter table t_blog_article add column link_url varchar(255) default null comment '外链地址' after `type`;

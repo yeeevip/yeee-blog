@@ -167,7 +167,7 @@ export default {
         {
           let routeData = this.$router.resolve({
             path: "/list",
-            query: { sortUid: entity.blogSort.uid }
+            query: { classifyId: entity.classify.id }
           });
           window.open(routeData.href, "_blank");
         }
@@ -187,7 +187,7 @@ export default {
           if(entity.type == "0") {
             let routeData = this.$router.resolve({
               path: "/info",
-              query: { blogOid: entity.oid }
+              query: { blogOid: entity.id }
             });
             window.open(routeData.href, "_blank");
           } else if(entity.type == "1") {

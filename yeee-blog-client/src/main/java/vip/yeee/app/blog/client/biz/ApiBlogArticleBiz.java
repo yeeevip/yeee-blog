@@ -7,6 +7,7 @@ import com.alicp.jetcache.anno.Cached;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
+import vip.yeee.app.blog.client.model.dto.BlogArticleDto;
 import vip.yeee.app.blog.client.model.request.ApiBlogArticlePageListRequest;
 import vip.yeee.app.blog.client.model.vo.ApiBlogArticleDetailVo;
 import vip.yeee.app.blog.client.model.vo.ApiBlogArticleListVo;
@@ -33,7 +34,7 @@ public class ApiBlogArticleBiz {
     @CachePenetrationProtect(timeout = 3)
     @Cached(cacheType = CacheType.BOTH, expire = 60, localExpire = 31)
     public PageVO<ApiBlogArticleListVo> blogArticlePageList(ApiBlogArticlePageListRequest request) {
-        IPage<BlogArticle> page = apiBlogArticleService.apiBlogArticlePageList(request);
+        IPage<BlogArticleDto> page = apiBlogArticleService.apiBlogArticlePageList(request);
         PageVO<ApiBlogArticleListVo> pageVO = new PageVO<>((int) page.getCurrent(), (int) page.getSize());
         if (CollectionUtil.isEmpty(page.getRecords())) {
             return pageVO;
@@ -44,6 +45,10 @@ public class ApiBlogArticleBiz {
                     ApiBlogArticleListVo vo = new ApiBlogArticleListVo();
                     BeanUtils.copyProperties(po, vo);
                     vo.setId(po.getId().toString());
+                    ApiBlogArticleListVo.Classify classify = new ApiBlogArticleListVo.Classify();
+                    classify.setId(po.getClassifyId().toString());
+                    classify.setName(po.getClassifyName());
+                    vo.setClassify(classify);
                     return vo;
                 })
                 .collect(Collectors.toList());

@@ -91,6 +91,19 @@
             </el-date-picker>
           </el-form-item>
         </el-col>
+        <el-col :span="11">
+          <el-form-item label="类型" prop="type">
+            <el-select v-model="dataForm.type" clearable  placeholder="类型">
+              <el-option label="原文" value='0' />
+              <el-option label="外链" value='1' />
+            </el-select>
+          </el-form-item>
+        </el-col>
+        <el-col :span="11">
+          <el-form-item label="外链地址" prop="linkUrl">
+            <el-input v-model="dataForm.linkUrl" placeholder="外链地址"></el-input>
+          </el-form-item>
+        </el-col>
       </el-row>
     </el-form>
     <span slot="footer" class="dialog-footer">
@@ -200,6 +213,7 @@ export default {
         }
         this.dataForm.oriFlag = this.dataForm.oriFlag.toString()
         this.dataForm.status = this.dataForm.status.toString()
+        this.dataForm.type = this.dataForm.type.toString()
       }).catch(() => {})
     },
     getClassifyList () {

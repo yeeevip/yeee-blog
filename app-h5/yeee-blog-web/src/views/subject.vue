@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import {getSubjectList} from "../api/subject";
+import {getTopicList, getTopicItemList} from "../api/topic";
 import SubjectItemList from "../components/SubjectItemList";
 export default {
   name: "share",
@@ -76,7 +76,7 @@ export default {
         pageNum: this.currentPage,
         pageSize: this.pageSize
       };
-      getSubjectList(JSON.stringify(params)).then(response => {
+      getTopicList(JSON.stringify(params)).then(response => {
         console.log("得到的结果", response)
         if (response.code == this.$ECode.SUCCESS) {
           this.dataList = response.data.result;

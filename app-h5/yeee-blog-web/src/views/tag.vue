@@ -70,7 +70,7 @@
 </template>
 
 <script>
-  import { getTagList, getArticleByTagUid } from "../api/tag";
+  import { getLabelList, getArticleByLabelId } from "../api/label";
   export default {
     data() {
       return {
@@ -94,7 +94,7 @@
         pageNum: 1,
         pageSize: 15
       }
-      getTagList(JSON.stringify(params)).then(response => {
+      getLabelList(JSON.stringify(params)).then(response => {
         if (response.code == this.$ECode.SUCCESS) {
           var activities = response.data.result;
           var result = [];
@@ -121,7 +121,7 @@
           pageSize: 5,
           labelId: this.selectBlogUid
         }
-        getArticleByTagUid(JSON.stringify(params)).then(response => {
+        getArticleByLabelId(JSON.stringify(params)).then(response => {
           if (response.code == this.$ECode.SUCCESS) {
             this.itemByDate = response.data.result;
             this.currentPage = response.data.pageNum;
@@ -142,7 +142,7 @@
           pageSize: 5,
           labelId: this.selectBlogUid
         }
-        getArticleByTagUid(JSON.stringify(params)).then(response => {
+        getArticleByLabelId(JSON.stringify(params)).then(response => {
           if (response.code == this.$ECode.SUCCESS) {
             this.itemByDate = this.itemByDate.concat(response.data.result);
             this.currentPage = response.data.pageNum;
@@ -167,7 +167,7 @@
           {
             let routeData = this.$router.resolve({
               path: "/list",
-              query: { sortUid: entity.blogSort.uid }
+              query: { classifyId: entity.classify.id }
             });
             window.open(routeData.href, "_blank");
           }
@@ -187,7 +187,7 @@
             if(entity.type == "0") {
               let routeData = this.$router.resolve({
                 path: "/info",
-                query: { blogOid: entity.oid }
+                query: { blogOid: entity.id }
               });
               window.open(routeData.href, "_blank");
             } else if(entity.type == "1") {

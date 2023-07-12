@@ -23,7 +23,7 @@ public class ApiBlogArticleService extends ServiceImpl<ApiBlogArticleMapper, Blo
         return this.getById(id);
     }
 
-    public IPage<BlogArticle> apiBlogArticlePageList(ApiBlogArticlePageListRequest request) {
+    public IPage<BlogArticleDto> apiBlogArticlePageList(ApiBlogArticlePageListRequest request) {
         BlogArticleDto query = new BlogArticleDto();
         query.setClassifyId(request.getClassifyId());
         query.setTopicId(request.getTopicId());

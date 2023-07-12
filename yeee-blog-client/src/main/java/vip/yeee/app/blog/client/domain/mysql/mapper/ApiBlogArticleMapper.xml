@@ -14,17 +14,22 @@
         </trim>
     </sql>
 
-    <select id="apiBlogArticlePageList" resultType="vip.yeee.app.common.domain.mysql.entity.BlogArticle">
+    <select id="apiBlogArticlePageList" resultType="vip.yeee.app.blog.client.model.dto.BlogArticleDto">
         SELECT
             ba.id,
             ba.classify_id,
+            bc.name classifyName,
             ba.title,
             ba.title_img,
             ba.author,
+            ba.ori_flag,
             ba.publish_time,
+            ba.type,
+            ba.link_url,
             ba.remark
         FROM
             t_blog_article ba
+        left join t_blog_classify bc on bc.id = ba.classify_id
         <include refid="searchBy"/>
         <if test="query.labelCode != null and query.labelCode != ''">
             and ba.id in(
