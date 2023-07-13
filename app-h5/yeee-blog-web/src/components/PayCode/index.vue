@@ -1,6 +1,6 @@
 <template>
   <div class="share">
-    <p class="diggit" @click="praiseBlog(blogUid)">
+    <p class="diggit" @click="praiseBlog(blogId)">
       <a href="javascript:void(0);">很赞哦！</a>
       <span v-if="praiseCount!= 0">
         (<b id="diggnum">{{praiseCount}}</b>)
@@ -61,7 +61,7 @@ export default {
       type: Number,
       default: 0
     },
-    blogUid: {
+    blogId: {
       type: String
     }
   },

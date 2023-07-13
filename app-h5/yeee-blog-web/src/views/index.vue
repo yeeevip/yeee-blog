@@ -177,10 +177,10 @@
     methods: {
       //跳转到文章详情【或推广链接】
       goToInfo(blog) {
-        if(true) {
+        if(blog.type == "0") {
           let routeData = this.$router.resolve({
             path: "/info",
-            query: {blogOid: blog.id}
+            query: {blogId: blog.id}
           });
           window.open(routeData.href, '_blank');
         } else if(blog.type == "1") {
@@ -190,7 +190,7 @@
           getBlogByUid(JSON.stringify(params)).then(response => {
             // 记录一下用户点击日志
           });
-          window.open(blog.outsideLink, '_blank');
+          window.open(blog.linkUrl, '_blank');
         }
       },
       //跳转到搜索详情页

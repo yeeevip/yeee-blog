@@ -47,7 +47,7 @@ export default {
       if(true) {
         let routeData = this.$router.resolve({
           path: "/info",
-          query: {blogOid: blog.id}
+          query: {blogId: blog.id}
         });
         window.open(routeData.href, '_blank');
       } else if(blog.type == "1") {

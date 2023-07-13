@@ -766,7 +766,7 @@ export default {
     goToInfo(uid) {
       let routeData = this.$router.resolve({
         path: "/info",
-        query: {blogUid: uid}
+        query: {blogId: uid}
       });
       window.open(routeData.href, '_blank');
     },
@@ -805,7 +805,7 @@ export default {
         case "BLOG_INFO": {
           let routeData = this.$router.resolve({
             path: "/info",
-            query: {blogUid: comment.blogUid}
+            query: {blogId: comment.blogId}
           });
           window.open(routeData.href, '_blank');
         }

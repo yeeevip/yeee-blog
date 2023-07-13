@@ -16,7 +16,7 @@
               <el-timeline-item v-for="(activity, index) in activities" hide-timestamp :key="index">
                 <span
                   @click="getBlogTagList(activity.id)"
-                  :class="[activity.id == selectBlogUid ? 'sortBoxSpan sortBoxSpanSelect' : 'sortBoxSpan']"
+                  :class="[activity.id == selectBlogId ? 'sortBoxSpan sortBoxSpanSelect' : 'sortBoxSpan']"
                 >{{activity.name}}</span>
               </el-timeline-item>
             </el-timeline>
@@ -74,7 +74,7 @@
   export default {
     data() {
       return {
-        selectBlogUid: "",
+        selectBlogId: "",
         reverse: false,
         activities: [],
         itemByDate: [],
@@ -115,11 +115,11 @@
     },
     methods: {
       getBlogTagList(tagUid) {
-        this.selectBlogUid = tagUid;
+        this.selectBlogId = tagUid;
         var params = {
           pageNum: 1,
           pageSize: 5,
-          labelId: this.selectBlogUid
+          labelId: this.selectBlogId
         }
         getArticleByLabelId(JSON.stringify(params)).then(response => {
           if (response.code == this.$ECode.SUCCESS) {
@@ -131,16 +131,16 @@
       },
       load() {
         if (
-          this.selectBlogUid == null ||
-          this.selectBlogUid == "" ||
-          this.selectBlogUid == undefined
+          this.selectBlogId == null ||
+          this.selectBlogId == "" ||
+          this.selectBlogId == undefined
         ) {
           return;
         }
         var params = {
           pageNum: this.currentPage + 1,
           pageSize: 5,
-          labelId: this.selectBlogUid
+          labelId: this.selectBlogId
         }
         getArticleByLabelId(JSON.stringify(params)).then(response => {
           if (response.code == this.$ECode.SUCCESS) {
@@ -187,11 +187,11 @@
             if(entity.type == "0") {
               let routeData = this.$router.resolve({
                 path: "/info",
-                query: { blogOid: entity.id }
+                query: { blogId: entity.id }
               });
               window.open(routeData.href, "_blank");
             } else if(entity.type == "1") {
-              window.open(entity.outsideLink, '_blank');
+              window.open(entity.linkUrl, '_blank');
             }
           }
             break;

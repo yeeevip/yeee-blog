@@ -11,7 +11,7 @@
       <div class="share">
         <ul>
           <li v-for="item in dataList" :key="item.id">
-            <div class="shareli" @click="showSubjectItemList(item.id)">
+            <div class="shareli" @click="showTopicItemList(item.id)">
               <a href="javascript:void(0);">
                 <i>
                   <img v-if="item.coverImg" class="resImg" :src="item.coverImg" lazy>
@@ -43,14 +43,14 @@
       </div>
     </div>
 
-    <SubjectItemList :visiable="visiable" @close="closeSubjectItemList" :subjectUid="selectSubjectUid"></SubjectItemList>
+    <TopicItemList :visiable="visiable" @close="closeTopicItemList" :subjectUid="selectSubjectUid"></TopicItemList>
 
   </div>
 </template>
 
 <script>
 import {getTopicList, getTopicItemList} from "../api/topic";
-import SubjectItemList from "../components/SubjectItemList";
+import TopicItemList from "../components/TopicItemList";
 export default {
   name: "share",
   data() {
@@ -65,7 +65,7 @@ export default {
   },
   components: {
     //注册组件
-    SubjectItemList
+    TopicItemList
   },
   created() {
     this.subjectList()
@@ -91,11 +91,11 @@ export default {
       this.currentPage = val; //改变当前所指向的页数
       this.subjectList();
     },
-    showSubjectItemList(selectSubjectUid) {
+    showTopicItemList(selectSubjectUid) {
       this.selectSubjectUid = selectSubjectUid
       this.visiable = !this.visiable
     },
-    closeSubjectItemList(selectSubjectUid) {
+    closeTopicItemList(selectSubjectUid) {
       this.visiable = !this.visiable
     }
   }

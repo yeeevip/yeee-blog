@@ -150,7 +150,7 @@
         let params = {};
         params.userUid = e.userUid;
         params.content = e.content;
-        params.blogUid = e.blogUid;
+        params.blogId = e.blogId;
         params.toUid = e.toCommentUid;
         params.toUserUid = e.toUserUid;
         params.source = e.source

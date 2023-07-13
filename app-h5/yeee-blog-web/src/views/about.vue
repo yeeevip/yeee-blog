@@ -165,11 +165,11 @@
             },
             submitBox(e) {
                 let params = {};
-                params.blogUid = e.blogUid;
+                params.blogId = e.blogId;
                 params.source = e.source;
                 params.userUid = e.userUid;
                 params.content = e.content;
-                params.blogUid = e.blogUid;
+                params.blogId = e.blogId;
                 addComment(params).then(response => {
                     if (response.code == this.$ECode.SUCCESS) {
                         this.$notify({

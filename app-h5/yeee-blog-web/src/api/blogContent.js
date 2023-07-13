@@ -17,7 +17,7 @@ export function getSameBlogByTagUid (params) {
   })
 }
 
-export function getSameBlogByBlogUid (params) {
+export function getSameBlogByBlogId (params) {
   return request({
     url: process.env.WEB_API + '/api/blog/article/page',
     method: 'post',

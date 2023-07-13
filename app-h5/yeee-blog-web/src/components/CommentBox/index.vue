@@ -124,7 +124,7 @@
         let userUid = info.uid;
         let toUserUid = "";
         let toCommentUid = "";
-        let blogUid = "";
+        let blogId = "";
 
         // 评论来源： MESSAGE_BOARD，ABOUT，BLOG_INFO 等 代表来自某些页面的评论
         let source = "";
@@ -136,7 +136,7 @@
           toCommentUid = this.toInfo.commentUid;
         }
         if(this.commentInfo) {
-          blogUid = this.commentInfo.blogUid;
+          blogId = this.commentInfo.blogId;
           source = this.commentInfo.source;
         }
         this.comments = {
@@ -144,7 +144,7 @@
           toCommentUid: toCommentUid,
           toUserUid: toUserUid,
           content: content,
-          blogUid: blogUid,
+          blogId: blogId,
           source: source,
           reply: [],
         }

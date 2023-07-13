@@ -8,7 +8,7 @@
     :with-header="false">
 
     <div class="block" style="margin:10px;">
-      <div style="text-align: center;font-size: 16px;" v-if="!loading && subjectItemlist.length == 0">空空如也</div>
+      <div style="text-align: center;font-size: 16px;" v-if="!loading && topicItemList.length == 0">空空如也</div>
 
       <div class="lds-css ng-scope" v-if="loading">
         <div style="width:100%;height:100%" class="lds-facebook">
@@ -21,18 +21,18 @@
       <el-timeline>
         <div class="blogsbox">
           <div
-            v-for="item in subjectItemlist"
+            v-for="item in topicItemList"
             :key="item.id"
             class="blogs"
           >
             <el-timeline-item :timestamp="item.publishTime" placement="top">
               <el-card>
-                <span class="blogpic" @click="goToInfo(item.id)">
+                <span class="blogpic" @click="goToInfo(item)">
                   <a href="javascript:void(0);" title>
                     <img v-if="item && item.titleImg" :src="item.titleImg" alt>
                   </a>
                 </span>
-                <p class="blogtext" style="font-weight: bold; cursor: pointer;" @click="goToInfo(item.id)">{{item.title}}</p>
+                <p class="blogtext" style="font-weight: bold; cursor: pointer;" @click="goToInfo(item)">{{item.title}}</p>
                 <div class="bloginfo">
                   <ul>
                     <li class="author">
@@ -68,8 +68,9 @@
 
 <script>
 import {getTopicItemList} from "../../api/topic";
+import {getBlogByUid} from "../../api/blogContent";
     export default {
-      name: "SubjectItemList",
+      name: "topicItemList",
       props: ["visiable", "subjectUid"],
       watch: {
         visiable: function() {
@@ -77,14 +78,14 @@ import {getTopicItemList} from "../../api/topic";
         },
         subjectUid: function () {
           this.currentPage = 1
-          this.subjectItemlist = []
+          this.topicItemList = []
           this.getList()
         }
       },
       data() {
         return {
           drawer: this.visiable,
-          subjectItemlist: [],
+          topicItemList: [],
           pageSize: 5,
           currentPage: 1,
           total: 0,
@@ -114,10 +115,10 @@ import {getTopicItemList} from "../../api/topic";
           getTopicItemList(params).then(response => {
             if(response.code == this.$ECode.SUCCESS) {
               let itemList = response.data.result
-              let oldItemList = this.subjectItemlist
+              let oldItemList = this.topicItemList
               this.currentPage = response.data.pageNum
               this.total = response.data.total
-              this.subjectItemlist = oldItemList.concat(itemList);
+              this.topicItemList = oldItemList.concat(itemList);
             }
             this.loading = false
           })
@@ -145,12 +146,22 @@ import {getTopicItemList} from "../../api/topic";
           this.$emit("close", "");
         },
         //跳转到文章详情
-        goToInfo(uid) {
-          let routeData = this.$router.resolve({
-            path: "/info",
-            query: {blogUid: uid}
-          });
-          window.open(routeData.href, '_blank');
+        goToInfo(blog) {
+          if(blog.type == "0") {
+            let routeData = this.$router.resolve({
+              path: "/info",
+              query: {blogId: blog.id}
+            });
+            window.open(routeData.href, '_blank');
+          } else if(blog.type == "1") {
+            var params = {
+              id: blog.id
+            }
+            getBlogByUid(JSON.stringify(params)).then(response => {
+              // 记录一下用户点击日志
+            });
+            window.open(blog.linkUrl, '_blank');
+          }
         },
         //跳转到搜索详情页
         goToList(uid) {

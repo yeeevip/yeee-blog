@@ -67,7 +67,7 @@
       </div>
 
       <!--付款码和点赞-->
-      <PayCode v-if="openAdmiration == '1'" :blogUid="blogUid" :praiseCount.sync="blogData.collectCount"></PayCode>
+      <PayCode v-if="openAdmiration == '1'" :blogId="blogId" :praiseCount.sync="blogData.collectCount"></PayCode>
 
       <div class="otherlink" v-if="sameBlogData.length > 0">
         <h2>相关文章</h2>
@@ -110,7 +110,7 @@
 
 <script>
     import {getWebConfig} from "../api/index";
-    import { getBlogByUid, getSameBlogByBlogUid } from "../api/blogContent";
+    import { getBlogByUid, getSameBlogByBlogId } from "../api/blogContent";
     import CommentList from "../components/CommentList";
     import CommentBox from "../components/CommentBox";
     // vuex中有mapState方法，相当于我们能够使用它的getset方法
@@ -150,15 +150,15 @@
                 commentInfo: {
                     // 评论来源： MESSAGE_BOARD，ABOUT，BLOG_INFO 等 代表来自某些页面的评论
                     source: "BLOG_INFO",
-                    blogUid: this.$route.query.blogUid
+                    blogId: this.$route.query.blogId
                 },
                 currentPage: 1,
                 pageSize: 10,
                 total: 0, //总数量
                 toInfo: {},
                 userInfo: {},
-                blogUid: null, //传递过来的博客uid
-                blogOid: 0, // 传递过来的博客oid
+                blogId: null, //传递过来的博客uid
+                blogId: 0, // 传递过来的博客oid
                 blogData: {
                   blogSort: {}
                 },
@@ -214,15 +214,15 @@
         mounted () {
           var that = this;
           var params = {
-            id: this.blogOid ? this.blogOid : this.blogUid
+            id: this.blogId ? this.blogId : this.blogId
           }
           getBlogByUid(JSON.stringify(params)).then(response => {
             if (response.code == this.$ECode.SUCCESS) {
               console.log("获取博客信息", response)
               this.blogData = response.data;
-              this.blogUid = response.data.id
-              this.blogOid = response.data.id
-              this.commentInfo.blogUid = response.data.id;
+              this.blogId = response.data.id
+              this.blogId = response.data.id
+              this.commentInfo.blogId = response.data.id;
               document.title = response.data.title
               this.getSameBlog()
               this.getCommentDataList();
@@ -260,7 +260,7 @@
               }
               let params = {};
               params.source = that.commentInfo.source;
-              params.blogUid = that.commentInfo.blogUid;
+              params.blogId = that.commentInfo.blogId;
               params.currentPage = that.currentPage + 1
               params.pageSize = that.pageSize;
               getCommentList(params).then(response => {
@@ -288,8 +288,8 @@
                 fullscreen: true,
                 text: "正在努力加载中~"
             });
-            this.blogUid = this.$route.query.blogUid;
-            this.blogOid = this.$route.query.blogOid;
+            this.blogId = this.$route.query.blogId;
+            this.blogId = this.$route.query.blogId;
             this.setCommentAndAdmiration()
             // 屏幕大于950px的时候，显示侧边栏
             this.showSidebar = document.body.clientWidth > 950
@@ -306,7 +306,7 @@
                 pageNum: 1,
                 pageSize: 7
               }
-              getSameBlogByBlogUid(JSON.stringify(blogParams)).then(response => {
+              getSameBlogByBlogId(JSON.stringify(blogParams)).then(response => {
                 if (response.code == this.$ECode.SUCCESS) {
                   this.sameBlogData = response.data.result;
                 }
@@ -332,11 +332,11 @@
             },
             submitBox(e) {
                 let params = {};
-                params.blogUid = e.blogUid;
+                params.blogId = e.blogId;
                 params.source = e.source;
                 params.userUid = e.userUid;
                 params.content = e.content;
-                params.blogUid = e.blogUid;
+                params.blogId = e.blogId;
                 addComment(params).then(response => {
                     if (response.code == this.$ECode.SUCCESS) {
                         this.$notify({
@@ -358,7 +358,7 @@
             getCommentDataList: function() {
                 let params = {};
                 params.source = this.commentInfo.source;
-                params.blogUid = this.commentInfo.blogUid;
+                params.blogId = this.commentInfo.blogId;
                 params.currentPage = this.currentPage;
                 params.pageSize = this.pageSize;
                 getCommentList(params).then(response => {
@@ -375,7 +375,7 @@
             goToInfo(uid) {
                 let routeData = this.$router.resolve({
                     path: "/info",
-                    query: { blogUid: uid }
+                    query: { blogId: uid }
                 });
                 window.open(routeData.href, "_blank");
             },

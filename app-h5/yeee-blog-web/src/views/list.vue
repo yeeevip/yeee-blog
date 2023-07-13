@@ -180,7 +180,7 @@ export default {
       if(blog.type == "0") {
         let routeData = this.$router.resolve({
           path: "/info",
-          query: {blogOid: blog.id}
+          query: {blogId: blog.id}
         });
         window.open(routeData.href, '_blank');
       } else if(blog.type == "1") {
