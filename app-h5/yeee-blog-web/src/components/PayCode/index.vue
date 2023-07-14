@@ -2,11 +2,11 @@
   <div class="share">
     <p class="diggit" @click="praiseBlog(blogId)">
       <a href="javascript:void(0);">很赞哦！</a>
-      <span v-if="praiseCount!= 0">
-        (<b id="diggnum">{{praiseCount}}</b>)
+      <span v-if="likeNum != 0">
+        (<b id="diggnum">{{likeNum}}</b>)
       </span>
     </p>
-    <p class="dasbox">
+    <p class="dasbox" v-if="showPayButton">
       <a href="javascript:void(0)" @click="dashangToggle()" class="dashang" title="打赏，支持一下">打赏本站</a>
     </p>
     <div class="hide_box" v-if="showPay"></div>
@@ -49,15 +49,12 @@
 
 <script>
 import { getWebConfig } from "../../api/index";
-import {
-  praiseBlogByUid,
-  getBlogPraiseCountByUid
-} from "../../api/blogContent";
 import {mapMutations} from "vuex";
+import {recordBlogStatsData} from "../../api/stats";
 export default {
   name: "PayCode",
   props: {
-    praiseCount: {
+    likeNum: {
       type: Number,
       default: 0
     },
@@ -69,6 +66,7 @@ export default {
     return {
       webConfigData: [],
       showPay: false, //是否显示支付
+      showPayButton: false,
       payMethod: 1, // 1: 支付宝  2：微信
       payCode: "", //支付码图片
     };
@@ -86,7 +84,7 @@ export default {
     //拿到vuex中的写的方法
     ...mapMutations(['setLoginMessage']),
     dashangToggle: function() {
-      this.showPay = !this.showPay;
+      // this.showPay = !this.showPay;
     },
     // 支付方式
     choosePay: function(type) {
@@ -100,46 +98,26 @@ export default {
     //博客点赞
     praiseBlog: function(uid) {
       // 判断用户是否登录
-      let isLogin = this.$store.state.user.isLogin
-      if(!isLogin) {
-        this.$notify.error({
-          title: '警告',
-          message: '登录后才可以评论哦~',
+      // let isLogin = this.$store.state.user.isLogin
+      // if(!isLogin) {
+      //   this.$notify.error({
+      //     title: '警告',
+      //     message: '登录后才可以评论哦~',
+      //     offset: 100
+      //   });
+      //   // 未登录，自动弹出登录框
+      //   this.setLoginMessage(Math.random())
+      //   return;
+      // }
+
+      recordBlogStatsData('like', uid).then(response => {
+        this.$notify({
+          title: '成功',
+          message: "点赞成功",
+          type: 'success',
           offset: 100
         });
-        // 未登录，自动弹出登录框
-        this.setLoginMessage(Math.random())
-        return;
-      }
-
-      var params = new URLSearchParams();
-      params.append("uid", uid);
-      praiseBlogByUid(params).then(response => {
-        if (response.code == this.$ECode.SUCCESS) {
-          this.$notify({
-            title: '成功',
-            message: "点赞成功",
-            type: 'success',
-            offset: 100
-          });
-          this.$emit('update:praiseCount',response.data);
-        } else {
-          this.$notify.error({
-            title: '错误',
-            message: response.message,
-            offset: 100
-          });
-        }
-      });
-    },
-    //获取点赞数
-    getPraiseCount: function(uid) {
-      var params = new URLSearchParams();
-      params.append("uid", uid);
-      getBlogPraiseCountByUid(params).then(response => {
-        if (response.code == this.$ECode.SUCCESS) {
-          this.praiseCount = response.data;
-        }
+        this.$emit('update:likeNum', this.likeNum + 1);
       });
     }
   }

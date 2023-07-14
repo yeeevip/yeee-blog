@@ -26,6 +26,8 @@
             ba.publish_time,
             ba.type,
             ba.link_url,
+            ba.read_num,
+            ba.like_num,
             ba.remark
         FROM
             t_blog_article ba
@@ -65,5 +67,13 @@
         </if>
             order by ba.publish_time desc
     </select>
+
+    <update id="incrBlogReadNum">
+        update t_blog_article set read_num = read_num + #{delta} where id = #{blogId}
+    </update>
+
+    <update id="incrBlogLikeNum">
+        update t_blog_article set like_num = like_num + #{delta} where id = #{blogId}
+    </update>
 
 </mapper>

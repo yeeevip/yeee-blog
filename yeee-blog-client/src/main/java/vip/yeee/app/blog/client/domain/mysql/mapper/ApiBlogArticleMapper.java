@@ -13,4 +13,8 @@ import vip.yeee.app.common.domain.mysql.entity.BlogArticle;
 public interface ApiBlogArticleMapper extends BaseMapper<BlogArticle> {
 
     IPage<BlogArticleDto> apiBlogArticlePageList(Page<BlogArticle> page, @Param("query") BlogArticleDto query);
+
+    void incrBlogReadNum(@Param("blogId") Long blogId, @Param("delta") int delta);
+
+    void incrBlogLikeNum(@Param("blogId") Long blogId, @Param("delta") int delta);
 }

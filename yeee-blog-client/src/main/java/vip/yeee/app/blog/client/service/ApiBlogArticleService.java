@@ -31,4 +31,12 @@ public class ApiBlogArticleService extends ServiceImpl<ApiBlogArticleMapper, Blo
         query.setLabelCode(request.getLabelCode());
         return baseMapper.apiBlogArticlePageList(new Page<>(request.getPageNum(), request.getPageSize()), query);
     }
+
+    public void incrBlogReadNum(String blogId, int delta) {
+        baseMapper.incrBlogReadNum(Long.valueOf(blogId), delta);
+    }
+
+    public void incrBlogLikeNum(String blogId, int delta) {
+        baseMapper.incrBlogLikeNum(Long.valueOf(blogId), delta);
+    }
 }

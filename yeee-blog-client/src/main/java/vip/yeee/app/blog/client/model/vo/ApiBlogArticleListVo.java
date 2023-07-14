@@ -40,6 +40,12 @@ public class ApiBlogArticleListVo {
     @ApiModelProperty("外链地址")
     private String linkUrl;
 
+    @ApiModelProperty("阅读量")
+    private Integer readNum;
+
+    @ApiModelProperty("点赞量")
+    private Integer likeNum;
+
     @ApiModelProperty("说明")
     private String remark;
 

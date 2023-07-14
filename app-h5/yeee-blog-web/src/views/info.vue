@@ -54,8 +54,8 @@
         </div>
         <div class="news_about">
           <strong>版权</strong>
-          <span v-html="blogData.copyright">
-            {{blogData.copyright}}
+          <span>
+            本文为yeee.vip原创文章，转载无需和我联系，但请注明来自https://www.yeee.vip
           </span>
         </div>
         <div
@@ -67,7 +67,7 @@
       </div>
 
       <!--付款码和点赞-->
-      <PayCode v-if="openAdmiration == '1'" :blogId="blogId" :praiseCount.sync="blogData.collectCount"></PayCode>
+      <PayCode v-if="openAdmiration == '1'" :blogId="blogId" :likeNum.sync="blogData.likeNum"></PayCode>
 
       <div class="otherlink" v-if="sameBlogData.length > 0">
         <h2>相关文章</h2>

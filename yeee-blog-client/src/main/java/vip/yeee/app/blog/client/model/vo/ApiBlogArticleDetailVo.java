@@ -28,6 +28,12 @@ public class ApiBlogArticleDetailVo {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date publishTime;
 
+    @ApiModelProperty("阅读量")
+    private Integer readNum;
+
+    @ApiModelProperty("点赞量")
+    private Integer likeNum;
+
     @ApiModelProperty("说明")
     private String remark;
 

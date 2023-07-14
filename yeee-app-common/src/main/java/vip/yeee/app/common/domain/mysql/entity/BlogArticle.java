@@ -73,6 +73,16 @@ public class BlogArticle {
     private String linkUrl;
 
     /**
+     * 阅读量
+     */
+    private Integer readNum;
+
+    /**
+     * 点赞量
+     */
+    private Integer likeNum;
+
+    /**
      * 创建人
      */
     @TableField(fill = FieldFill.INSERT)

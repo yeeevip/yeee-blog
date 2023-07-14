@@ -85,6 +85,8 @@
           <el-tag v-else-if="scope.row.type === 1" size="small" type="danger">外链</el-tag>
         </template>
       </el-table-column>
+      <el-table-column prop="readNum" label="阅读量" sortable="custom" header-align="center" align="center"></el-table-column>
+      <el-table-column prop="likeNum" label="点赞量" sortable="custom" header-align="center" align="center"></el-table-column>
       <el-table-column prop="sort" label="排序" sortable="custom" header-align="center" align="center"></el-table-column>
       <el-table-column prop="status" label="发布状态" sortable="custom" header-align="center" align="center">
         <template slot-scope="scope">

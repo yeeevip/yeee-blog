@@ -191,3 +191,8 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 alter table t_blog_article add column type tinyint(1) default 0 comment '文章类型:0原文，1外链' after `publish_time`;
 alter table t_blog_article add column link_url varchar(255) default null comment '外链地址' after `type`;
+
+-- 2023.07.14
+
+alter table t_blog_article add column read_num int(8) default 0 comment '阅读量' after `link_url`;
+alter table t_blog_article add column like_num int(8) default 0 comment '点赞量' after `read_num`;

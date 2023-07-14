@@ -5,8 +5,8 @@
         <h3 class="news_title" v-if="dataForm.title">{{dataForm.title}}</h3>
         <div class="news_about">
           <strong>版权</strong>
-          <span v-html="dataForm.copyright">
-            {{dataForm.copyright}}
+          <span>
+            本文为yeee.vip原创文章，转载无需和我联系，但请注明来自https://www.yeee.vip
           </span>
         </div>
         <div

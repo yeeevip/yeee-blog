@@ -71,6 +71,7 @@
 
 <script>
 import { getBlogSortList, getArticleByBlogSortUid } from "../api/classify";
+import {recordBlogStatsData} from "../api/stats";
 export default {
   data() {
     return {
@@ -184,6 +185,9 @@ export default {
 
         case "blogContent":
         {
+          recordBlogStatsData('read', entity.id).then(response => {
+            // 记录一下用户点击日志
+          });
           if(entity.type == "0") {
             let routeData = this.$router.resolve({
               path: "/info",

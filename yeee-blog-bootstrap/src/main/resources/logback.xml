@@ -58,6 +58,29 @@
             <pattern>${LOG_PATTERN}</pattern>
         </encoder>
     </appender>
+
+
+    <appender name="REF-YEEE-BLOG-STATS" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/log_blog_stats.log</file>
+        <!-- 循环政策：基于时间创建日志文件 -->
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- 日志文件名格式 -->
+            <fileNamePattern>${LOG_PATH}/log_blog_stats.%d{yyyy-MM-dd}-%i.log</fileNamePattern>
+            <!-- 日志最大的历史 60天 -->
+            <maxHistory>60</maxHistory>
+            <maxFileSize>100MB</maxFileSize>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="YEEE-BLOG-STATS" additivity="false">
+        <appender-ref ref="REF-YEEE-BLOG-STATS"/>
+    </logger>
+
+
     <springProfile name="dev">
         <root level="INFO">
             <appender-ref ref="REF-CONSOLE"/>

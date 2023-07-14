@@ -69,6 +69,7 @@
 <script>
 import {getTopicItemList} from "../../api/topic";
 import {getBlogByUid} from "../../api/blogContent";
+import {recordBlogStatsData} from "../../api/stats";
     export default {
       name: "topicItemList",
       props: ["visiable", "subjectUid"],
@@ -147,6 +148,9 @@ import {getBlogByUid} from "../../api/blogContent";
         },
         //跳转到文章详情
         goToInfo(blog) {
+          recordBlogStatsData('read', blog.id).then(response => {
+            // 记录一下用户点击日志
+          });
           if(blog.type == "0") {
             let routeData = this.$router.resolve({
               path: "/info",
@@ -154,12 +158,6 @@ import {getBlogByUid} from "../../api/blogContent";
             });
             window.open(routeData.href, '_blank');
           } else if(blog.type == "1") {
-            var params = {
-              id: blog.id
-            }
-            getBlogByUid(JSON.stringify(params)).then(response => {
-              // 记录一下用户点击日志
-            });
             window.open(blog.linkUrl, '_blank');
           }
         },

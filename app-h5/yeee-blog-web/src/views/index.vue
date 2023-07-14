@@ -55,11 +55,11 @@
             </li>
             <li class="view">
               <span class="iconfont">&#xe8c7;</span>
-              <span>666</span>
+              <span>{{item.readNum}}</span>
             </li>
             <li class="like">
               <span class="iconfont">&#xe663;</span>
-              666
+              <span>{{item.likeNum}}</span>
             </li>
             <li class="createTime">
               <span class="iconfont">&#xe606;</span>
@@ -122,6 +122,7 @@
   import {getBlogByLevel, getNewBlog, recorderVisitPage} from "../api/index";
   import { Loading } from 'element-ui';
   import {getBlogByUid} from "../api/blogContent";
+  import {recordBlogStatsData} from "../api/stats";
   export default {
     name: "index",
     components: {
@@ -177,6 +178,9 @@
     methods: {
       //跳转到文章详情【或推广链接】
       goToInfo(blog) {
+        recordBlogStatsData('read', blog.id).then(response => {
+          // 记录一下用户点击日志
+        });
         if(blog.type == "0") {
           let routeData = this.$router.resolve({
             path: "/info",
@@ -184,12 +188,6 @@
           });
           window.open(routeData.href, '_blank');
         } else if(blog.type == "1") {
-          var params = {
-            id: blog.id
-          }
-          getBlogByUid(JSON.stringify(params)).then(response => {
-            // 记录一下用户点击日志
-          });
           window.open(blog.linkUrl, '_blank');
         }
       },

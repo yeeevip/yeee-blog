@@ -2,7 +2,7 @@
   <div class="zhuanti" v-if="thirdData.length > 0">
     <h2 class="hometitle">特别推荐</h2>
     <ul>
-      <li  v-for="item in thirdData" :key="item.id" style="cursor: pointer" @click="goToInfo(item)"> <i><img v-if="item.titleImg" :src="item.titleImg"></i>
+      <li  v-for="item in thirdData" :key="item.id" style="cursor: pointer"> <i><img v-if="item.titleImg" :src="item.titleImg" @click="goToInfo(item)"></i>
         <p @click="goToInfo(item)" style="cursor: pointer">{{splitStr(item.title, 30)}}<span><a href="javascript:void(0);">阅读</a></span> </p>
       </li>
     </ul>
@@ -12,6 +12,7 @@
 <script>
 import { getBlogByLevel } from "../../api/index";
 import {getBlogByUid} from "../../api/blogContent";
+import {recordBlogStatsData} from "../../api/stats";
 export default {
   name: 'ThirdRecommend',
     data() {
@@ -35,6 +36,9 @@ export default {
     methods: {
       //跳转到文章详情【或推广链接】
       goToInfo(blog) {
+        recordBlogStatsData('read', blog.id).then(response => {
+          // 记录一下用户点击日志
+        });
         if(blog.type == "0") {
           let routeData = this.$router.resolve({
             path: "/info",
@@ -42,12 +46,6 @@ export default {
           });
           window.open(routeData.href, '_blank');
         } else if(blog.type == "1") {
-          var params = {
-            id: blog.id
-          }
-          getBlogByUid(JSON.stringify(params)).then(response => {
-            // 记录一下用户点击日志
-          });
           window.open(blog.linkUrl, '_blank');
         }
       },
