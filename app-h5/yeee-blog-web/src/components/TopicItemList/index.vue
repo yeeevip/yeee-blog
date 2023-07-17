@@ -69,7 +69,7 @@
 <script>
 import {getTopicItemList} from "../../api/topic";
 import {getBlogByUid} from "../../api/blogContent";
-import {recordBlogStatsData} from "../../api/stats";
+import {recordArticleStatsData} from "../../api/stats";
     export default {
       name: "topicItemList",
       props: ["visiable", "subjectUid"],
@@ -148,7 +148,7 @@ import {recordBlogStatsData} from "../../api/stats";
         },
         //跳转到文章详情
         goToInfo(blog) {
-          recordBlogStatsData('read', blog.id).then(response => {
+          recordArticleStatsData('click', blog.id).then(response => {
             // 记录一下用户点击日志
           });
           if(blog.type == "0") {

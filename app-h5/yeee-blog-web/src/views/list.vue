@@ -104,7 +104,7 @@ import {
   searchBlogByAuthor
 } from "../api/search";
 import {getBlogByUid} from "../api/blogContent";
-import {recordBlogStatsData} from "../api/stats";
+import {recordArticleStatsData} from "../api/stats";
 
 export default {
   name: "list",
@@ -178,7 +178,7 @@ export default {
 
     //跳转到文章详情
     goToInfo(blog) {
-      recordBlogStatsData('read', blog.id).then(response => {
+      recordArticleStatsData('click', blog.id).then(response => {
         // 记录一下用户点击日志
       });
       if(blog.type == "0") {

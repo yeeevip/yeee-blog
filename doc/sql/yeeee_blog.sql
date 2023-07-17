@@ -196,3 +196,39 @@ alter table t_blog_article add column link_url varchar(255) default null comment
 
 alter table t_blog_article add column read_num int(8) default 0 comment '阅读量' after `link_url`;
 alter table t_blog_article add column like_num int(8) default 0 comment '点赞量' after `read_num`;
+
+-- 2023.07.17
+
+CREATE TABLE `t_blog_access_log` (
+    `id` bigint NOT NULL AUTO_INCREMENT COMMENT 'ID',
+    `client_ip` varchar(32) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'IP',
+    `client_address` varchar(255) COLLATE utf8mb4_general_ci NOT NULL COMMENT '地址',
+    `subject` varchar(32) COLLATE utf8mb4_general_ci NOT NULL COMMENT '主体',
+    `subject_id` bigint NOT NULL COMMENT '主体ID',
+    `event` varchar(32) COLLATE utf8mb4_general_ci NOT NULL COMMENT '操作事件',
+    `access_time` datetime DEFAULT NULL COMMENT '访问时间',
+    `remark` varchar(512) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '详情描述',
+    PRIMARY KEY (`id`),
+    KEY `idx_access_time` (`access_time`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='博客访问日志';
+
+
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792166, 4353221119792144, '访问日志', 'blog/accessLog/accessLog', '', '', 5, NULL, 0, '2023-07-17 10:00:34', 'admin', '2023-07-17 10:00:34', 'admin');
+
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792167, 4353221119792166, '添加', '', 'blog:accessLog:add', '', 1, NULL, 1, '2023-07-17 10:00:34', 'admin', '2023-07-17 10:00:34', 'admin');
+
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792168, 4353221119792166, '修改', '', 'blog:accessLog:upd', '', 1, NULL, 1, '2023-07-17 10:00:34', 'admin', '2023-07-17 10:00:34', 'admin');
+
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792169, 4353221119792166, '查看', '', 'blog:accessLog:info', '', 1, NULL, 1, '2023-07-17 10:00:34', 'admin', '2023-07-17 10:00:34', 'admin');
+
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792170, 4353221119792166, '删除', '', 'blog:accessLog:del', '', 1, NULL, 1, '2023-07-17 10:00:34', 'admin', '2023-07-17 10:00:34', 'admin');

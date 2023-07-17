@@ -16,7 +16,7 @@ public enum BlogStatsEnum {
     public static enum Subject {
 
         INDEX("index", ""),
-        BLOG("blog", ""),
+        ARTICLE("article", ""),
         ;
         private final String code;
         private final String name;

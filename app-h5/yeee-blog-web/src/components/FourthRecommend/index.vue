@@ -19,7 +19,7 @@
 <script>
 import { getBlogByLevel } from "../../api/index";
 import {getBlogByUid} from "../../api/blogContent";
-import {recordBlogStatsData} from "../../api/stats";
+import {recordArticleStatsData} from "../../api/stats";
 export default {
   name: 'FourthRecommend',
     data() {
@@ -49,7 +49,7 @@ export default {
     methods: {
       //跳转到文章详情【或推广链接】
       goToInfo(blog) {
-        recordBlogStatsData('read', blog.id).then(response => {
+        recordArticleStatsData('click', blog.id).then(response => {
           // 记录一下用户点击日志
         });
         if(blog.type == "0") {

@@ -50,7 +50,7 @@
 <script>
 import { getWebConfig } from "../../api/index";
 import {mapMutations} from "vuex";
-import {recordBlogStatsData} from "../../api/stats";
+import {recordArticleStatsData} from "../../api/stats";
 export default {
   name: "PayCode",
   props: {
@@ -110,7 +110,7 @@ export default {
       //   return;
       // }
 
-      recordBlogStatsData('like', uid).then(response => {
+      recordArticleStatsData('like', uid).then(response => {
         this.$notify({
           title: '成功',
           message: "点赞成功",

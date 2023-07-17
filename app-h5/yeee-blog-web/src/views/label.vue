@@ -71,7 +71,7 @@
 
 <script>
   import { getLabelList, getArticleByLabelId } from "../api/label";
-  import {recordBlogStatsData} from "../api/stats";
+  import {recordArticleStatsData} from "../api/stats";
   export default {
     data() {
       return {
@@ -185,7 +185,7 @@
 
           case "blogContent":
           {
-            recordBlogStatsData('read', entity.id).then(response => {
+            recordArticleStatsData('click', entity.id).then(response => {
               // 记录一下用户点击日志
             });
             if(entity.type == "0") {

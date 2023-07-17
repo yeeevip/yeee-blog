@@ -126,6 +126,7 @@
     import { Loading } from "element-ui";
     import Sticky from "@/components/Sticky";
     import SideCatalog from '@/components/VueSideCatalog'
+    import {recordArticleStatsData} from "../api/stats";
 
     export default {
         name: "info",
@@ -158,7 +159,6 @@
                 toInfo: {},
                 userInfo: {},
                 blogId: null, //传递过来的博客uid
-                blogId: 0, // 传递过来的博客oid
                 blogData: {
                   blogSort: {}
                 },
@@ -289,10 +289,11 @@
                 text: "正在努力加载中~"
             });
             this.blogId = this.$route.query.blogId;
-            this.blogId = this.$route.query.blogId;
             this.setCommentAndAdmiration()
             // 屏幕大于950px的时候，显示侧边栏
             this.showSidebar = document.body.clientWidth > 950
+          recordArticleStatsData('read', this.blogId).then(response => {
+          });
         },
         methods: {
             //拿到vuex中的写的两个方法
