@@ -27,9 +27,11 @@
     </el-form>
     <el-table :data="dataList" border stripe v-loading="dataListLoading" :max-height="tableHeight"
               @selection-change="selectionChangeHandle" @sort-change="sortChangeHandle" style="width: 100%;">
-      <el-table-column prop="clientIp" label="IP" header-align="center" align="center"></el-table-column>
-      <el-table-column prop="accessTime" label="时间" header-align="center" align="center"></el-table-column>
+      <el-table-column prop="clientIp" label="IP" header-align="center" align="center" width="200"></el-table-column>
+      <el-table-column prop="referer" label="Referer" header-align="center" align="center" width="200"></el-table-column>
+      <el-table-column prop="userAgent" label="User-Agent" header-align="center" align="center" width="200"></el-table-column>
       <el-table-column prop="remark" label="详情" header-align="center" align="center"></el-table-column>
+      <el-table-column prop="accessTime" label="时间" header-align="center" align="center" width="200"></el-table-column>
   </el-table>
   <el-pagination v-if="this.gridOptions.isPage"
                  @size-change="sizeChangeHandle"

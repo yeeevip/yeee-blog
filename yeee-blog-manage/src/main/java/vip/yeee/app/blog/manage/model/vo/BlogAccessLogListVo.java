@@ -18,6 +18,12 @@ public class BlogAccessLogListVo {
     @ApiModelProperty("IP")
     private String clientIp;
 
+    @ApiModelProperty("Referer")
+    private String referer;
+
+    @ApiModelProperty("User-Agent")
+    private String userAgent;
+
     @ApiModelProperty("访问时间")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date accessTime;

@@ -12,8 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import vip.yeee.app.blog.client.constatnt.BlogStatsEnum;
 import vip.yeee.app.blog.client.model.request.BlogStatsRequest;
-import vip.yeee.app.common.utils.HttpRequestUtils;
+import vip.yeee.memo.base.web.utils.HttpRequestUtils;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
 import java.util.Date;
 
@@ -43,7 +44,10 @@ public class ApiBlogStatsController {
             return;
         }
 
-        request.setClientIp(HttpRequestUtils.getIpAddr(HttpRequestUtils.getHttpServletRequest()));
+        HttpServletRequest httpServletRequest = HttpRequestUtils.getHttpServletRequest();
+        request.setClientIp(HttpRequestUtils.getIpAddr(httpServletRequest));
+        request.setReferer(HttpRequestUtils.getReferer(httpServletRequest));
+        request.setUserAgent(HttpRequestUtils.getUserAgent(httpServletRequest));
 
         log.info(JSON.toJSONString(request));
     }

@@ -34,11 +34,11 @@
             </li>
             <li class="view">
               <span class="iconfont">&#xe8c7;</span>
-              666
+              {{blogData.readNum}}
             </li>
             <li class="like">
               <span class="iconfont">&#xe663;</span>
-              666
+              {{blogData.likeNum}}
             </li>
           </ul>
         </div>

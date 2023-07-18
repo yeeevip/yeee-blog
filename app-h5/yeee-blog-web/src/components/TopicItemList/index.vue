@@ -48,11 +48,11 @@
                     </li>
                     <li class="view">
                       <span class="iconfont">&#xe8c7;</span>
-                      <span>666</span>
+                      <span>{{item.readNum}}</span>
                     </li>
                     <li class="like">
                       <span class="iconfont">&#xe663;</span>
-                      666
+                      <span>{{item.likeNum}}</span>
                     </li>
                   </ul>
                 </div>

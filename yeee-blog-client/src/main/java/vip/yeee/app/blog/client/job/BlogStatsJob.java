@@ -1,6 +1,7 @@
 package vip.yeee.app.blog.client.job;
 
 import cn.hutool.core.collection.CollectionUtil;
+import cn.hutool.core.date.DatePattern;
 import cn.hutool.core.date.DateUnit;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
@@ -21,6 +22,7 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
@@ -39,7 +41,7 @@ public class BlogStatsJob {
     @Scheduled(fixedRate = 20 * 1000)
     public void statsAccessLog() {
         synchronized (this) {
-            String cacheKey = "BLOG:STATS:LOG_LINE";
+            String cacheKey = "BLOG:STATS:LOG_LINE:" + DateUtil.format(new Date(), DatePattern.PURE_DATE_PATTERN);
             String value = redisKit.getValue(cacheKey);
 
             String filePath = "logs/log_blog_stats.log";
@@ -73,6 +75,7 @@ public class BlogStatsJob {
         if (CollectionUtil.isEmpty(lines)) {
             return;
         }
+        lines = lines.stream().filter(Objects::nonNull).collect(Collectors.toList());
         Map<String, List<BlogStatsRequest>> subjectMap = lines.stream().collect(Collectors.groupingBy(BlogStatsRequest::getSubject));
         subjectMap.forEach((subject, sGroup) -> {
             Map<String, List<BlogStatsRequest>> eventMap = sGroup.stream().collect(Collectors.groupingBy(BlogStatsRequest::getEvent));

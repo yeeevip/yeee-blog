@@ -25,6 +25,16 @@ public class BlogAccessLog {
     private String clientIp;
 
     /**
+     * Referer
+     */
+    private String referer;
+
+    /**
+     * User-Agent
+     */
+    private String userAgent;
+
+    /**
      * 地址
      */
     private String clientAddress;

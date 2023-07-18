@@ -19,6 +19,10 @@ public class BlogStatsRequest {
 
     private String clientIp;
 
+    private String referer;
+
+    private String userAgent;
+
     private Long timestamp;
 
 }

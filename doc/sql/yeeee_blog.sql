@@ -232,3 +232,9 @@ VALUES(4353221119792169, 4353221119792166, '查看', '', 'blog:accessLog:info', 
 INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4353221119792170, 4353221119792166, '删除', '', 'blog:accessLog:del', '', 1, NULL, 1, '2023-07-17 10:00:34', 'admin', '2023-07-17 10:00:34', 'admin');
+
+
+-- 2023.07.18
+
+alter table t_blog_access_log add column referer varchar(255) default null comment 'Referer' after `client_ip`;
+alter table t_blog_access_log add column user_agent varchar(255) default null comment 'User-Agent' after `referer`;
