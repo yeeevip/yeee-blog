@@ -764,11 +764,14 @@ export default {
     },
     //跳转到文章详情
     goToInfo(uid) {
-      let routeData = this.$router.resolve({
-        path: "/info",
-        query: {blogId: uid}
+      // let routeData = this.$router.resolve({
+      //   path: "/info/" + uid
+      // });
+      // window.open(routeData.href, '_blank');
+      this.$router.push({
+        name: "info",
+        params: {'blogId': uid}
       });
-      window.open(routeData.href, '_blank');
     },
 
     // 获取导航栏列表
@@ -803,11 +806,14 @@ export default {
           ;
           break;
         case "BLOG_INFO": {
-          let routeData = this.$router.resolve({
-            path: "/info",
-            query: {blogId: comment.blogId}
+          // let routeData = this.$router.resolve({
+          //   path: "/info/" + comment.blogId
+          // });
+          // window.open(routeData.href, '_blank');
+          this.$router.push({
+            name: "info",
+            params: {'blogId': comment.blogId}
           });
-          window.open(routeData.href, '_blank');
         }
           ;
           break;

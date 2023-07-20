@@ -7,6 +7,7 @@ Vue.use(Router)
 export const constantRouterMap = [
   {
     path: '/',
+    name: 'index',
     component: HomeIndex,
     children: [
       { path: '/', component: () => import('@/views/index') },
@@ -19,10 +20,11 @@ export const constantRouterMap = [
       { path: '/classify', component: () => import('@/views/classify') },
       { path: '/label', component: () => import('@/views/label') },
       { path: '/time', component: () => import('@/views/time') },
-      { path: '/info', component: () => import('@/views/info') },
+      { path: '/info/:blogId', name: 'info', component: () => import('@/views/info') },
       { path: '/messageBoard', component: () => import('@/views/messageBoard') },
     ]
   },
+  { path: "/index.html", redirect: { name: "index" } },
   { path: '/404', component: () => import('@/views/404') },
   { path: '/500', component: () => import('@/views/500') },
   { path: '/502', component: () => import('@/views/502') },
@@ -31,6 +33,7 @@ export const constantRouterMap = [
 ]
 
 const router = new Router({
+  mode: 'history',
   routes: constantRouterMap
 })
 

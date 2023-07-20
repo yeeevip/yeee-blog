@@ -182,11 +182,14 @@ export default {
         // 记录一下用户点击日志
       });
       if(blog.type == "0") {
-        let routeData = this.$router.resolve({
-          path: "/info",
-          query: {blogId: blog.id}
+        // let routeData = this.$router.resolve({
+        //   path: "/info/" + blog.id
+        // });
+        // window.open(routeData.href, '_blank');
+        this.$router.push({
+          name: "info",
+          params: {'blogId': blog.id}
         });
-        window.open(routeData.href, '_blank');
       } else if(blog.type == "1") {
         window.open(blog.outsideLink, '_blank');
       }

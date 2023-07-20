@@ -189,11 +189,14 @@
               // 记录一下用户点击日志
             });
             if(entity.type == "0") {
-              let routeData = this.$router.resolve({
-                path: "/info",
-                query: { blogId: entity.id }
+              // let routeData = this.$router.resolve({
+              //   path: "/info/" + entity.id
+              // });
+              // window.open(routeData.href, "_blank");
+              this.$router.push({
+                name: "info",
+                params: {'blogId': entity.id}
               });
-              window.open(routeData.href, "_blank");
             } else if(entity.type == "1") {
               window.open(entity.linkUrl, '_blank');
             }

@@ -8,6 +8,8 @@ import cn.hutool.core.util.StrUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import vip.yeee.app.blog.client.handle.SinkHandle;
@@ -23,6 +25,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 /**
@@ -38,11 +41,19 @@ public class BlogStatsJob {
     @Resource
     private RedisKit redisKit;
 
+    private final static Logger log_stats = LoggerFactory.getLogger("YEEE-BLOG-STATS");
+
     @Scheduled(fixedRate = 20 * 1000)
-    public void statsAccessLog() {
+    public void statsAccessLog() throws Exception {
         synchronized (this) {
             String cacheKey = "BLOG:STATS:LOG_LINE:" + DateUtil.format(new Date(), DatePattern.PURE_DATE_PATTERN);
             String value = redisKit.getValue(cacheKey);
+
+            if (value == null || "0".equals(value)) {
+                log_stats.info("start");
+                TimeUnit.MILLISECONDS.sleep(800);
+                value = "2";
+            }
 
             String filePath = "logs/log_blog_stats.log";
             int startLine = StrUtil.isBlank(value) ? 1 : Integer.parseInt(value);

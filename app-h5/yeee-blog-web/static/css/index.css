@@ -228,7 +228,6 @@ h1.t_nav { border-bottom: #bfbfbf 1px solid; font-size: 14px; font-weight: norma
 .n1, .n2 { width: 100px; display: block; text-align: center; float: left; color: #fff; }
 .n1 { background: #000; }
 .n2 { background: #3a6ab5; }
-.sidebar .about { background: #FFF url(../images/banner.png) no-repeat top center; overflow: hidden; }
 .avatar { margin: 40px auto 20px; width: 100px }
 .avatar img { width: 100px; border-radius: 50% }
 .abname { color: #3f3f3f; font-weight: bold; font-size: 16px; margin-bottom: 10px; text-align: center }

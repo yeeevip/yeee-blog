@@ -151,7 +151,7 @@
                 commentInfo: {
                     // 评论来源： MESSAGE_BOARD，ABOUT，BLOG_INFO 等 代表来自某些页面的评论
                     source: "BLOG_INFO",
-                    blogId: this.$route.query.blogId
+                    blogId: this.$route.params.blogId
                 },
                 currentPage: 1,
                 pageSize: 10,
@@ -288,7 +288,7 @@
                 fullscreen: true,
                 text: "正在努力加载中~"
             });
-            this.blogId = this.$route.query.blogId;
+            this.blogId = this.$route.params.blogId
             this.setCommentAndAdmiration()
             // 屏幕大于950px的时候，显示侧边栏
             this.showSidebar = document.body.clientWidth > 950
@@ -374,11 +374,14 @@
             },
             //跳转到文章详情
             goToInfo(uid) {
-                let routeData = this.$router.resolve({
-                    path: "/info",
-                    query: { blogId: uid }
-                });
-                window.open(routeData.href, "_blank");
+                // let routeData = this.$router.resolve({
+                //   path: "/info/" + uid
+                // });
+                // window.open(routeData.href, "_blank");
+              this.$router.push({
+                name: "info",
+                params: {'blogId': uid}
+              });
             },
             //跳转到搜索详情页
             goToList(uid) {

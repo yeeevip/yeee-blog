@@ -84,10 +84,10 @@ export function getWebConfig (params) {
   let res = {
     "code": commonUtil.ECode.SUCCESS,
     "data": {
-      "name": "一页の博客",
-      "title": "一个专注于技术分享的博客平台",
-      "summary": "一个专注于技术分享的博客平台，大家以共同学习，乐于分享，拥抱开源的价值观进行学习交流",
-      "keyword": "一页の博客,IT社区,技术社区,Java技术分享,Spring教程,开发者社区",
+      "name": "一页的博客",
+      "title": "一页的博客 - YEEE.VIP",
+      "summary": "提供分享Java基础、Spring教程、源码分析、架构师、开源框架、互联网大厂、面试宝典记录、高并发案例、SpringCloud实战、前端教程",
+      "keyword": "Java基础,Spring教程,源码分析,架构师,开源框架,互联网大厂,面试宝典记录,高并发案例,SpringCloud实战,前端教程",
       "author": "Yeee、一页",
       "recordNum": "蒙ICP备20001946号",
       "aliPay": "",
