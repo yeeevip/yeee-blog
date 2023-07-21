@@ -3,6 +3,7 @@ package vip.yeee.app.blog.client.handle;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
 import com.google.common.collect.Lists;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import vip.yeee.app.blog.client.model.request.BlogStatsRequest;
 import vip.yeee.app.blog.client.service.ApiBlogAccessLogService;
@@ -18,6 +19,7 @@ import java.util.List;
  * @author yeeee
  * @since 2023/7/14 11:46
  */
+@Slf4j
 public abstract class AbstractSinkHandle implements SinkHandle {
 
     @Resource
@@ -37,6 +39,7 @@ public abstract class AbstractSinkHandle implements SinkHandle {
                         save.setAccessTime(DateUtil.date(request.getTimestamp()));
                         save.setClientAddress(commonService.getCachedAddressByIp(request.getClientIp()));
                         save.setRemark(genAccessLogRemark(save));
+                        save.setUserAgent(StrUtil.subWithLength(save.getUserAgent(), 0, 1000));
                         saveList.add(save);
                     } catch (Exception ignored) {
 
@@ -44,8 +47,8 @@ public abstract class AbstractSinkHandle implements SinkHandle {
                 }
                 apiBlogAccessLogService.saveBatch(saveList);
             }
-        } catch (Exception ignored) {
-
+        } catch (Exception e) {
+            log.error("saveAccessLog error", e);
         }
     }
 

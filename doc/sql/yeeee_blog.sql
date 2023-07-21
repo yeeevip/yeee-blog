@@ -237,4 +237,4 @@ VALUES(4353221119792170, 4353221119792166, '删除', '', 'blog:accessLog:del', '
 -- 2023.07.18
 
 alter table t_blog_access_log add column referer varchar(255) default null comment 'Referer' after `client_ip`;
-alter table t_blog_access_log add column user_agent varchar(255) default null comment 'User-Agent' after `referer`;
+alter table t_blog_access_log add column user_agent varchar(1024) default null comment 'User-Agent' after `referer`;

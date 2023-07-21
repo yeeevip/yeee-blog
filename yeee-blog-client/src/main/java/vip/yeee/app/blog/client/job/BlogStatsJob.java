@@ -52,7 +52,6 @@ public class BlogStatsJob {
             if (value == null || "0".equals(value)) {
                 log_stats.info("start");
                 TimeUnit.MILLISECONDS.sleep(800);
-                value = "2";
             }
 
             String filePath = "logs/log_blog_stats.log";
@@ -67,7 +66,11 @@ public class BlogStatsJob {
                 List<BlogStatsRequest> lines = Lists.newArrayList();
                 String line;
                 while ((line = reader.readLine()) != null) {
-                    lines.add(JSONObject.parseObject(line, BlogStatsRequest.class));
+                    try {
+                        lines.add(JSONObject.parseObject(line, BlogStatsRequest.class));
+                    } catch (Exception ignored) {
+
+                    }
                     startLine++;
                 }
                 if (CollectionUtil.isEmpty(lines)) {
