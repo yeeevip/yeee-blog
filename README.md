@@ -90,6 +90,6 @@ cd app-h5/yeee-blog-web && npm install && npm run dev
 
 | 微信群                             | QQ群                                                                           |
 |---------------------------------|-------------------------------------------------------------------------------|
-| ![作者微信](doc/images/yeee_wp.jpg) | ![](doc/images/yeee-memo-qq.jpg)                                              |
+| ![作者微信](doc/yeee/images/yeee_wp.jpg) | ![](doc/yeee/images/yeee-memo-qq.jpg)                                              |
 | 回复：加群，邀您加入群聊                    | <a href="https://qm.qq.com/q/oLSCm1Ksjm" target="_blank">点击加入QQ群：96305921</a> |
 
