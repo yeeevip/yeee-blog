@@ -2,6 +2,7 @@ package vip.yeee.app.blog.manage.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import vip.yeee.app.blog.manage.biz.BlogClassifyBiz;
@@ -27,30 +28,35 @@ public class BlogClassifyController {
     private BlogClassifyBiz blogClassifyBiz;
 
     @ApiOperation("列表")
+    @PreAuthorize("hasAuthority('blog:classify:info')")
     @GetMapping(value = "/page")
     public CommonResult<PageVO<BlogClassifyListVo>> blogClassifyPageList(String query) {
         return CommonResult.success(blogClassifyBiz.blogClassifyPageList(query));
     }
 
     @ApiOperation("创建")
+    @PreAuthorize("hasAuthority('blog:classify:add')")
     @PostMapping(value = "/add")
     public CommonResult<Void> blogClassifyAdd(@RequestBody @Validated BlogClassifyAddRequest request) {
         return CommonResult.success(blogClassifyBiz.blogClassifyAdd(request));
     }
 
     @ApiOperation("修改")
+    @PreAuthorize("hasAuthority('blog:classify:upd')")
     @PostMapping(value = "/upd")
     public CommonResult<Void> blogClassifyUpd(@RequestBody @Validated BlogClassifyUpdRequest request) {
         return CommonResult.success(blogClassifyBiz.blogClassifyUpd(request));
     }
 
     @ApiOperation("详情")
+    @PreAuthorize("hasAuthority('blog:classify:info')")
     @PostMapping(value = "/info")
     public CommonResult<BlogClassifyInfoVo> blogClassifyInfo(@RequestBody @Validated IdRequest request) {
         return CommonResult.success(blogClassifyBiz.blogClassifyInfo(request));
     }
 
     @ApiOperation("删除")
+    @PreAuthorize("hasAuthority('blog:classify:del')")
     @PostMapping(value = "/del")
     public CommonResult<Void> blogClassifyDel(@RequestBody @Validated IdRequest request) {
         return CommonResult.success(blogClassifyBiz.blogClassifyDel(request));
