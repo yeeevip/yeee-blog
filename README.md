@@ -33,7 +33,7 @@
 | 依赖                          | 版本                                                   |
 |-----------------------------|------------------------------------------------------|
 | Spring Boot                 | 2.6.3                                                |
-| yeee-memo                   | [通用web脚手架](https://github.com/yeeevip/yeee-memo.git) |
+| yeee-memo                   | [通用web脚手架](https://gitee.com/yeeevip/yeee-memo.git) |
 
 ### 模块说明
 
@@ -82,7 +82,7 @@ cd app-h5/yeee-blog-web && npm install && npm run dev
 
 1. 欢迎提交 [PR](https://www.yeee.vip)，注意对应提交对应 `blog-dev` 分支
 
-2. 欢迎提交 [issue](https://github.com/yeeevip/yeee-blog/issues)，请写清楚遇到问题的原因、开发环境、复显步骤。
+2. 欢迎提交 [issue](https://gitee.com/yeeevip/yeee-blog/issues)，请写清楚遇到问题的原因、开发环境、复显步骤。
 
 ## 交流群
 
