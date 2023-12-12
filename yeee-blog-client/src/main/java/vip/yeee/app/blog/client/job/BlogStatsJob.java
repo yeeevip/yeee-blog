@@ -14,7 +14,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import vip.yeee.app.blog.client.handle.SinkHandle;
 import vip.yeee.app.blog.client.model.request.BlogStatsRequest;
-import vip.yeee.memo.base.redis.kit.RedisKit;
+import vip.yeee.memo.base.redis.utils.RedisUtil;
 import vip.yeee.memo.base.web.utils.SpringContextUtils;
 
 import javax.annotation.Resource;
@@ -39,7 +39,7 @@ import java.util.stream.Collectors;
 public class BlogStatsJob {
 
     @Resource
-    private RedisKit redisKit;
+    private RedisUtil redisUtil;
 
     private final static Logger log_stats = LoggerFactory.getLogger("YEEE-BLOG-STATS");
 
@@ -47,7 +47,7 @@ public class BlogStatsJob {
     public void statsAccessLog() throws Exception {
         synchronized (this) {
             String cacheKey = "BLOG:STATS:LOG_LINE:" + DateUtil.format(new Date(), DatePattern.PURE_DATE_PATTERN);
-            String value = redisKit.getValue(cacheKey);
+            String value = redisUtil.getValue(cacheKey);
 
             if (value == null || "0".equals(value)) {
                 log_stats.info("start");
@@ -77,7 +77,7 @@ public class BlogStatsJob {
                     return;
                 }
                 this.sinkLines(lines);
-                redisKit.cacheValue(cacheKey, String.valueOf(startLine)
+                redisUtil.cacheValue(cacheKey, String.valueOf(startLine)
                         , DateUtil.between(new Date(), DateUtil.endOfDay(new Date()), DateUnit.SECOND));
             } catch (IOException e) {
                 log.error("BlogStatsJob error", e);
