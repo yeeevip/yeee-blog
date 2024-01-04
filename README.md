@@ -63,24 +63,24 @@ yeee-blog
 git clone https://github.com/yeeevip/yeee-memo.git
 
 # 打包[JavaWeb通用脚手架]
-cd memo-parent && mvn clean install
+cd yeee-memo/memo-parent && mvn clean install
 
 # 下载yeee-blog项目
 git clone https://github.com/yeeevip/yeee-blog.git
 
 # 运行博客服务
-mvn clean install && java -jar -Dspring.profiles.active=test yeee-blog-bootstrap/target/yeee-blog-bootstrap-1.0.0-SNAPSHOT.jar
+cd yeee-blog && mvn clean install && java -jar -Dspring.profiles.active=test yeee-blog-bootstrap/target/yeee-blog-bootstrap-1.0.0-SNAPSHOT.jar
 
 # 运行博客管理端ui
-cd app-h5/yeee-admin-ui && npm install && npm run dev
+cd yeee-blog/app-h5/yeee-admin-ui && npm install && npm run dev
 
 # 运行博客客户端ui
-cd app-h5/yeee-blog-web && npm install && npm run dev
+cd yeee-blog/app-h5/yeee-blog-web && npm install && npm run dev
 ```
 
 ### 其他说明
 
-1. 欢迎提交 [PR](https://www.yeee.vip)，注意对应提交对应 `blog-dev` 分支
+1. 欢迎提交 [PR](https://www.yeee.vip)
 
 2. 欢迎提交 [issue](https://gitee.com/yeeevip/yeee-blog/issues)，请写清楚遇到问题的原因、开发环境、复显步骤。
 
