@@ -1,6 +1,6 @@
-import Vue from 'vue'
 import router from '@/router'
 import store from '@/store'
+import API_CONFIG from '../../config/index'
 
 /**
  * 获取浏览器高度
@@ -29,6 +29,16 @@ export function getUUID () {
  */
 export function baseUrl () {
   return process.env.NODE_ENV !== 'production' && process.env.OPEN_PROXY ? '/proxyApi/' : window.SITE_CONFIG.baseUrl
+}
+
+export function baseUrl2 () {
+  let url
+  if (process.env.NODE_ENV !== 'production' && process.env.OPEN_PROXY) {
+    url = API_CONFIG.dev.proxyTable['/proxyApi'].target
+  } else {
+    url = window.SITE_CONFIG.baseUrl
+  }
+  return (url === '/' ? '' : url)
 }
 
 /**
