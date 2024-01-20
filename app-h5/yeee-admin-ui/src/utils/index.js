@@ -1,6 +1,6 @@
 import router from '@/router'
 import store from '@/store'
-import API_CONFIG from '../../config/index'
+// import API_CONFIG from '../../config/index'
 
 /**
  * 获取浏览器高度
@@ -28,7 +28,7 @@ export function getUUID () {
  * 获取baseUrl
  */
 export function baseUrl () {
-  return process.env.NODE_ENV !== 'production' && process.env.OPEN_PROXY ? '/proxyApi/' : window.SITE_CONFIG.baseUrl
+  // return process.env.NODE_ENV !== 'production' && process.env.OPEN_PROXY ? '/proxyApi/' : window.SITE_CONFIG.baseUrl
 }
 
 export function baseUrl2 () {

@@ -4,7 +4,7 @@ import router from '@/router'                 // api: https://github.com/vuejs/v
 import store from '@/store'                   // api: https://github.com/vuejs/vuex
 import VueCookie from 'vue-cookie'            // api: https://github.com/alfhen/vue-cookie
 import '@/element-ui'                         // api: https://github.com/ElemeFE/element
-import '@/icons'                              // api: http://www.iconfont.cn/
+import '@/assets/icons'                              // api: http://www.iconfont.cn/
 import '@/element-ui-theme'
 import '@/assets/scss/index.scss'
 import httpRequest from '@/utils/httpRequest' // api: https://github.com/axios/axios
@@ -30,14 +30,15 @@ Vue.directive('highlight', function (el) {
   })
 })
 
+Vue.config.productionTip = false
+
 // 保存整站vuex本地储存初始状态
 window.SITE_CONFIG['storeState'] = cloneDeep(store.state)
 
-/* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   store,
-  template: '<App/>',
-  components: { App }
+  render: h => h(App)
 })
+

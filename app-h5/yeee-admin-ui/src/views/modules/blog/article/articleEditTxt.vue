@@ -103,7 +103,8 @@ export default {
       // 否则: 添加并全局变量保存, 再跳转
       route = {
         path: routeName,
-        component: () => import(`@/views/modules/blog/article/articlePreview`),
+        // component: () => import(`@/views/modules/blog/article/articlePreview`),
+        component: (resolve) => require([`@/views/modules/blog/article/articlePreview`], resolve),
         name: routeName,
         meta: {
           ...window.SITE_CONFIG['contentTabDefault'],

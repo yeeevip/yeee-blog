@@ -153,12 +153,6 @@ INSERT INTO sys_menu
 VALUES(4059918640845824, 4323654351082496, '接口日志', 'sys/log/log', NULL, 'icon-log', 10, 'view/sys/log/log.html', 0, NULL, NULL, '2019-04-06 19:55:29', 'admin');
 INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
-VALUES(4059918640845825, 4323654351082499, '会员管理', 'sys/log/log', NULL, 'icon-log', 20, 'view/sys/log/log.html', 0, NULL, NULL, '2019-04-06 19:55:29', 'admin');
-INSERT INTO sys_menu
-(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
-VALUES(4059918640845826, 4323654351082499, '订单管理', 'sys/log/log', NULL, 'icon-log', 30, 'view/sys/log/log.html', 0, NULL, NULL, '2019-04-06 19:55:29', 'admin');
-INSERT INTO sys_menu
-(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4059919174194176, 4059916341400576, '数据字典', 'sys/cat/cat', NULL, 'icon-sousuo', 20, 'view/sys/cat/cat.html', 0, NULL, NULL, '2019-02-11 15:43:16', NULL);
 INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
@@ -267,12 +261,6 @@ INSERT INTO sys_menu
 VALUES(4323654351082496, NULL, '日志管理', '', '', 'icon-filesearch', 350, '', 0, '2019-03-16 17:51:34', 'admin', '2019-03-16 17:51:34', 'admin');
 INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
-VALUES(4323654351082499, NULL, '众筹管理', '', '', 'icon-filesearch', 1, '', 0, '2019-03-16 17:51:34', 'admin', '2019-03-16 17:51:34', 'admin');
-INSERT INTO sys_menu
-(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
-VALUES(4336080847524864, NULL, '伪菜单那', '', '', '', 1000, '伪菜单在后台不显示', 2, '2019-03-25 12:32:27', 'admin', '2019-04-16 16:19:18', 'admin');
-INSERT INTO sys_menu
-(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4347326007383040, 4059916341400576, '组织机构', 'sys/org/org', NULL, 'icon-cluster', 30, NULL, 0, NULL, 'auto', '2019-04-02 12:34:22', 'admin');
 INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
@@ -280,9 +268,6 @@ VALUES(4353221119792119, 4323654351082499, '项目管理', 'sys/qrtzLog/qrtzLog'
 INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4353221119792128, 4323654351082496, '调度日志', 'sys/qrtzLog/qrtzLog', NULL, 'icon-file-text', 50, NULL, 0, NULL, 'auto', '2019-04-06 19:54:39', 'admin');
-INSERT INTO sys_menu
-(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
-VALUES(4353221119792136, 4347326007383040, '编辑', '', 'sys:dept:upd', '', 1, NULL, 1, '2022-05-29 14:53:18', 'admin', '2022-05-29 14:53:18', 'admin');
 INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4353221119792132, 4353221119792128, '删除', NULL, 'sys:qrtzLog:del', NULL, 40, NULL, 1, NULL, 'auto', NULL, 'auto');
@@ -301,30 +286,76 @@ VALUES(4353221119792136, 4347326007383040, '编辑', '', 'sys:dept:upd', '', 1, 
 INSERT INTO sys_menu
 (id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
 VALUES(4353221119792137, 4347326007383040, '新增', '', 'sys:dept:add', '', 1, NULL, 1, '2022-05-29 14:53:53', 'admin', '2022-05-29 14:53:53', 'admin');
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792142, 4059879121720320, 'OSS资源', 'sys/oss/oss', '', '', 1, NULL, 0, '2023-06-12 17:22:41', 'admin', '2023-06-12 17:22:41', 'admin');
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792143, 4353221119792142, '上传', '', 'sys:oss:upload', '', 1, NULL, 1, '2023-06-12 17:51:22', 'admin', '2023-06-12 17:51:22', 'admin');
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792144, NULL, '一页の博客', '', '', 'icon-meh', 2, NULL, 0, '2023-06-17 14:29:00', 'admin', '2023-06-17 14:29:00', 'admin');
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792145, 4353221119792144, '博客分类', 'blog/classify/classify', '', '', 1, NULL, 0, '2023-06-17 13:53:44', 'admin', '2023-06-17 13:53:44', 'admin');
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792146, 4353221119792145, '添加', '', 'blog:classify:add', '', 1, NULL, 1, '2023-06-17 13:53:44', 'admin', '2023-06-17 13:53:44', 'admin');
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792147, 4353221119792145, '修改', '', 'blog:classify:upd', '', 1, NULL, 1, '2023-06-17 13:53:44', 'admin', '2023-06-17 13:53:44', 'admin');
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792148, 4353221119792145, '查看', '', 'blog:classify:info', '', 1, NULL, 1, '2023-06-17 13:53:44', 'admin', '2023-06-17 13:53:44', 'admin');
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792149, 4353221119792145, '删除', '', 'blog:classify:del', '', 1, NULL, 1, '2023-06-17 13:53:44', 'admin', '2023-06-17 13:53:44', 'admin');
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792150, 4353221119792144, '博客标签', 'blog/label/label', '', '', 1, NULL, 0, '2023-06-17 14:05:12', 'admin', '2023-06-17 14:05:12', 'admin');
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792151, 4353221119792150, '添加', '', 'blog:label:add', '', 1, NULL, 1, '2023-06-17 14:05:12', 'admin', '2023-06-17 14:05:12', 'admin');
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792152, 4353221119792150, '修改', '', 'blog:label:upd', '', 1, NULL, 1, '2023-06-17 14:05:12', 'admin', '2023-06-17 14:05:12', 'admin');
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792153, 4353221119792150, '查看', '', 'blog:label:info', '', 1, NULL, 1, '2023-06-17 14:05:12', 'admin', '2023-06-17 14:05:12', 'admin');
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792155, 4353221119792150, '删除', '', 'blog:label:del', '', 1, NULL, 1, '2023-06-17 14:05:12', 'admin', '2023-06-17 14:05:12', 'admin');
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792156, 4353221119792144, '博客专题', 'blog/topic/topic', '', '', 1, NULL, 0, '2023-06-17 14:06:10', 'admin', '2023-06-17 14:06:10', 'admin');
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792157, 4353221119792156, '添加', '', 'blog:topic:add', '', 1, NULL, 1, '2023-06-17 14:06:10', 'admin', '2023-06-17 14:06:10', 'admin');
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792158, 4353221119792156, '修改', '', 'blog:topic:upd', '', 1, NULL, 1, '2023-06-17 14:06:10', 'admin', '2023-06-17 14:06:10', 'admin');
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792159, 4353221119792156, '查看', '', 'blog:topic:info', '', 1, NULL, 1, '2023-06-17 14:06:10', 'admin', '2023-06-17 14:06:10', 'admin');
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792160, 4353221119792156, '删除', '', 'blog:topic:del', '', 1, NULL, 1, '2023-06-17 14:06:10', 'admin', '2023-06-17 14:06:10', 'admin');
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792161, 4353221119792144, '博客文章', 'blog/article/article', '', '', 1, NULL, 0, '2023-06-17 14:06:56', 'admin', '2023-06-17 14:06:56', 'admin');
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792162, 4353221119792161, '添加', '', 'blog:article:add', '', 1, NULL, 1, '2023-06-17 14:06:56', 'admin', '2023-06-17 14:06:56', 'admin');
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792163, 4353221119792161, '修改', '', 'blog:article:upd', '', 1, NULL, 1, '2023-06-17 14:06:56', 'admin', '2023-06-17 14:06:56', 'admin');
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792164, 4353221119792161, '查看', '', 'blog:article:info', '', 1, NULL, 1, '2023-06-17 14:06:56', 'admin', '2023-06-17 14:06:56', 'admin');
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792165, 4353221119792161, '删除', '', 'blog:article:del', '', 1, NULL, 1, '2023-06-17 14:06:56', 'admin', '2023-06-17 14:06:56', 'admin');
 
-INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792142, 4059879121720320, 'OSS资源', 'sys/oss/oss', '', '', 1, NULL, 0, '2023-06-12 17:22:41', 'admin', '2023-06-12 17:22:41', 'admin');
-INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792143, 4353221119792142, '上传', '', 'sys:oss:upload', '', 1, NULL, 1, '2023-06-12 17:51:22', 'admin', '2023-06-12 17:51:22', 'admin');
-INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792144, NULL, '一页の博客', '', '', 'icon-meh', 2, NULL, 0, '2023-06-17 14:29:00', 'admin', '2023-06-17 14:29:00', 'admin');
-INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792145, 4353221119792144, '博客分类', 'blog/classify/classify', '', '', 1, NULL, 0, '2023-06-17 13:53:44', 'admin', '2023-06-17 13:53:44', 'admin');
-INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792146, 4353221119792145, '添加', '', 'blog:classify:add', '', 1, NULL, 1, '2023-06-17 13:53:44', 'admin', '2023-06-17 13:53:44', 'admin');
-INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792147, 4353221119792145, '修改', '', 'blog:classify:upd', '', 1, NULL, 1, '2023-06-17 13:53:44', 'admin', '2023-06-17 13:53:44', 'admin');
-INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792148, 4353221119792145, '查看', '', 'blog:classify:info', '', 1, NULL, 1, '2023-06-17 13:53:44', 'admin', '2023-06-17 13:53:44', 'admin');
-INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792149, 4353221119792145, '删除', '', 'blog:classify:del', '', 1, NULL, 1, '2023-06-17 13:53:44', 'admin', '2023-06-17 13:53:44', 'admin');
-INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792150, 4353221119792144, '博客标签', 'blog/label/label', '', '', 1, NULL, 0, '2023-06-17 14:05:12', 'admin', '2023-06-17 14:05:12', 'admin');
-INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792151, 4353221119792150, '添加', '', 'blog:label:add', '', 1, NULL, 1, '2023-06-17 14:05:12', 'admin', '2023-06-17 14:05:12', 'admin');
-INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792152, 4353221119792150, '修改', '', 'blog:label:upd', '', 1, NULL, 1, '2023-06-17 14:05:12', 'admin', '2023-06-17 14:05:12', 'admin');
-INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792153, 4353221119792150, '查看', '', 'blog:label:info', '', 1, NULL, 1, '2023-06-17 14:05:12', 'admin', '2023-06-17 14:05:12', 'admin');
-INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792155, 4353221119792150, '删除', '', 'blog:label:del', '', 1, NULL, 1, '2023-06-17 14:05:12', 'admin', '2023-06-17 14:05:12', 'admin');
-INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792156, 4353221119792144, '博客专题', 'blog/topic/topic', '', '', 1, NULL, 0, '2023-06-17 14:06:10', 'admin', '2023-06-17 14:06:10', 'admin');
-INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792157, 4353221119792156, '添加', '', 'blog:topic:add', '', 1, NULL, 1, '2023-06-17 14:06:10', 'admin', '2023-06-17 14:06:10', 'admin');
-INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792158, 4353221119792156, '修改', '', 'blog:topic:upd', '', 1, NULL, 1, '2023-06-17 14:06:10', 'admin', '2023-06-17 14:06:10', 'admin');
-INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792159, 4353221119792156, '查看', '', 'blog:topic:info', '', 1, NULL, 1, '2023-06-17 14:06:10', 'admin', '2023-06-17 14:06:10', 'admin');
-INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792160, 4353221119792156, '删除', '', 'blog:topic:del', '', 1, NULL, 1, '2023-06-17 14:06:10', 'admin', '2023-06-17 14:06:10', 'admin');
-INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792161, 4353221119792144, '博客文章', 'blog/article/article', '', '', 1, NULL, 0, '2023-06-17 14:06:56', 'admin', '2023-06-17 14:06:56', 'admin');
-INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792162, 4353221119792161, '添加', '', 'blog:article:add', '', 1, NULL, 1, '2023-06-17 14:06:56', 'admin', '2023-06-17 14:06:56', 'admin');
-INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792163, 4353221119792161, '修改', '', 'blog:article:upd', '', 1, NULL, 1, '2023-06-17 14:06:56', 'admin', '2023-06-17 14:06:56', 'admin');
-INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792164, 4353221119792161, '查看', '', 'blog:article:info', '', 1, NULL, 1, '2023-06-17 14:06:56', 'admin', '2023-06-17 14:06:56', 'admin');
-INSERT INTO `sys_menu` (`id`, `pid`, `name`, `url`, `perm`, `icon`, `seq`, `remark`, `type`, `create_time`, `create_by`, `update_time`, `update_by`) VALUES (4353221119792165, 4353221119792161, '删除', '', 'blog:article:del', '', 1, NULL, 1, '2023-06-17 14:06:56', 'admin', '2023-06-17 14:06:56', 'admin');
 -- ----------------------------
 
 -- ----------------------------
@@ -710,61 +741,6 @@ CREATE TABLE `sys_user_role`  (
   INDEX `idx_user_role`(`role_id`, `user_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 367 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci COMMENT = '用户角色关联表' ROW_FORMAT = Dynamic;
 
--- ----------------------------
--- Records of sys_user_role
--- ----------------------------
-INSERT INTO `sys_user_role` VALUES (33, 10054, 3, '1', '2021-12-04 19:12:13', '1', '2021-12-04 19:12:13');
-INSERT INTO `sys_user_role` VALUES (36, 10142, 4, '1', '2021-12-04 19:20:22', '1', '2021-12-04 19:20:22');
-INSERT INTO `sys_user_role` VALUES (45, 10193, 10098, '1', '2021-12-04 20:41:04', '1', '2021-12-04 20:41:04');
-INSERT INTO `sys_user_role` VALUES (46, 10193, 10098, '1', '2021-12-04 20:47:10', '1', '2021-12-04 20:47:10');
-INSERT INTO `sys_user_role` VALUES (47, 10193, 10098, '1', '2021-12-04 20:58:07', '1', '2021-12-04 20:58:07');
-INSERT INTO `sys_user_role` VALUES (48, 10193, 10098, '1', '2021-12-04 21:04:57', '1', '2021-12-04 21:04:57');
-INSERT INTO `sys_user_role` VALUES (50, 10011, 3, '1', '2021-12-06 11:27:25', '1', '2021-12-06 11:27:25');
-INSERT INTO `sys_user_role` VALUES (152, 10272, 4, '1', '2021-12-16 13:45:51', '1', '2021-12-16 13:45:51');
-INSERT INTO `sys_user_role` VALUES (156, 2, 1, '1', '2021-12-16 16:59:44', '1', '2021-12-16 16:59:44');
-INSERT INTO `sys_user_role` VALUES (162, 10101, 3, '1', '2021-12-20 12:42:49', '1', '2021-12-20 12:42:49');
-INSERT INTO `sys_user_role` VALUES (163, 10026, 4, '1', '2021-12-20 13:30:58', '1', '2021-12-20 13:30:58');
-INSERT INTO `sys_user_role` VALUES (191, 12356, 4, '1', '2021-12-22 14:08:52', '1', '2021-12-22 14:08:52');
-INSERT INTO `sys_user_role` VALUES (214, 10215, 1, '10215', '2021-12-24 10:55:30', '10215', '2021-12-24 10:55:30');
-INSERT INTO `sys_user_role` VALUES (267, 10124, 4, '1', '2021-12-29 16:09:48', '1', '2021-12-29 16:09:48');
-INSERT INTO `sys_user_role` VALUES (268, 10239, 4, '1', '2021-12-29 16:09:56', '1', '2021-12-29 16:09:56');
-INSERT INTO `sys_user_role` VALUES (269, 10098, 2, '1', '2021-12-29 16:10:30', '1', '2021-12-29 16:10:30');
-INSERT INTO `sys_user_role` VALUES (274, 10097, 2, '1', '2021-12-30 10:30:20', '1', '2021-12-30 10:30:20');
-INSERT INTO `sys_user_role` VALUES (275, 10024, 6, '1', '2021-12-30 10:31:05', '1', '2021-12-30 10:31:05');
-INSERT INTO `sys_user_role` VALUES (276, 10065, 9, '1', '2021-12-30 10:31:20', '1', '2021-12-30 10:31:20');
-INSERT INTO `sys_user_role` VALUES (282, 10030, 62, '1', '2021-12-30 14:13:23', '1', '2021-12-30 14:13:23');
-INSERT INTO `sys_user_role` VALUES (288, 10126, 2, '1', '2021-12-30 15:09:10', '1', '2021-12-30 15:09:10');
-INSERT INTO `sys_user_role` VALUES (290, 10061, 2, '1', '2021-12-30 15:09:19', '1', '2021-12-30 15:09:19');
-INSERT INTO `sys_user_role` VALUES (294, 12354, 10, '1', '2021-12-30 16:23:33', '1', '2021-12-30 16:23:33');
-INSERT INTO `sys_user_role` VALUES (296, 10227, 3, '1', '2021-12-31 03:00:35', '1', '2021-12-31 03:00:35');
-INSERT INTO `sys_user_role` VALUES (298, 12358, 10, '1', '2022-01-05 17:02:06', '1', '2022-01-05 17:02:06');
-INSERT INTO `sys_user_role` VALUES (302, 1, 1, '1', '2022-01-05 17:04:43', '1', '2022-01-05 17:04:43');
-INSERT INTO `sys_user_role` VALUES (306, 10007, 1, '10215', '2022-01-07 17:39:05', '10215', '2022-01-07 17:39:05');
-INSERT INTO `sys_user_role` VALUES (316, 10280, 1, '1', '2022-01-13 15:33:52', '1', '2022-01-13 15:33:52');
-INSERT INTO `sys_user_role` VALUES (317, 10280, 3, '1', '2022-01-13 15:33:52', '1', '2022-01-13 15:33:52');
-INSERT INTO `sys_user_role` VALUES (318, 10280, 5, '1', '2022-01-13 15:33:52', '1', '2022-01-13 15:33:52');
-INSERT INTO `sys_user_role` VALUES (319, 10255, 1, '10215', '2022-01-13 15:39:05', '10215', '2022-01-13 15:39:05');
-INSERT INTO `sys_user_role` VALUES (324, 12357, 2, '10280', '2022-02-08 15:41:19', '10280', '2022-02-08 15:41:19');
-INSERT INTO `sys_user_role` VALUES (325, 12357, 11, '10280', '2022-02-08 15:41:19', '10280', '2022-02-08 15:41:19');
-INSERT INTO `sys_user_role` VALUES (326, 10224, 1, '10280', '2022-02-08 15:41:34', '10280', '2022-02-08 15:41:34');
-INSERT INTO `sys_user_role` VALUES (327, 10224, 11, '10280', '2022-02-08 15:41:34', '10280', '2022-02-08 15:41:34');
-INSERT INTO `sys_user_role` VALUES (338, 10228, 3, '1', '2022-02-18 13:49:10', '1', '2022-02-18 13:49:10');
-INSERT INTO `sys_user_role` VALUES (340, 10131, 63, '1', '2022-02-18 14:39:57', '1', '2022-02-18 14:39:57');
-INSERT INTO `sys_user_role` VALUES (346, 10130, 8, '1', '2022-02-18 15:21:12', '1', '2022-02-18 15:21:12');
-INSERT INTO `sys_user_role` VALUES (348, 10029, 3, '1', '2022-02-18 16:16:38', '1', '2022-02-18 16:16:38');
-INSERT INTO `sys_user_role` VALUES (349, 10029, 11, '1', '2022-02-18 16:16:38', '1', '2022-02-18 16:16:38');
-INSERT INTO `sys_user_role` VALUES (350, 10013, 3, '1', '2022-02-18 16:16:47', '1', '2022-02-18 16:16:47');
-INSERT INTO `sys_user_role` VALUES (353, 10135, 7, '10229', '2022-02-18 17:02:33', '10229', '2022-02-18 17:02:33');
-INSERT INTO `sys_user_role` VALUES (354, 10049, 5, '10229', '2022-02-18 17:15:14', '10229', '2022-02-18 17:15:14');
-INSERT INTO `sys_user_role` VALUES (355, 10132, 3, '10229', '2022-02-18 18:08:28', '10229', '2022-02-18 18:08:28');
-INSERT INTO `sys_user_role` VALUES (356, 10144, 1, '10229', '2022-02-23 11:30:47', '10229', '2022-02-23 11:30:47');
-INSERT INTO `sys_user_role` VALUES (357, 10144, 2, '10229', '2022-02-23 11:30:47', '10229', '2022-02-23 11:30:47');
-INSERT INTO `sys_user_role` VALUES (358, 10144, 4, '10229', '2022-02-23 11:30:47', '10229', '2022-02-23 11:30:47');
-INSERT INTO `sys_user_role` VALUES (362, 10099, 2, '10144', '2022-02-27 23:28:40', '10144', '2022-02-27 23:28:40');
-INSERT INTO `sys_user_role` VALUES (363, 10229, 1, '10144', '2022-02-28 14:31:10', '10144', '2022-02-28 14:31:10');
-INSERT INTO `sys_user_role` VALUES (364, 10229, 2, '10144', '2022-02-28 14:31:10', '10144', '2022-02-28 14:31:10');
-INSERT INTO `sys_user_role` VALUES (365, 10229, 3, '10144', '2022-02-28 14:31:10', '10144', '2022-02-28 14:31:10');
-INSERT INTO `sys_user_role` VALUES (366, 10219, 1, '1', '2022-03-02 15:19:53', '1', '2022-03-02 15:19:53');
 -- ----------------------------
 
 --

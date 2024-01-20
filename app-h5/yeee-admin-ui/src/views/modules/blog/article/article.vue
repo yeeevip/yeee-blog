@@ -127,7 +127,7 @@ import info from './article-info'
 import grid from '@/mixins/grid'
 import filePreview from '@/components/filePreview'
 import query from '@/utils/query'
-import { mainRoutes } from '@/router'
+import { mainRoutes, _import } from '@/router'
 export default {
   mixins: [grid],
   data () {
@@ -165,20 +165,21 @@ export default {
     },
     handleToEditTxtPage (row) {
       // 组装路由名称, 并判断是否已添加, 如是: 则直接跳转
+      // return this.$router.push({ name: 'blog-article/articleEditTxt__29' })
       var routeName = `${this.$route.name}EditTxt__${row.id}`
-      var route = window.SITE_CONFIG['dynamicRoutes'].filter(item => item.name === routeName)[0]
-      var params = { 'id': row.id }
-      if (route) {
-        return this.$router.push({ name: routeName, params: params })
+      var routes = window.SITE_CONFIG['dynamicRoutes'].filter(item => item.name === routeName)
+      if (routes.length >= 1) {
+        return this.$router.push(routes[0])
       }
+      var params = { 'id': row.id }
       // 否则: 添加并全局变量保存, 再跳转
-      route = {
+      var route = {
         path: routeName,
-        component: () => import(`@/views/modules/${this.$route.name.replace(/-/g, '/')}EditTxt`),
+        // component: () => import(`@/views/modules/${this.$route.name.replace(/-/g, '/')}EditTxt`),
+        component: (resolve) => require([`@/views/modules/${this.$route.name.replace(/-/g, '/')}EditTxt`], resolve),
         name: routeName,
         meta: {
           ...window.SITE_CONFIG['contentTabDefault'],
-          menuId: this.$route.meta.menuId,
           title: `编辑 - ${row.title}`
         }
       }
@@ -190,7 +191,7 @@ export default {
         }
       ])
       window.SITE_CONFIG['dynamicRoutes'].push(route)
-      this.$router.push({ name: route.name, params: params })
+      return this.$router.push({name: routeName, params: params})
     }
   }
 }

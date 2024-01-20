@@ -72,7 +72,7 @@ git clone https://github.com/yeeevip/yeee-blog.git
 cd yeee-blog && mvn clean install && java -jar -Dspring.profiles.active=test yeee-blog-bootstrap/target/yeee-blog-bootstrap-1.0.0-SNAPSHOT.jar
 
 # 运行博客管理端ui
-cd yeee-blog/app-h5/yeee-admin-ui && npm install && npm run dev
+cd yeee-blog/app-h5/yeee-admin-ui && npm install --registry=https://registry.npmmirror.com && npm run dev
 
 # 运行博客客户端ui
 cd yeee-blog/app-h5/yeee-blog-web && npm install && npm run dev
