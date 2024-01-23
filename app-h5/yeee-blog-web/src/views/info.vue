@@ -451,7 +451,6 @@
     vertical-align: middle;
   }
   .emoji-size-large {
-    zoom: 0.5; /* emojipanel表情大小 */
     margin: 5px;
   }
   .iconfont {

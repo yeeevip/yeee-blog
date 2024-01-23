@@ -32,12 +32,8 @@ export function baseUrl () {
 }
 
 export function baseUrl2 () {
-  let url
-  if (process.env.NODE_ENV !== 'production' && process.env.OPEN_PROXY) {
-    url = API_CONFIG.dev.proxyTable['/proxyApi'].target
-  } else {
-    url = window.SITE_CONFIG.baseUrl
-  }
+  console.log(process.env)
+  let url = process.env.VUE_APP_BASE_HOST_URL + process.env.VUE_APP_BASE_API
   return (url === '/' ? '' : url)
 }
 
