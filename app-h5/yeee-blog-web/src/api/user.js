@@ -1,4 +1,5 @@
 import request from '@/utils/request'
+import commonUtil from "@/utils/commonUtil";
 
 /**
  * 第三方登录
@@ -6,7 +7,7 @@ import request from '@/utils/request'
  */
 export function login(params) {
   return request({
-    url: process.env.WEB_API + '/oauth/render',
+    url: commonUtil.FUNCTIONS.base_url() + '/oauth/render',
     method: 'post',
     params
   })
@@ -14,14 +15,14 @@ export function login(params) {
 
 export function authVerify(params) {
   return request({
-    url: process.env.WEB_API + '/oauth/verify/' + params,
+    url: commonUtil.FUNCTIONS.base_url() + '/oauth/verify/' + params,
     method: 'get',
   })
 }
 
 export function editUser(params) {
   return request({
-    url: process.env.WEB_API + '/oauth/editUser',
+    url: commonUtil.FUNCTIONS.base_url() + '/oauth/editUser',
     method: 'post',
     data: params
   })
@@ -33,7 +34,7 @@ export function editUser(params) {
  */
 export function updateUserPwd(params) {
   return request({
-    url: process.env.WEB_API + '/oauth/updateUserPwd',
+    url: commonUtil.FUNCTIONS.base_url() + '/oauth/updateUserPwd',
     method: 'post',
     data: params
   })
@@ -45,7 +46,7 @@ export function updateUserPwd(params) {
  */
 export function getFeedbackList(params) {
   return request({
-    url: process.env.WEB_API + '/oauth/getFeedbackList',
+    url: commonUtil.FUNCTIONS.base_url() + '/oauth/getFeedbackList',
     method: 'get',
     params
   })
@@ -57,7 +58,7 @@ export function getFeedbackList(params) {
  */
 export function addFeedback(params) {
   return request({
-    url: process.env.WEB_API + '/oauth/addFeedback',
+    url: commonUtil.FUNCTIONS.base_url() + '/oauth/addFeedback',
     method: 'post',
     data: params
   })
@@ -65,7 +66,7 @@ export function addFeedback(params) {
 
 export function replyBlogLink(params) {
   return request({
-    url: process.env.WEB_API + '/oauth/replyBlogLink',
+    url: commonUtil.FUNCTIONS.base_url() + '/oauth/replyBlogLink',
     method: 'post',
     data: params
   })
@@ -73,7 +74,7 @@ export function replyBlogLink(params) {
 
 export function deleteUserAccessToken(params) {
   return request({
-    url: process.env.WEB_API + '/oauth/delete/' + params,
+    url: commonUtil.FUNCTIONS.base_url() + '/oauth/delete/' + params,
     method: 'post',
   })
 }
@@ -84,7 +85,7 @@ export function deleteUserAccessToken(params) {
  */
 export function localLogin(params) {
   return request({
-    url: process.env.WEB_API + '/login/login',
+    url: commonUtil.FUNCTIONS.base_url() + '/login/login',
     method: 'post',
     data: params
   })
@@ -96,7 +97,7 @@ export function localLogin(params) {
  */
 export function localRegister(params) {
   return request({
-    url: process.env.WEB_API + '/login/register',
+    url: commonUtil.FUNCTIONS.base_url() + '/login/register',
     method: 'post',
     data: params
   })
@@ -104,7 +105,7 @@ export function localRegister(params) {
 
 export function logout(params) {
   return request({
-    url: process.env.WEB_API + '/user/logout',
+    url: commonUtil.FUNCTIONS.base_url() + '/user/logout',
     method: 'post',
     data: params
   })
@@ -117,7 +118,7 @@ export function logout(params) {
  */
 export function getWechatOrCodeTicket(params) {
   return request({
-    url: process.env.WEB_API + '/wechat/getWechatOrCodeTicket',
+    url: commonUtil.FUNCTIONS.base_url() + '/wechat/getWechatOrCodeTicket',
     method: 'get',
     data: params
   })
@@ -125,7 +126,7 @@ export function getWechatOrCodeTicket(params) {
 
 export function getUserLoginStatus(params) {
   return request({
-    url: process.env.WEB_API + '/wechat/getUserLoginStatus',
+    url: commonUtil.FUNCTIONS.base_url() + '/wechat/getUserLoginStatus',
     method: 'get',
     params
   })

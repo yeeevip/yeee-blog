@@ -3,7 +3,7 @@ import commonUtil from '@/utils/commonUtil'
 
 export function getBlogByLevel (params) {
   return request({
-    url: process.env.WEB_API + '/api/blog/article/page',
+    url: commonUtil.FUNCTIONS.base_url() + '/api/blog/article/page',
     method: 'post',
     params
   })
@@ -11,7 +11,7 @@ export function getBlogByLevel (params) {
 
 export function getNewBlog (params) {
   return request({
-    url: process.env.WEB_API + '/api/blog/article/page',
+    url: commonUtil.FUNCTIONS.base_url() + '/api/blog/article/page',
     method: 'post',
     params
   })
@@ -19,7 +19,7 @@ export function getNewBlog (params) {
 
 export function getBlogByTime (params) {
   return request({
-    url: process.env.WEB_API + '/index/getBlogByTime',
+    url: commonUtil.FUNCTIONS.base_url() + '/index/getBlogByTime',
     method: 'get',
     params
   })
@@ -27,7 +27,7 @@ export function getBlogByTime (params) {
 
 export function getHotBlog (params) {
   return request({
-    url: process.env.WEB_API + '/api/blog/article/page',
+    url: commonUtil.FUNCTIONS.base_url() + '/api/blog/article/page',
     method: 'post',
     params
   })
@@ -35,7 +35,7 @@ export function getHotBlog (params) {
 
 export function getHotTag (params) {
   return request({
-    url: process.env.WEB_API + '/api/blog/label/page',
+    url: commonUtil.FUNCTIONS.base_url() + '/api/blog/label/page',
     method: 'post',
     params
   })

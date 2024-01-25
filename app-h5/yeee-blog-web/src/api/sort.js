@@ -1,8 +1,9 @@
 import request from '@/utils/request'
+import commonUtil from "@/utils/commonUtil";
 
 export function getSortList (params) {
   return request({
-    url: process.env.WEB_API + '/sort/getSortList',
+    url: commonUtil.FUNCTIONS.base_url() + '/sort/getSortList',
     method: 'get',
     params
   })
@@ -10,7 +11,7 @@ export function getSortList (params) {
 
 export function getArticleByMonth (params) {
   return request({
-    url: process.env.WEB_API + '/sort/getArticleByMonth',
+    url: commonUtil.FUNCTIONS.base_url() + '/sort/getArticleByMonth',
     method: 'get',
     params
   })

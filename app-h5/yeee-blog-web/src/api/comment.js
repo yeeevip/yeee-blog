@@ -1,4 +1,5 @@
 import request from '@/utils/request'
+import commonUtil from "@/utils/commonUtil";
 
 export function getCommentList (params) {
   // return request({
@@ -13,7 +14,7 @@ export function getCommentList (params) {
 
 export function getCommentListByUser (params) {
   return request({
-    url: process.env.WEB_API + '/web/comment/getListByUser',
+    url: commonUtil.FUNCTIONS.base_url() + '/web/comment/getListByUser',
     method: 'post',
     data: params
   })
@@ -21,7 +22,7 @@ export function getCommentListByUser (params) {
 
 export function getPraiseListByUser (params) {
   return request({
-    url: process.env.WEB_API + '/web/comment/getPraiseListByUser',
+    url: commonUtil.FUNCTIONS.base_url() + '/web/comment/getPraiseListByUser',
     method: 'post',
     data: params
   })
@@ -29,7 +30,7 @@ export function getPraiseListByUser (params) {
 
 export function addComment (params) {
   return request({
-    url: process.env.WEB_API + '/web/comment/add',
+    url: commonUtil.FUNCTIONS.base_url() + '/web/comment/add',
     method: 'post',
     data: params
   })
@@ -37,7 +38,7 @@ export function addComment (params) {
 
 export function deleteComment (params) {
   return request({
-    url: process.env.WEB_API + '/web/comment/delete',
+    url: commonUtil.FUNCTIONS.base_url() + '/web/comment/delete',
     method: 'post',
     data: params
   })
@@ -45,7 +46,7 @@ export function deleteComment (params) {
 
 export function reportComment (params) {
   return request({
-    url: process.env.WEB_API + '/web/comment/report',
+    url: commonUtil.FUNCTIONS.base_url() + '/web/comment/report',
     method: 'post',
     data: params
   })
@@ -53,7 +54,7 @@ export function reportComment (params) {
 
 export function getUserReceiveCommentCount (params) {
   return request({
-    url: process.env.WEB_API + '/web/comment/getUserReceiveCommentCount',
+    url: commonUtil.FUNCTIONS.base_url() + '/web/comment/getUserReceiveCommentCount',
     method: 'get',
     params
   })
@@ -61,7 +62,7 @@ export function getUserReceiveCommentCount (params) {
 
 export function readUserReceiveCommentCount (params) {
   return request({
-    url: process.env.WEB_API + '/web/comment/readUserReceiveCommentCount',
+    url: commonUtil.FUNCTIONS.base_url() + '/web/comment/readUserReceiveCommentCount',
     method: 'post',
     params
   })

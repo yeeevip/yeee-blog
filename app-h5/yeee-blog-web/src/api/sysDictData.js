@@ -3,7 +3,7 @@ import commonUtil from '@/utils/commonUtil'
 
 export function getListByDictType(params) {
   return request({
-    url: process.env.WEB_API + '/sysDictData/getListByDictType',
+    url: commonUtil.FUNCTIONS.base_url() + '/sysDictData/getListByDictType',
     method: 'post',
     params
   })

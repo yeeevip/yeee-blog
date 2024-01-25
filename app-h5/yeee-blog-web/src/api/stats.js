@@ -1,4 +1,5 @@
 import request from '@/utils/request'
+import commonUtil from "@/utils/commonUtil";
 
 export function recordArticleStatsData (event, blogId) {
   var params = new URLSearchParams();
@@ -7,7 +8,7 @@ export function recordArticleStatsData (event, blogId) {
   params.append("event", event);
   params.append("timestamp", new Date().getTime());
   return request({
-    url: process.env.WEB_API + '/api/blog/stats/',
+    url: commonUtil.FUNCTIONS.base_url() + '/api/blog/stats/',
     method: 'post',
     params
   })
@@ -19,7 +20,7 @@ export function recordIndexStatsData (event) {
   params.append("event", event);
   params.append("timestamp", new Date().getTime());
   return request({
-    url: process.env.WEB_API + '/api/blog/stats/',
+    url: commonUtil.FUNCTIONS.base_url() + '/api/blog/stats/',
     method: 'post',
     params
   })

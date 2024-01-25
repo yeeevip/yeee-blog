@@ -1,8 +1,9 @@
 import request from '@/utils/request'
+import commonUtil from "@/utils/commonUtil";
 
 export function getBlogSortList(params) {
   return request({
-    url: process.env.WEB_API + '/api/blog/classify/page',
+    url: commonUtil.FUNCTIONS.base_url() + '/api/blog/classify/page',
     method: 'post',
     params
   })
@@ -10,7 +11,7 @@ export function getBlogSortList(params) {
 
 export function getArticleByBlogSortUid(params) {
   return request({
-    url: process.env.WEB_API + '/api/blog/article/page',
+    url: commonUtil.FUNCTIONS.base_url() + '/api/blog/article/page',
     method: 'post',
     params
   })

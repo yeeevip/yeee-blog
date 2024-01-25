@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "axios": "^0.26.0",
-    "element-ui": "2.15.14",
+    "element-ui": "^2.13.1",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
     "vue": "2.6.12",

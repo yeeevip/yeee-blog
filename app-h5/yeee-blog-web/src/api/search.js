@@ -23,7 +23,7 @@ export function getSearchModel (params) {
  */
 export function searchBlog (params) {
   return request({
-    url: process.env.WEB_API + '/search/sqlSearchBlog',
+    url: commonUtil.FUNCTIONS.base_url() + '/search/sqlSearchBlog',
     method: 'get',
     params
   })
@@ -35,7 +35,7 @@ export function searchBlog (params) {
  */
 export function searchBlogByES (params) {
   return request({
-    url: process.env.SEARCH_API + '/search/elasticSearchBlog',
+    url: commonUtil.FUNCTIONS.base_url() + '/search/elasticSearchBlog',
     method: 'get',
     params
   })
@@ -47,7 +47,7 @@ export function searchBlogByES (params) {
  */
 export function searchBloBySolr (params) {
   return request({
-    url: process.env.SEARCH_API + '/search/solrSearchBlog',
+    url: commonUtil.FUNCTIONS.base_url() + '/search/solrSearchBlog',
     method: 'get',
     params
   })
@@ -55,7 +55,7 @@ export function searchBloBySolr (params) {
 
 export function searchBlogByLabel (params) {
   return request({
-    url: process.env.WEB_API + '/api/blog/article/page',
+    url: commonUtil.FUNCTIONS.base_url() + '/api/blog/article/page',
     method: 'post',
     params
   })
@@ -63,7 +63,7 @@ export function searchBlogByLabel (params) {
 
 export function searchBlogByClassify (params) {
   return request({
-    url: process.env.WEB_API + '/api/blog/article/page',
+    url: commonUtil.FUNCTIONS.base_url() + '/api/blog/article/page',
     method: 'post',
     params
   })
@@ -71,7 +71,7 @@ export function searchBlogByClassify (params) {
 
 export function searchBlogByAuthor (params) {
   return request({
-    url: process.env.WEB_API + '/search/searchBlogByAuthor',
+    url: commonUtil.FUNCTIONS.base_url() + '/search/searchBlogByAuthor',
     method: 'get',
     params
   })

@@ -2,10 +2,10 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 
-// import ElementUI from 'element-ui'
+import ElementUI from 'element-ui'
 // import 'element-ui/lib/theme-chalk/index.css'
-// import locale from 'element-ui/lib/locale/lang/en' // lang i18n
-// Vue.use(ElementUI, { locale })
+import locale from 'element-ui/lib/locale/lang/en' // lang i18n
+Vue.use(ElementUI, { locale })
 
 import App from './App'
 import router from './router'
@@ -44,6 +44,5 @@ new Vue({
   router,
   //需要将store和vue实例进行关联，这里将其传递进去
   store,
-  components: { App },
-  template: '<App/>'
+  render: h => h(App)
 })
