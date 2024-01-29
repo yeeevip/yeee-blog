@@ -60,13 +60,13 @@ yeee-blog
 
 ```
 # 下载yeee-memo工程
-git clone https://github.com/yeeevip/yeee-memo.git
+git clone https://gitee.com/yeeevip/yeee-memo.git
 
 # 打包[JavaWeb通用脚手架]
 cd yeee-memo/memo-parent && mvn clean install
 
 # 下载yeee-blog项目
-git clone https://github.com/yeeevip/yeee-blog.git
+git clone https://gitee.com/yeeevip/yeee-blog.git
 
 # 运行博客服务
 cd yeee-blog && mvn clean install && java -jar -Dspring.profiles.active=test yeee-blog-bootstrap/target/yeee-blog-bootstrap-1.0.0-SNAPSHOT.jar
