@@ -168,10 +168,10 @@ export default {
       // return this.$router.push({ name: 'blog-article/articleEditTxt__29' })
       var routeName = `${this.$route.name}EditTxt__${row.id}`
       var routes = window.SITE_CONFIG['dynamicRoutes'].filter(item => item.name === routeName)
-      if (routes.length >= 1) {
-        return this.$router.push(routes[0])
-      }
       var params = { 'id': row.id }
+      if (routes.length >= 1) {
+        return this.$router.push({name: routeName, params: params})
+      }
       // 否则: 添加并全局变量保存, 再跳转
       var route = {
         path: routeName,
