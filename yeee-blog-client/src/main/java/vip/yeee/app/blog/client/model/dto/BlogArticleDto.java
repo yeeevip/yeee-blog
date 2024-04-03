@@ -7,7 +7,7 @@ import vip.yeee.app.common.domain.mysql.entity.BlogArticle;
 /**
  * description......
  *
- * @author yeeee
+ * @author https://www.yeee.vip
  * @since 2023/7/8 17:19
  */
 @EqualsAndHashCode(callSuper = true)
