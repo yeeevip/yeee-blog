@@ -8,7 +8,7 @@ export function recordArticleStatsData (event, blogId) {
   params.append("event", event);
   params.append("timestamp", new Date().getTime());
   return request({
-    url: commonUtil.FUNCTIONS.base_url() + '/api/blog/stats/',
+    url: commonUtil.FUNCTIONS.base_url() + 'api/blog/stats/',
     method: 'post',
     params
   })
@@ -20,7 +20,7 @@ export function recordIndexStatsData (event) {
   params.append("event", event);
   params.append("timestamp", new Date().getTime());
   return request({
-    url: commonUtil.FUNCTIONS.base_url() + '/api/blog/stats/',
+    url: commonUtil.FUNCTIONS.base_url() + 'api/blog/stats/',
     method: 'post',
     params
   })

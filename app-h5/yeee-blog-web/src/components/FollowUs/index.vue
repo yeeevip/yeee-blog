@@ -3,7 +3,7 @@
       <h2 class="hometitle">联系博主</h2>
       <ul>
         <!-- <li class="sina"><a href="/" target="_blank"><span>新浪微博</span>一页の博客</a></li>         -->
-        <li class="qqGroup" v-if="contact.qqGroup"><a href="javascript:void(0);"><span>QQ群</span>{{contact.qqGroup}}</a></li>
+        <li class="qqGroup" v-if="contact.qqGroup"><a href="https://qm.qq.com/q/oLSCm1Ksjm"><span>QQ群</span>{{contact.qqGroup}}</a></li>
         <li class="qq" v-if="contact.qqNumber"><a :href="'tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=' + contact.qqNumber" target="_blank"><span>QQ号</span>{{contact.qqNumber}}</a></li>
         <li class="email" v-if="contact.email"><a href="javascript:void(0);"><span>邮箱帐号</span>{{contact.email}}</a></li>
         <li class="wxgzh" v-if="contact.weChat"><a href="javascript:void(0);"><span>微信号</span>{{contact.weChat}}</a></li>

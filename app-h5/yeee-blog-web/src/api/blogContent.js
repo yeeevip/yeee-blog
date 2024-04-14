@@ -3,7 +3,7 @@ import commonUtil from '@/utils/commonUtil'
 
 export function getBlogByUid (params) {
   return request({
-    url: process.env.WEB_API + '/api/blog/article/detail',
+    url: commonUtil.FUNCTIONS.base_url() + 'api/blog/article/detail',
     method: 'post',
     params
   })
@@ -11,7 +11,7 @@ export function getBlogByUid (params) {
 
 export function getSameBlogByTagUid (params) {
   return request({
-    url: process.env.WEB_API + '/content/getSameBlogByTagUid',
+    url: commonUtil.FUNCTIONS.base_url() + '/content/getSameBlogByTagUid',
     method: 'get',
     params
   })
@@ -19,7 +19,7 @@ export function getSameBlogByTagUid (params) {
 
 export function getSameBlogByBlogId (params) {
   return request({
-    url: process.env.WEB_API + '/api/blog/article/page',
+    url: commonUtil.FUNCTIONS.base_url() + 'api/blog/article/page',
     method: 'post',
     params
   })

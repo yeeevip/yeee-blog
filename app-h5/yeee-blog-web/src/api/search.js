@@ -55,7 +55,7 @@ export function searchBloBySolr (params) {
 
 export function searchBlogByLabel (params) {
   return request({
-    url: commonUtil.FUNCTIONS.base_url() + '/api/blog/article/page',
+    url: commonUtil.FUNCTIONS.base_url() + 'api/blog/article/page',
     method: 'post',
     params
   })
@@ -63,7 +63,7 @@ export function searchBlogByLabel (params) {
 
 export function searchBlogByClassify (params) {
   return request({
-    url: commonUtil.FUNCTIONS.base_url() + '/api/blog/article/page',
+    url: commonUtil.FUNCTIONS.base_url() + 'api/blog/article/page',
     method: 'post',
     params
   })

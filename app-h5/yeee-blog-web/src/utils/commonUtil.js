@@ -26,7 +26,7 @@ const SysConf = {
 const FUNCTIONS = {
 
   base_url: () => {
-    return process.env.NODE_ENV !== 'production' ? '' : (process.env.VUE_APP_BASE_URL + process.env.VUE_APP_BASE_API)
+    return process.env.NODE_ENV !== 'production' ? '/' : (process.env.VUE_APP_BASE_URL + process.env.VUE_APP_BASE_API)
   },
 
   /**

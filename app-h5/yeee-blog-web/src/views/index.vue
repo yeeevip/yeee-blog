@@ -89,14 +89,14 @@
 
     <div class="sidebar">
 
+      <!--联系博主-->
+      <FollowUs></FollowUs>
+
       <!-- 特别推荐 -->
       <ThirdRecommend></ThirdRecommend>
 
       <!--热门标签-->
       <TagCloud></TagCloud>
-
-      <!--联系博主-->
-      <FollowUs></FollowUs>
 
       <!--推荐文章-->
       <FourthRecommend></FourthRecommend>

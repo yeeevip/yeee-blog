@@ -3,7 +3,7 @@ import commonUtil from '@/utils/commonUtil'
 
 export function getBlogByLevel (params) {
   return request({
-    url: commonUtil.FUNCTIONS.base_url() + '/api/blog/article/page',
+    url: commonUtil.FUNCTIONS.base_url() + 'api/blog/article/page',
     method: 'post',
     params
   })
@@ -11,7 +11,7 @@ export function getBlogByLevel (params) {
 
 export function getNewBlog (params) {
   return request({
-    url: commonUtil.FUNCTIONS.base_url() + '/api/blog/article/page',
+    url: commonUtil.FUNCTIONS.base_url() + 'api/blog/article/page',
     method: 'post',
     params
   })
@@ -27,7 +27,7 @@ export function getBlogByTime (params) {
 
 export function getHotBlog (params) {
   return request({
-    url: commonUtil.FUNCTIONS.base_url() + '/api/blog/article/page',
+    url: commonUtil.FUNCTIONS.base_url() + 'api/blog/article/page',
     method: 'post',
     params
   })
@@ -35,7 +35,7 @@ export function getHotBlog (params) {
 
 export function getHotTag (params) {
   return request({
-    url: commonUtil.FUNCTIONS.base_url() + '/api/blog/label/page',
+    url: commonUtil.FUNCTIONS.base_url() + 'api/blog/label/page',
     method: 'post',
     params
   })
@@ -98,8 +98,8 @@ export function getWebConfig (params) {
       "openAdmiration": "1",
       "openMobileAdmiration": "0",
       "showList": "[\"2\",\"3\",\"4\",\"5\",\"1\"]",
-      "github": "https://github.com/yeeevip/yeee-memo",
-      "gitee": "https://gitee.com/yeeevip/yeee-memo",
+      "github": "https://github.com/yeeevip",
+      "gitee": "https://gitee.com/yeeevip",
       "qqNumber": "1324459373",
       "qqGroup": "96305921",
       "weChat": "",
