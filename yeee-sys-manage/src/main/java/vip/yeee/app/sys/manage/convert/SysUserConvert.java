@@ -10,7 +10,7 @@ import vip.yeee.memo.base.websecurityoauth2.model.AuthedUser;
 /**
  * description......
  *
- * @author https://www.yeee.vip
+ * @author yeeee
  * @since 2022/4/30 20:18
  */
 @Mapper(componentModel = "spring")

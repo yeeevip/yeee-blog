@@ -11,7 +11,7 @@ import java.util.Date;
  * 部门表
  * </p>
  *
- * @author https://www.yeee.vip
+ * @author yeeee
  * @since 2022-05-29
  */
 @Data

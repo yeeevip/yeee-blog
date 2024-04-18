@@ -5,7 +5,7 @@ import lombok.Getter;
 /**
  * description......
  *
- * @author https://www.yeee.vip
+ * @author yeeee
  * @since 2023/7/14 9:32
  */
 public enum BlogStatsEnum {

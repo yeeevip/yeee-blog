@@ -2,7 +2,7 @@ package vip.yeee.app.common.constant;
 
 /**
  * description......
- * @author https://www.yeee.vip
+ * @author yeeee
  */
 public interface MessageConstant {
 

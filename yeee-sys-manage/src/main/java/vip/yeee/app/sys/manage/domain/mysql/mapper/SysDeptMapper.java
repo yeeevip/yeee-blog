@@ -8,7 +8,7 @@ import vip.yeee.app.common.domain.mysql.entity.SysDept;
  * 部门表 Mapper 接口
  * </p>
  *
- * @author https://www.yeee.vip
+ * @author yeeee
  * @since 2022-05-29
  */
 public interface SysDeptMapper extends BaseMapper<SysDept> {

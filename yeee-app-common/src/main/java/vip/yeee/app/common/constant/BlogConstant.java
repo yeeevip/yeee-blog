@@ -3,7 +3,7 @@ package vip.yeee.app.common.constant;
 /**
  * description......
  *
- * @author https://www.yeee.vip
+ * @author yeeee
  * @since 2023/7/8 16:42
  */
 public class BlogConstant {

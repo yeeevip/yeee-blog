@@ -8,7 +8,7 @@ import vip.yeee.app.common.model.request.PageRequest;
 /**
  * description......
  *
- * @author https://www.yeee.vip
+ * @author yeeee
  * @since 2023/7/8 16:53
  */
 @EqualsAndHashCode(callSuper = true)

@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
  * 字典表 服务实现类
  * </p>
  *
- * @author https://www.yeee.vip
+ * @author yeeee
  * @since 2022-05-29
  */
 @RequiredArgsConstructor

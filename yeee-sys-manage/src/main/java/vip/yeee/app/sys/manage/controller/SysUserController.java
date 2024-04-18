@@ -19,7 +19,7 @@ import vip.yeee.memo.base.websecurityoauth2.model.Oauth2TokenVo;
 /**
  * description......
  *
- * @author https://www.yeee.vip
+ * @author yeeee
  * @since 2022/4/28 22:53
  */
 @Slf4j

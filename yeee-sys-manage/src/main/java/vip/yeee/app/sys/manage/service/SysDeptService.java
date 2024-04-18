@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
  * 部门表 服务实现类
  * </p>
  *
- * @author https://www.yeee.vip
+ * @author yeeee
  * @since 2022-05-29
  */
 @RequiredArgsConstructor

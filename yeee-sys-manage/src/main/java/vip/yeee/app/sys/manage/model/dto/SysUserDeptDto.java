@@ -6,7 +6,7 @@ import vip.yeee.app.common.domain.mysql.entity.SysUserDept;
 /**
  * description......
  *
- * @author https://www.yeee.vip
+ * @author yeeee
  * @since 2023/12/28 15:45
  */
 @Data
