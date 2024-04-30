@@ -38,7 +38,7 @@ CREATE TABLE `oauth_client_details`  (
 -- ----------------------------
 -- Records of oauth_client_details
 -- ----------------------------
-INSERT INTO `oauth_client_details` VALUES ('yeee-manage', NULL, '96e79218965eb72c92a549dd5a330112, 'all', 'password,refresh_token,authorization_code,client_credentials', '', NULL, 864000, 6048000, NULL, 'true');
+INSERT INTO `oauth_client_details` VALUES ('yeee-manage', NULL, '96e79218965eb72c92a549dd5a330112', 'all', 'password,refresh_token,authorization_code,client_credentials', '', NULL, 864000, 6048000, NULL, 'true');
 
 -- ----------------------------
 -- Table structure for sys_cat
@@ -756,6 +756,27 @@ CREATE TABLE `sys_oss_log` (
    `update_time` datetime DEFAULT NULL,
    PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='OSS上传日志';
+
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792166, 4353221119792144, '访问日志', 'blog/accessLog/accessLog', '', '', 5, NULL, 0, '2023-07-17 10:00:34', 'admin', '2023-07-17 10:00:34', 'admin');
+
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792167, 4353221119792166, '添加', '', 'blog:accessLog:add', '', 1, NULL, 1, '2023-07-17 10:00:34', 'admin', '2023-07-17 10:00:34', 'admin');
+
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792168, 4353221119792166, '修改', '', 'blog:accessLog:upd', '', 1, NULL, 1, '2023-07-17 10:00:34', 'admin', '2023-07-17 10:00:34', 'admin');
+
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792169, 4353221119792166, '查看', '', 'blog:accessLog:info', '', 1, NULL, 1, '2023-07-17 10:00:34', 'admin', '2023-07-17 10:00:34', 'admin');
+
+INSERT INTO sys_menu
+(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
+VALUES(4353221119792170, 4353221119792166, '删除', '', 'blog:accessLog:del', '', 1, NULL, 1, '2023-07-17 10:00:34', 'admin', '2023-07-17 10:00:34', 'admin');
+
 
 
 SET FOREIGN_KEY_CHECKS = 1;

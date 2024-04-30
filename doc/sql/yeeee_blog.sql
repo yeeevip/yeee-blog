@@ -212,28 +212,6 @@ CREATE TABLE `t_blog_access_log` (
     KEY `idx_access_time` (`access_time`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='博客访问日志';
 
-
-INSERT INTO sys_menu
-(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
-VALUES(4353221119792166, 4353221119792144, '访问日志', 'blog/accessLog/accessLog', '', '', 5, NULL, 0, '2023-07-17 10:00:34', 'admin', '2023-07-17 10:00:34', 'admin');
-
-INSERT INTO sys_menu
-(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
-VALUES(4353221119792167, 4353221119792166, '添加', '', 'blog:accessLog:add', '', 1, NULL, 1, '2023-07-17 10:00:34', 'admin', '2023-07-17 10:00:34', 'admin');
-
-INSERT INTO sys_menu
-(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
-VALUES(4353221119792168, 4353221119792166, '修改', '', 'blog:accessLog:upd', '', 1, NULL, 1, '2023-07-17 10:00:34', 'admin', '2023-07-17 10:00:34', 'admin');
-
-INSERT INTO sys_menu
-(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
-VALUES(4353221119792169, 4353221119792166, '查看', '', 'blog:accessLog:info', '', 1, NULL, 1, '2023-07-17 10:00:34', 'admin', '2023-07-17 10:00:34', 'admin');
-
-INSERT INTO sys_menu
-(id, pid, name, url, perm, icon, seq, remark, `type`, create_time, create_by, update_time, update_by)
-VALUES(4353221119792170, 4353221119792166, '删除', '', 'blog:accessLog:del', '', 1, NULL, 1, '2023-07-17 10:00:34', 'admin', '2023-07-17 10:00:34', 'admin');
-
-
 -- 2023.07.18
 
 alter table t_blog_access_log add column referer varchar(255) default null comment 'Referer' after `client_ip`;
