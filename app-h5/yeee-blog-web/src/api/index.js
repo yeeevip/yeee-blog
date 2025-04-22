@@ -100,7 +100,7 @@ export function getWebConfig (params) {
       "showList": "[\"2\",\"3\",\"4\",\"5\",\"1\"]",
       "github": "https://github.com/yeeevip",
       "gitee": "https://gitee.com/yeeevip",
-      "qqNumber": "1324459373",
+      "qqNumber": "394230080",
       "qqGroup": "96305921",
       "weChat": "",
       "email": "wwwyeeevip@gmail.com",
