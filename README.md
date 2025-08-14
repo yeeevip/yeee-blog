@@ -8,8 +8,6 @@
 
 [预览地址](https://www.yeee.vip)
 
-- 管理员账号密码：admin/111111
-
 ### 前台
 
 ![](doc/blog/images/blog-index.png)
@@ -87,6 +85,8 @@ java -jar yeee-blog-bootstrap/target/yeee-blog-bootstrap-1.0.0-SNAPSHOT.jar
 cd yeee-blog/app-h5/yeee-admin-ui 
 npm install --registry=https://registry.npmmirror.com 
 npm run dev
+
+- 管理员账号密码：admin/111111
 
 # 运行博客用户端ui
 cd yeee-blog/app-h5/yeee-blog-web 
