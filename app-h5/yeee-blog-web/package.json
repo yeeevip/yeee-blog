@@ -4,8 +4,9 @@
   "description": "yeee-blog-ui基于vue、element-ui构建开发，实现博客前端功能。",
   "author": "yeee一页 <wwwyeeevip@gmail.com>",
   "scripts": {
-    "dev": "vue-cli-service serve",
-    "build:prod": "vue-cli-service build",
+    "blog": "npm run dev",
+    "dev": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",
+    "build:prod": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build",
     "build:stage": "vue-cli-service build --mode staging",
     "preview": "node build/index.js --preview",
     "lint": "eslint --ext .js,.vue src"
@@ -15,7 +16,7 @@
     "element-ui": "2.15.14",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
-    "vue": "2.6.12",
+    "vue": "2.6.14",
     "vue-image-crop-upload": "2.5.0",
     "vue-meta": "2.4.0",
     "vue-router": "3.0.1",
@@ -39,7 +40,7 @@
     "sass-loader": "10.1.1",
     "script-ext-html-webpack-plugin": "2.1.5",
     "svg-sprite-loader": "5.1.1",
-    "vue-template-compiler": "2.6.12"
+    "vue-template-compiler": "2.6.14"
   },
   "engines": {
     "node": ">= 8.11.1",
