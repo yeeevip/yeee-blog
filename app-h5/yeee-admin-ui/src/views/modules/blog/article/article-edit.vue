@@ -157,7 +157,20 @@ export default {
       roleList: [],
       orgList: [],
       dataForm: {
-        username: ''
+        id: null,
+        title: '',
+        titleImg: '',
+        author: '',
+        classifyId: null,
+        labelIds: [],
+        topicIds: [],
+        remark: '',
+        oriFlag: '',
+        sort: null,
+        status: '',
+        publishTime: '',
+        type: '',
+        linkUrl: ''
       },
       dataFormOrigin: [],
       dataRule: {

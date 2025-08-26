@@ -78,19 +78,22 @@ export default {
       roleList: [],
       orgList: [],
       dataForm: {
-        username: ''
+        id: null,
+        name: '',
+        sort: '',
+        status: '1',   // 默认启用
+        remark: ''
       },
-      dataFormOrigin: [],
+      dataFormOrigin: {},
       dataRule: {
-        username: [
-          { required: true, message: '用户名不能为空', trigger: 'blur' },
-          { validator: validateFormDataUnique, trigger: 'blur' }
+        name: [
+          { required: true, message: '名称不能为空', trigger: 'blur' }
         ],
-        email: [
-          { validator: validateEmail, trigger: 'blur' }
+        sort: [
+          { required: true, message: '排序不能为空', trigger: 'blur' }
         ],
-        mobile: [
-          { validator: validateMobile, trigger: 'blur' }
+        status: [
+          { required: true, message: '状态不能为空', trigger: 'change' }
         ]
       }
     }
