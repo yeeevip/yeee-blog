@@ -24,7 +24,7 @@
     data () {
       return {
         editor: null,
-        html: 'Hello!!!',
+        html: '内容加载中!!!',
         toolbarConfig: { },
         editorConfig: { placeholder: '请输入内容...' }
       }

@@ -1,14 +1,24 @@
 <template>
   <div class="mod-articleEditTxt">
-    <el-form :model="dataForm" ref="dataForm" label-width="0px">
-      <el-form-item label="" prop="content">
-        <wangeditor ref="wangeditor" :getEditConts="getEditConts" :insertImg="insertImgHandle"></wangeditor>
-      </el-form-item>
-    </el-form>
-    <span slot="footer" class="dialog-footer">
-      <el-button type="primary" @click="dataFormSubmit()">保存</el-button>
-      <el-button @click="blogPreview()">预览</el-button>
-    </span>
+    <!-- 顶部操作栏 -->
+    <div class="toolbar-header">
+      <div class="toolbar-left">
+        <el-button type="info" icon="el-icon-arrow-left" @click="goBack()">返回</el-button>
+      </div>
+      <div class="toolbar-right">
+        <el-button type="primary" @click="dataFormSubmit()">保存</el-button>
+        <el-button @click="blogPreview()">预览</el-button>
+      </div>
+    </div>
+    
+    <!-- 主内容区域 -->
+    <div class="content-area">
+      <el-form :model="dataForm" ref="dataForm" label-width="0px">
+        <el-form-item label="" prop="content">
+          <wangeditor ref="wangeditor" :getEditConts="getEditConts" :insertImg="insertImgHandle"></wangeditor>
+        </el-form-item>
+      </el-form>
+    </div>
   </div>
 </template>
 
@@ -127,11 +137,64 @@ export default {
     },
     insertImgHandle (res, insertImg, editor) {
 
+    },
+    // 返回上一个路由
+    goBack () {
+      this.$router.go(-1)
     }
   }
 }
 </script>
 <style lang="scss">
+.mod-articleEditTxt {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  
+  // 顶部工具栏
+  .toolbar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #e4e7ed;
+    background: #fff;
+    flex-shrink: 0;
+    
+    .toolbar-left {
+      .el-button {
+        margin-right: 10px;
+      }
+    }
+    
+    .toolbar-right {
+      .el-button {
+        margin-left: 10px;
+      }
+    }
+  }
+  
+  // 主内容区域
+  .content-area {
+    flex: 1;
+    overflow-y: auto;
+    padding-top: 15px;
+    
+    .el-form {
+      height: 100%;
+      
+      .el-form-item {
+        margin-bottom: 0;
+        height: 100%;
+        
+        .el-form-item__content {
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
 .mod-article-edit {
   .input-bar i {
     padding-top: 6px;

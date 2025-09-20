@@ -30,6 +30,7 @@
         <el-button size="small" @click="listData()">查询</el-button>
         <el-button v-if="$hasPerm('blog:article:add')" type="primary" size="small" @click="editHandle()">新增</el-button>
         <el-button v-if="$hasPerm('blog:article:del')" type="danger" size="small" @click="delHandle()" :disabled="dataListSelections.length <= 0">删除</el-button>
+        <el-button type="warning" icon="el-icon-edit" size="small" @click="showEditTip()">文章编写</el-button>
       </el-form-item>
     </el-form>
     <el-table :data="dataList" border stripe v-loading="dataListLoading" :max-height="tableHeight"
@@ -192,6 +193,12 @@ export default {
       ])
       window.SITE_CONFIG['dynamicRoutes'].push(route)
       return this.$router.push({name: routeName, params: params})
+    },
+    showEditTip () {
+      this.$alert('请【双击文章标题】进入编辑页面！！！', '提示', {
+        confirmButtonText: '确定',
+        type: 'warning'
+      })
     }
   }
 }

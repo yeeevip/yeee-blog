@@ -1,5 +1,12 @@
 <template>
   <article>
+    <!-- 顶部操作栏 -->
+    <div class="toolbar-header">
+      <div class="toolbar-left">
+        <el-button type="info" icon="el-icon-arrow-left" @click="goBack()">返回</el-button>
+      </div>
+    </div>
+
     <div class="infosbox">
       <div class="newsview">
         <h3 class="news_title" v-if="dataForm.title">{{dataForm.title}}</h3>
@@ -46,6 +53,10 @@ export default {
           ...res.data
         }
       }).catch(() => {})
+    },
+    // 返回上一个路由
+    goBack () {
+      this.$router.go(-1)
     }
   }
 }
